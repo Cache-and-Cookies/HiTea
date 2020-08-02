@@ -1,0 +1,11 @@
+.parallax-container {
+    position: relative;
+    height: 100vh;
+    filter: brightness(50%);
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
