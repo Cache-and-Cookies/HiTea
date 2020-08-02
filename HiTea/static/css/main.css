@@ -1,11 +1,30 @@
 .parallax-container {
     position: relative;
     height: 100vh;
+}
+
+.parallax{
     filter: brightness(50%);
 }
 
 .logo {
     display: block;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.horizontal-center {
+  position: absolute;
+  margin-top:70px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+	margin: 100px 0px 0px 100px;
 }
