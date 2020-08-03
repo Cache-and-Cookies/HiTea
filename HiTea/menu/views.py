@@ -3,32 +3,37 @@ from .models import *
 from django.shortcuts import redirect
 
 
-
 # Create your views here.
+def home(request):
+    return redirect('/menu/Hot-Fresh-Fruit/')
+
+
 def getMenuData(request, product_type):
     # 1) look up product data in database:
     if product_type == 'Hot-Fresh-Fruit':
-        product_data = HotFreshFruit.objects.get()  # specify query set here
+        products = HotFreshFruit.objects.all()  # specify query set here
     elif product_type == 'Iced-Fresh-Fruit':
-        product_data = IcedFreshFruit.objects.get()
+        products = IcedFreshFruit.objects.all()
     elif product_type == 'Hot-Milk_Tea':
-        product_data = HotMilkTea.objects.get()
+        products = HotMilkTea.objects.all()
     elif product_type == 'Iced-Milk-Tea':
-        product_data = IcedMilkTea.objects.get()
+        products = IcedMilkTea.objects.all()
     elif product_type == 'Hot-Lemon-Tea':
-        product_data = HotLemonTea.objects.get()
+        products = HotLemonTea.objects.all()
     elif product_type == 'Iced-Lemon-Tea':
-        product_data = IcedLemonTea.objects.get()
+        products = IcedLemonTea.objects.all()
     elif product_type == 'Hot-Cheese-Foam':
-        product_data = HotCheeseFoam.objects.get()
+        products = HotCheeseFoam.objects.all()
     elif product_type == 'Iced-Cheese-Foam':
-        product_data = IcedCheeseFoam.objects.get()
+        products = IcedCheeseFoam.objects.all()
     else:
-        return redirect('/Hot-Fresh-Fruit/')
+        return redirect('/menu/Hot-Fresh-Fruit/')
 
     # 2) pack data into context:
     context = {
-        'product_data': product_data,
+        'products': products,
     }
 
-    # 3) render (request, )
+    # 3) render
+    render(request, 'menu/menu.html', context)
+
