@@ -3,13 +3,13 @@
     height: 100vh;
 }
 
-.parallax{
+.parallax {
     filter: brightness(50%);
 }
 
 .logo {
     display: block;
-    margin-top: 30px;
+    margin-top: 3vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -21,10 +21,16 @@
     transform: translate(-50%,-50%);
 }
 
-.box-element{
-	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+.box-element {
+	box-shadow: gray 0 0 16px;
 	background-color: #fff;
 	border-radius: 4px;
 	padding: 10px;
-	margin: 100px 0px 0px 100px;
+    margin: 100px 0px 0px 100px;
+}
+
+.page-section {
+    background-image: url(../images/white-background.jpg);
+    background-size: cover;
+    height: 100vh;
 }
