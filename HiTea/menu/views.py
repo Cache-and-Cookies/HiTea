@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import *
+from django.shortcuts import redirect
+
 
 
 # Create your views here.
@@ -22,11 +24,11 @@ def getMenuData(request, product_type):
     elif product_type == 'Iced-Cheese-Foam':
         product_data = IcedCheeseFoam.objects.get()
     else:
-        return redirect()
+        return redirect('/Hot-Fresh-Fruit/')
 
     # 2) pack data into context:
     context = {
-
+        'product_data': product_data,
     }
 
-    # 3) render template with context:
+    # 3) render (request, )
