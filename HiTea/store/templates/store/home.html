@@ -3,21 +3,46 @@
 
 {% block content %}
 
-<div class="parallax-container">
-    <div class="parallax"><img src="{% static 'images/store.jpg' %}"></div>
-    <img class="logo responsive-img" src="{% static 'images/HiTea Logo.png' %}">
-    <i class="horizontal-center large material-icons"><a class="white-text" href="#introduction">keyboard_arrow_down</a></i>
-</div>
-<div class="scrollspy container row" id="introduction">
-    <div class="col s12 l7 box-element">
-        <h5>About</h5>
+    <div class="parallax-container">
+        <div class="parallax"><img src="{% static 'images/store.jpg' %}"></div>
+        <img class="logo responsive-img" src="{% static 'images/HiTea Logo.png' %}">
+        <i class="horizontal-center large material-icons"><a class="white-text" href="#introduction">keyboard_arrow_down</a></i>
     </div>
 
-    <div class="col s12 l4 box-element offset-l1">
-        <h5>Hours of Operation</h5>
+    <div class="scrollspy container row" id="introduction">
+        <div class="col s12 l7 box-element">
+            <h5>About</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ducimus accusantium iure quos voluptas recusandae illo repellendus, atque dignissimos animi amet? Itaque, facere! Culpa quam suscipit optio laborum dignissimos soluta!</p>
+        </div>
+
+        <div class="col s12 l4 box-element offset-l1">
+            <h5>Hours of Operation</h5>
+            <!--   REPLACE WITH DJANGO HOUSR OF OPERATIONS-->
+            <ul>
+                <li>Sunday</li>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thurday</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+            </ul>
+        </div>
     </div>
-</div>
+    <div style="height: 30vh;"></div>
 
-<div style="height:600px"></div>
+    <div class="parallax-container">
+        <div class="parallax"><img src="{% static 'images/bubble-tea.jpg' %}"></div>
+    </div>
 
+    <div class="scrollspy container row" id="introduction">
+        <div class="col s12 l12 box-element">
+            <h5>About</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ducimus accusantium iure quos voluptas recusandae illo repellendus, atque dignissimos animi amet? Itaque, facere! Culpa quam suscipit optio laborum dignissimos soluta!</p>
+        </div>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="{% static 'images/bubble-tea.jpg' %}"></div>
+    </div>
 {% endblock content %}
