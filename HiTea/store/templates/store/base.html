@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<nav class="teal">
+<nav class="nav-extended teal"></nav>
     <div class="nav-wrapper">
         <a href="#" class="brand-logo center">Logo</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -26,6 +26,8 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
+    {% block navbar %}
+    {% endblock navbar %}
 </nav>
 {% block content %}
 {% endblock content %}
