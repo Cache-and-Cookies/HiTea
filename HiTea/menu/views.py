@@ -35,5 +35,5 @@ def getMenuData(request, product_type):
     }
 
     # 3) render
-    render(request, 'menu/menu.html', context)
+    return render(request, 'menu/menu.html', context)
 
