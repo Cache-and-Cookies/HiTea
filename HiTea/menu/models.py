@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
@@ -6,7 +7,10 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=99, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
-    calories = models.IntegerField(max_length=10)
+    calories = models.IntegerField(default=0, validators=[
+        MaxValueValidator(999999),
+        MinValueValidator(0),
+    ])
 
     def __str__(self):
         return self.name
