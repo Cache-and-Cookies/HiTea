@@ -20,17 +20,61 @@ class Product(models.Model):
 
 
 class HotFreshFruit(models.Model):
-    pass
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    TOPPING_CHOICES = (
+        ('a', 'Pearl'),
+        ('b', 'Grass Jelly'),
+        ('c', 'Red Beans'),
+        ('d', 'Coconut Jelly'),
+        ('e', 'Pudding'),
+        ('f', 'Agar Ball'),
+        ('h', 'Aloe'),
+        ('i', 'Popping Boba'),
+        ('j', 'Oreo'),
+        ('k', 'Cheese Foam'),
+    )
+    SUGAR_CHOICES = (
+        ('a', 'No Sugar'),
+        ('b', '30% Sugar'),
+        ('c', '50% Sugar'),
+        ('d', '80% Sugar'),
+        ('e', '100% Sugar'),
+
+    )
+    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
 
 
 class IcedFreshFruit(models.Model):
-    pass
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    TOPPING_CHOICES = (
+        ('a', 'Pearl'),
+        ('b', 'Grass Jelly'),
+        ('c', 'Red Beans'),
+        ('d', 'Coconut Jelly'),
+        ('e', 'Pudding'),
+        ('f', 'Agar Ball'),
+        ('h', 'Aloe'),
+        ('i', 'Popping Boba'),
+        ('j', 'Oreo'),
+        ('k', 'Cheese Foam'),
+    )
+    SUGAR_CHOICES = (
+        ('a', 'No Sugar'),
+        ('b', '30% Sugar'),
+        ('c', '50% Sugar'),
+        ('d', '80% Sugar'),
+        ('e', '100% Sugar'),
+
+    )
+    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
 
 
 class HotMilkTea(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE,)
     TOPPING_CHOICES = (
-        ('a,', 'Pearl'),
+        ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
         ('c', 'Red Beans'),
         ('d', 'Coconut Jelly'),
@@ -41,13 +85,22 @@ class HotMilkTea(models.Model):
         ('j', 'Oreo'),
         ('k', 'Cheese Foam'),
     )
+    SUGAR_CHOICES = (
+        ('a', 'No Sugar'),
+        ('b', '30% Sugar'),
+        ('c', '50% Sugar'),
+        ('d', '80% Sugar'),
+        ('e', '100% Sugar'),
+
+    )
     toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
 
 
 class IcedMilkTea(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE,)
     TOPPING_CHOICES = (
-        ('a,', 'Pearl'),
+        ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
         ('c', 'Red Beans'),
         ('d', 'Coconut Jelly'),
@@ -58,20 +111,117 @@ class IcedMilkTea(models.Model):
         ('j', 'Oreo'),
         ('k', 'Cheese Foam'),
     )
+    SUGAR_CHOICES = (
+        ('a', 'No Sugar'),
+        ('b', '30% Sugar'),
+        ('c', '50% Sugar'),
+        ('d', '80% Sugar'),
+        ('e', '100% Sugar'),
+
+    )
     toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
 
 
 class HotLemonTea(models.Model):
-    pass
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    TOPPING_CHOICES = (
+        ('a', 'Pearl'),
+        ('b', 'Grass Jelly'),
+        ('c', 'Red Beans'),
+        ('d', 'Coconut Jelly'),
+        ('e', 'Pudding'),
+        ('f', 'Agar Ball'),
+        ('h', 'Aloe'),
+        ('i', 'Popping Boba'),
+        ('j', 'Oreo'),
+        ('k', 'Cheese Foam'),
+    )
+    SUGAR_CHOICES = (
+        ('a', 'No Sugar'),
+        ('b', '30% Sugar'),
+        ('c', '50% Sugar'),
+        ('d', '80% Sugar'),
+        ('e', '100% Sugar'),
+
+    )
+    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
 
 
 class IcedLemonTea(models.Model):
-    pass
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    TOPPING_CHOICES = (
+        ('a', 'Pearl'),
+        ('b', 'Grass Jelly'),
+        ('c', 'Red Beans'),
+        ('d', 'Coconut Jelly'),
+        ('e', 'Pudding'),
+        ('f', 'Agar Ball'),
+        ('h', 'Aloe'),
+        ('i', 'Popping Boba'),
+        ('j', 'Oreo'),
+        ('k', 'Cheese Foam'),
+    )
+    SUGAR_CHOICES = (
+        ('a', 'No Sugar'),
+        ('b', '30% Sugar'),
+        ('c', '50% Sugar'),
+        ('d', '80% Sugar'),
+        ('e', '100% Sugar'),
+
+    )
+    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
 
 
 class HotCheeseFoam(models.Model):
-    pass
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    TOPPING_CHOICES = (
+        ('a', 'Pearl'),
+        ('b', 'Grass Jelly'),
+        ('c', 'Red Beans'),
+        ('d', 'Coconut Jelly'),
+        ('e', 'Pudding'),
+        ('f', 'Agar Ball'),
+        ('h', 'Aloe'),
+        ('i', 'Popping Boba'),
+        ('j', 'Oreo'),
+        ('k', 'Cheese Foam'),
+    )
+    SUGAR_CHOICES = (
+        ('a', 'No Sugar'),
+        ('b', '30% Sugar'),
+        ('c', '50% Sugar'),
+        ('d', '80% Sugar'),
+        ('e', '100% Sugar'),
+
+    )
+    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
 
 
 class IcedCheeseFoam(models.Model):
-    pass
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    TOPPING_CHOICES = (
+        ('a', 'Pearl'),
+        ('b', 'Grass Jelly'),
+        ('c', 'Red Beans'),
+        ('d', 'Coconut Jelly'),
+        ('e', 'Pudding'),
+        ('f', 'Agar Ball'),
+        ('h', 'Aloe'),
+        ('i', 'Popping Boba'),
+        ('j', 'Oreo'),
+        ('k', 'Cheese Foam'),
+    )
+    SUGAR_CHOICES = (
+        ('a', 'No Sugar'),
+        ('b', '30% Sugar'),
+        ('c', '50% Sugar'),
+        ('d', '80% Sugar'),
+        ('e', '100% Sugar'),
+
+    )
+    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
