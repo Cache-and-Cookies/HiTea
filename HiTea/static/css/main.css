@@ -8,10 +8,12 @@
 }
 
 .logo {
-    display: block;
+    display: flex;
     margin-top: 3vh;
     margin-left: auto;
     margin-right: auto;
+    width: 40%;
+    height: auto;
 }
 
 .horizontal-center {
