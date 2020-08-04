@@ -28,13 +28,19 @@
 	background-color: #fff;
 	border-radius: 4px;
 	padding: 10px;
-    margin: 100px 0px 0px 100px;
+    margin: 10vh 0px 0px 100px;
 }
 
 .page-section {
     background-image: url(../images/white-background.jpg);
     background-size: cover;
     height: 100vh;
+}
+
+@media screen and (max-width: 800px) {
+    .extended {
+      height: 150vh;
+    }
 }
 
 .fade-in {
