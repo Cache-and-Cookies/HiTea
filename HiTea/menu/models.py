@@ -3,16 +3,15 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from multiselectfield import MultiSelectField
 
 TOPPING_CHOICES = (
-    ('a', 'Pearl'),
-    ('b', 'Grass Jelly'),
-    ('c', 'Red Beans'),
-    ('d', 'Coconut Jelly'),
-    ('e', 'Pudding'),
-    ('f', 'Agar Ball'),
-    ('h', 'Aloe'),
-    ('i', 'Popping Boba'),
-    ('j', 'Oreo'),
-    ('k', 'Cheese Foam'),
+    ('a', 'Pearl ($0.50)'),
+    ('b', 'Red Beans ($0.50)'),
+    ('c', 'Coconut Jelly ($0.50)'),
+    ('d', 'Pudding ($0.50)'),
+    ('e', 'Agar Ball ($0.75)'),
+    ('f', 'Aloe ($0.75)'),
+    ('g', 'Popping Boba ($0.75)'),
+    ('h', 'Oreo ($1.00)'),
+    ('i', 'Cheese Foam ($1.00)'),
 )
 
 
@@ -38,15 +37,9 @@ class Product(models.Model):
         return url
 
 
-class HotFreshFruit(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
-
-    def __str__(self):
-        return self.product.name
 
 
-class IcedFreshFruit(models.Model):
+class FreshFruit(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
 
