@@ -16,19 +16,9 @@
 </head>
 
 <body>
-<nav class="nav-extended teal" style="position: absolute;">
-    <div class="nav-wrapper">
-        <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="#location">Location</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#introduction">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-    {% block navbar %}
-    {% endblock navbar %}
-</nav>
+{% block navbar %}
+{% endblock navbar %}
+
 {% block content %}
 {% endblock content %}
 
