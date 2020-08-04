@@ -1,12 +1,5 @@
 from django.shortcuts import render
 from .models import *
-from django.shortcuts import redirect
-
-
-# Create your views here.
-def home(request):
-    return render(request, 'menu/menu.html')
-
 
 
 def getMenuData(request):
