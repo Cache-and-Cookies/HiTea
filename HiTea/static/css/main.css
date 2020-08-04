@@ -36,3 +36,23 @@
     background-size: cover;
     height: 100vh;
 }
+
+.fade-in {
+    opacity: 0;
+    grid-column: 3/4;
+    transform: translateY(50%);
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.from-right {
+    transform: translateX(50%); 
+}
+
+.from-left {
+    transform: translateX(-50%); 
+}
