@@ -126,5 +126,5 @@ STATIC_URL = '/static/'
 
 # Determines where media files are stores
 # Configures url path so images can be found and rendered properly
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/thumbnail')
 MEDIA_URL = '/images/'

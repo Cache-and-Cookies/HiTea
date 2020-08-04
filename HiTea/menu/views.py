@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 
 # Create your views here.
 def home(request):
-    return redirect('/menu/Hot-Fresh-Fruit/')
+    return redirect('/menu/Hot-Milk-Tea/')
 
 
 def getMenuData(request, product_type):
@@ -14,7 +14,7 @@ def getMenuData(request, product_type):
         products = HotFreshFruit.objects.all()  # specify query set here
     elif product_type == 'Iced-Fresh-Fruit':
         products = IcedFreshFruit.objects.all()
-    elif product_type == 'Hot-Milk_Tea':
+    elif product_type == 'Hot-Milk-Tea':
         products = HotMilkTea.objects.all()
     elif product_type == 'Iced-Milk-Tea':
         products = IcedMilkTea.objects.all()
@@ -27,7 +27,7 @@ def getMenuData(request, product_type):
     elif product_type == 'Iced-Cheese-Foam':
         products = IcedCheeseFoam.objects.all()
     else:
-        return redirect('/menu/Hot-Fresh-Fruit/')
+        return redirect('/menu/Hot-Milk-Tea/')
 
     # 2) pack data into context:
     context = {
