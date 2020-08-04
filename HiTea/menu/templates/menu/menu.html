@@ -18,12 +18,7 @@
             <li class="tab"><a href="#IcedMilkTea">Iced Milk Tea</a></li>
             <li class="tab"><a href="#HotLemonTea">Hot Lemon Tea</a></li>
             <li class="tab"><a href="#IcedLemonTea">Iced Lemon Tea</a></li>
-<<<<<<< HEAD
-            <li class="tab"><a href="#HotFreshFruit">Hot Fresh Fruit</a></li>
-            <li class="tab"><a href="#IcedFreshFruit">Iced Fresh Fruit</a></li>
-=======
             <li class="tab"><a href="#FreshFruit">Fresh Fruit</a></li>
->>>>>>> menu
             <li class="tab"><a href="#HotCheeseFoam">Hot Cheese Foam</a></li>
             <li class="tab"><a href="#IcedCheeseFoam">Iced Cheese Foam</a></li>
 
@@ -33,39 +28,6 @@
 {% endblock navbar %}
 
 {% block content %}
-<<<<<<< HEAD
-  <div id="HotMilkTea" class="col s12">
-
-  </div>
-  <div id="test3" class="col s12">
-
-  </div>
-  <div id="test4" class="col s12">
-
-  </div>
-<div id="HotCheeseFoam"class="page-section">
-    <div class="container row">
-        <div class="col s6 l4 box-element">
-            <!-- Modal Trigger -->
-            <a class="modal-trigger menu-image" href="#modal1"><img src="{{product.product.imageURL}}" alt="filler" height="250" width="250" style="object-fit"></a>
-            <p align="center">
-                {{product.product.name}}
-                <br>
-            </p>
-
-            <!-- Modal Structure -->
-            <div id="modal1" class="col l4 offset-l2 modal">
-                <div class="modal-content">
-                    <h2 align="center">{{product.product.name}}</h2>
-                    <img class="modal-image" src="{{product.product.imageURL}}" alt="filler" height="250" width="250" style="object-fit">
-                    <h4 align="center">Price: ${{product.product.price}}</h4>
-                    <h4 align="center">Calories: {{product.product.calories}}</h4>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok!</a>
-                </div>
-            </div>
-=======
 <div class="page-section">
     <div id="HotMilkTea">
 
@@ -100,16 +62,9 @@
                 </div>
             </div>
             {% endfor %}
->>>>>>> menu
         </div>
-
     </div>
-<<<<<<< HEAD
-</div>
-{% for product in products %}
 
-{% endfor %}
-=======
     <div id="IcedMilkTea">
         {% for icedMilkTeaProducts in icedMilkTeaProducts %}
         <div class="row">hi</div>
@@ -156,5 +111,4 @@
         </div>
     </div>
 </div>
->>>>>>> menu
 {% endblock content %}
