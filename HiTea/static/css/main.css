@@ -28,7 +28,7 @@
 	background-color: #fff;
 	border-radius: 4px;
 	padding: 10px;
-    margin: 100px 0px 0px 100px;
+    margin: 10vh 0px 0px 100px;
 }
 
 .page-section {
@@ -36,15 +36,45 @@
     background-size: cover;
     height: 100vh;
 }
+
 .modal-image{
     display:block;
     margin-left:auto;
     margin-right:auto;
     margin-bottom:30px
 }
+<<<<<<< HEAD
+
 .menu-image{
     display:block;
     margin-left:auto;
     margin-right:auto;
     margin-top:10px;
 }
+
+@media screen and (max-width: 800px) {
+    .extended {
+      height: 150vh;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    grid-column: 3/4;
+    transform: translateY(50%);
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.from-right {
+    transform: translateX(50%); 
+}
+
+.from-left {
+    transform: translateX(-50%); 
+}
+
