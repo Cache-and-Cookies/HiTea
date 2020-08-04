@@ -3,7 +3,7 @@ from .models import *
 
 
 def getMenuData(request):
-    freshFruitProducts = freshFruit.objects.all()
+    freshFruitProducts = FreshFruit.objects.all()
     hotMilkTeaProducts = HotMilkTea.objects.all()
     icedMilkTeaProducts = IcedMilkTea.objects.all()
     hotLemonTeaProducts = HotLemonTea.objects.all()
@@ -13,8 +13,7 @@ def getMenuData(request):
 
     # 2) pack data into context:
     context = {
-        'hotFreshFruitProducts': hotFreshFruitProducts,
-        'icedFreshFruitProducts': icedFreshFruitProducts,
+        'freshFruitProducts': freshFruitProducts,
         'hotMilkTeaProducts': hotMilkTeaProducts,
         'icedMilkTeaProducts': icedMilkTeaProducts,
         'hotLemonTeaProducts': hotLemonTeaProducts,
