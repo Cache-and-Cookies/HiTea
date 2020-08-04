@@ -14,9 +14,9 @@
     </div>
     <div class="nav-content">
         <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="#test1">Test 1</a></li>
-            <li class="tab"><a class="active" href="#test2">Test 2</a></li>
-            <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+            <li class="tab"><a href="#HotMilkTea">Hot Milk Tea</a></li>
+            <li class="tab"><a href="#test2">Test 2</a></li>
+            <li class="tab"><a href="#test3">Test 3</a></li>
             <li class="tab"><a href="#test4">Test 4</a></li>
         </ul>
     </div>
@@ -24,22 +24,35 @@
 {% endblock navbar %}
 
 {% block content %}
-{% for product in products %}
-<div class="col s6 l2">
-    <!-- Modal Trigger -->
-    <p>{{product.product.imageURL}}</p>
-    <a class="modal-trigger" href="#modal1"><img src="{{product.product.imageURL}}" alt="filler"></a>
+  <div id="test2" class="col s12">Test 2</div>
+  <div id="test3" class="col s12">Test 3</div>
+  <div id="test4" class="col s12">Test 4</div>
+<div id="HotMilkTea"class="page-section">
+    <div class="container row">
+        <div class="col s6 l4 box-element">
+            <!-- Modal Trigger -->
+            <a class="modal-trigger menu-image" href="#modal1"><img src="{{product.product.imageURL}}" alt="filler" height="250" width="250" style="object-fit"></a>
+            <p align="center">
+                {{product.product.name}}
+                <br>
+            </p>
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <!-- Modal Structure -->
+            <div id="modal1" class="col l4 offset-l2 modal">
+                <div class="modal-content">
+                    <h2 align="center">{{product.product.name}}</h2>
+                    <img class="modal-image" src="{{product.product.imageURL}}" alt="filler" height="250" width="250" style="object-fit">
+                    <h4 align="center">Price: ${{product.product.price}}</h4>
+                    <h4 align="center">Calories: {{product.product.calories}}</h4>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok!</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+{% for product in products %}
+
 {% endfor %}
 {% endblock content %}
