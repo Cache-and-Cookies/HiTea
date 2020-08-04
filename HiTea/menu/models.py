@@ -20,7 +20,7 @@ TOPPING_CHOICES = (
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=99, decimal_places=2)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(default='bbt.png', null=True, blank=True)
     calories = models.IntegerField(default=0, validators=[
         MaxValueValidator(999999),
         MinValueValidator(0),
