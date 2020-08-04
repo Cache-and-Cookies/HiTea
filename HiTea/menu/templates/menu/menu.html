@@ -1,4 +1,5 @@
 {% extends "store/base.html" %}
+{% load static %}
 
 {% block navbar %}
 <nav class="nav-extended teal">
@@ -23,24 +24,22 @@
 {% endblock navbar %}
 
 {% block content %}
-{% for products in products %}
-<div class="col l4">
-    <a href="#modal1"><img src="{{product.product.imageURL}}" alt="{{product.product.name}}"></a>
+{% for product in products %}
+<div class="col s6 l2">
+    <!-- Modal Trigger -->
+    <p>{{product.product.imageURL}}</p>
+    <a class="modal-trigger" href="#modal1"><img src="{{product.product.imageURL}}" alt="filler"></a>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h2>{{product.name}}</h2>
-            <img src="{{product.imageURL}}" alt="{{product.product.name}}">
-            <h4>Price: {{product.product.price}}</h4>
-            <h4>Toppings: {{product.toppings}}</h4>
-            <h4>Sugar Levels: {{product.sugar}}</h4>
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
     </div>
-
 </div>
 {% endfor %}
 {% endblock content %}
