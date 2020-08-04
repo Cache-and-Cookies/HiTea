@@ -1,17 +1,9 @@
 from django.shortcuts import render
 from .models import *
-from django.shortcuts import redirect
-
-
-# Create your views here.
-def home(request):
-    return render(request, 'menu/menu.html')
-
 
 
 def getMenuData(request):
-    hotFreshFruitProducts = HotFreshFruit.objects.all()  # specify query set here
-    icedFreshFruitProducts = IcedFreshFruit.objects.all()
+    freshFruitProducts = freshFruit.objects.all()
     hotMilkTeaProducts = HotMilkTea.objects.all()
     icedMilkTeaProducts = IcedMilkTea.objects.all()
     hotLemonTeaProducts = HotLemonTea.objects.all()

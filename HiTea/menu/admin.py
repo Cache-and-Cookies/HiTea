@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
-admin.site.register(HotFreshFruit)
-admin.site.register(IcedFreshFruit)
+admin.site.register(Product)
+admin.site.register(FreshFruit)
 admin.site.register(HotMilkTea)
 admin.site.register(IcedMilkTea)
 admin.site.register(HotLemonTea)
