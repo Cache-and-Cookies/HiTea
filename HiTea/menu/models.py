@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+from multiselectfield import MultiSelectField
 
 
 # Create your models here.
@@ -6,7 +8,10 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=99, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
-    calories = models.IntegerField(max_length=10)
+    calories = models.IntegerField(default=0, validators=[
+        MaxValueValidator(999999),
+        MinValueValidator(0),
+    ])
 
     def __str__(self):
         return self.name
@@ -21,7 +26,7 @@ class Product(models.Model):
 
 
 class HotFreshFruit(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    product = models.OneToOneField(Product, on_delete=models.CASCADE, )
     TOPPING_CHOICES = (
         ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
@@ -42,12 +47,12 @@ class HotFreshFruit(models.Model):
         ('e', '100% Sugar'),
 
     )
-    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
-    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
+    toppings = MultiSelectField(max_choices=5, choices=TOPPING_CHOICES)
+    sugar = MultiSelectField(max_choices=1, choices=SUGAR_CHOICES)
 
 
 class IcedFreshFruit(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    product = models.OneToOneField(Product, on_delete=models.CASCADE, )
     TOPPING_CHOICES = (
         ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
@@ -68,12 +73,12 @@ class IcedFreshFruit(models.Model):
         ('e', '100% Sugar'),
 
     )
-    toppings = models.CharField(max_length=10, choices=TOPPING_CHOICES)
-    sugar = models.CharField(max_length=5, choices=SUGAR_CHOICES)
+    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES)
+    sugar = MultiSelectField(max_choices=5, choices=SUGAR_CHOICES)
 
 
 class HotMilkTea(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE,)
+    product = models.OneToOneField(Product, on_delete=models.CASCADE,)
     TOPPING_CHOICES = (
         ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
@@ -94,12 +99,12 @@ class HotMilkTea(models.Model):
         ('e', '100% Sugar'),
 
     )
-    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
-    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
+    toppings = MultiSelectField(max_choices=5, choices=TOPPING_CHOICES)
+    sugar = MultiSelectField(max_choices=1, choices=SUGAR_CHOICES)
 
 
 class IcedMilkTea(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE,)
+    product = models.OneToOneField(Product, on_delete=models.CASCADE,)
     TOPPING_CHOICES = (
         ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
@@ -120,12 +125,12 @@ class IcedMilkTea(models.Model):
         ('e', '100% Sugar'),
 
     )
-    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
-    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
+    toppings = MultiSelectField(max_choices=5, choices=TOPPING_CHOICES)
+    sugar = MultiSelectField(max_choices=1, choices=SUGAR_CHOICES)
 
 
 class HotLemonTea(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    product = models.OneToOneField(Product, on_delete=models.CASCADE, )
     TOPPING_CHOICES = (
         ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
@@ -146,12 +151,12 @@ class HotLemonTea(models.Model):
         ('e', '100% Sugar'),
 
     )
-    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
-    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
+    toppings = MultiSelectField(max_choices=5, choices=TOPPING_CHOICES)
+    sugar = MultiSelectField(max_choices=1, choices=SUGAR_CHOICES)
 
 
 class IcedLemonTea(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    product = models.OneToOneField(Product, on_delete=models.CASCADE, )
     TOPPING_CHOICES = (
         ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
@@ -172,12 +177,12 @@ class IcedLemonTea(models.Model):
         ('e', '100% Sugar'),
 
     )
-    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
-    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
+    toppings = MultiSelectField(max_choices=5, choices=TOPPING_CHOICES)
+    sugar = MultiSelectField(max_choices=1, choices=SUGAR_CHOICES)
 
 
 class HotCheeseFoam(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    product = models.OneToOneField(Product, on_delete=models.CASCADE, )
     TOPPING_CHOICES = (
         ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
@@ -198,12 +203,12 @@ class HotCheeseFoam(models.Model):
         ('e', '100% Sugar'),
 
     )
-    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
-    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
+    toppings = MultiSelectField(max_choices=5, choices=TOPPING_CHOICES)
+    sugar = MultiSelectField(max_choices=1, choices=SUGAR_CHOICES)
 
 
 class IcedCheeseFoam(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, )
+    product = models.OneToOneField(Product, on_delete=models.CASCADE, )
     TOPPING_CHOICES = (
         ('a', 'Pearl'),
         ('b', 'Grass Jelly'),
@@ -224,5 +229,5 @@ class IcedCheeseFoam(models.Model):
         ('e', '100% Sugar'),
 
     )
-    toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
-    sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
+    toppings = MultiSelectField(max_choices=5, choices=TOPPING_CHOICES)
+    sugar = MultiSelectField(max_choices=1, choices=SUGAR_CHOICES)

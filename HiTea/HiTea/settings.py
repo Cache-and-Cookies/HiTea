@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'store.apps.StoreConfig',
     'menu.apps.MenuConfig',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [
