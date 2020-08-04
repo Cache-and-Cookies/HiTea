@@ -1,9 +1,43 @@
 {% extends "store/base.html" %}
 
 {% block navbar %}
+<<<<<<< HEAD
 
 {% endblock navbar %}
 
 {% block content %}
 
+=======
+<div class="nav-content">
+    <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Test 1</a></li>
+        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+        <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+        <li class="tab"><a href="#test4">Test 4</a></li>
+    </ul>
+</div>
+{% endblock navbar %}
+
+{% block content %}
+{% for products in products %}
+<div class="col l4">
+    <a href="#modal1"><img src="{{product.product.imageURL}}" alt="{{product.product.name}}"></a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h2>{{product.name}}</h2>
+            <img src="{{product.imageURL}}" alt="{{product.product.name}}">
+            <h4>Price: {{product.product.price}}</h4>
+            <h4>Toppings: {{product.toppings}}</h4>
+            <h4>Sugar Levels: {{product.sugar}}</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+</div>
+{% endfor %}
+>>>>>>> 28ddcf349c6788532ae0c0bab45d48861cb1c8a0
 {% endblock content %}

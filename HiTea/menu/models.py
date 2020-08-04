@@ -6,6 +6,10 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=99, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
+<<<<<<< HEAD
+=======
+    calories = models.IntegerField(max_length=10)
+>>>>>>> 28ddcf349c6788532ae0c0bab45d48861cb1c8a0
 
     def __str__(self):
         return self.name
@@ -67,8 +71,13 @@ class IcedFreshFruit(models.Model):
         ('e', '100% Sugar'),
 
     )
+<<<<<<< HEAD
     toppings = models.CharField(max_length=5, choices=TOPPING_CHOICES)
     sugar = models.CharField(max_length=1, choices=SUGAR_CHOICES)
+=======
+    toppings = models.CharField(max_length=10, choices=TOPPING_CHOICES)
+    sugar = models.CharField(max_length=5, choices=SUGAR_CHOICES)
+>>>>>>> 28ddcf349c6788532ae0c0bab45d48861cb1c8a0
 
 
 class HotMilkTea(models.Model):
