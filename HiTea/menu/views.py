@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 
 # Create your views here.
 def home(request):
-    return render(request, '')
+    return render(request, 'menu/menu.html')
 
 
 
@@ -32,5 +32,5 @@ def getMenuData(request):
     }
 
     # 3) render
-    return render(request, '', context)
+    return render(request, 'menu/menu.html', context)
 
