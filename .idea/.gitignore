@@ -1,7 +1,20 @@
 # Default ignored files
 /shelf/
+<<<<<<< HEAD
 workspace.xml
 *.pyc
 !**/__pycache__/
 __pycache__/
 *.py[cod]
+=======
+/workspace.xml
+/__pycache__/
+__pycache__
+*.pyc
+.pyc
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+>>>>>>> master

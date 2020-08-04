@@ -1,6 +1,6 @@
 .parallax-container {
     position: relative;
-    height: 100vh;
+    height: 91vh;
 }
 
 .parallax {
@@ -8,10 +8,12 @@
 }
 
 .logo {
-    display: block;
-    margin-top: 3vh;
+    display: flex;
+    margin-top: 5vh;
     margin-left: auto;
     margin-right: auto;
+    width: 35%;
+    height: auto;
 }
 
 .horizontal-center {
