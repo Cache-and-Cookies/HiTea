@@ -36,3 +36,15 @@
     background-size: cover;
     height: 100vh;
 }
+.modal-image{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:30px
+}
+.menu-image{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+}
