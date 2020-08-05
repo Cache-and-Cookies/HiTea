@@ -83,3 +83,14 @@
     transform: translateX(-50%);
 }
 
+.iframe-container {
+  padding-bottom: 1%;
+  position: relative;
+  height: 65vh;
+}
+
+.iframe-container iframe {
+   height: 100%;
+   width: 100%;
+}
+
