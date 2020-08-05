@@ -32,3 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.ScrollSpy.init(elems, {scrollOffset: 0});
 });
 
+//fixes issues with sidenav not reloading tabs in menu
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {
+    onCloseEnd: function() {
+      location.reload();
+    }
+  });
+});
+
