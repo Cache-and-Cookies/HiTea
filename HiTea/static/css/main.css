@@ -57,9 +57,9 @@
 	padding: 10px;
     margin: 10px 0px 0px 10px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800) {
     .extended {
-      height: 160vh;
+        height: 160vh;
     }
 }
 
