@@ -37,6 +37,26 @@
     height: 100vh;
 }
 
+.modal-image{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:30px
+}
+
+.menu-image{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+}
+.menu-box-element{
+    box-shadow: gray 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+    margin: 10px 0px 0px 10px;
+}
 @media screen and (max-width: 800px) {
     .extended {
       height: 160vh;
@@ -56,9 +76,10 @@
 }
 
 .from-right {
-    transform: translateX(50%); 
+    transform: translateX(50%);
 }
 
 .from-left {
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
 }
+
