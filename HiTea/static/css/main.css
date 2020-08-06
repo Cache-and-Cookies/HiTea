@@ -31,6 +31,15 @@
     margin: 10vh 0px 0px 100px;
 }
 
+.home-image {
+    width: 60%; 
+    height: auto; 
+    text-align: center;
+    transform: translate(30%, 0);
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
 .page-section {
     background-image: url(../images/white-background.jpg);
     background-size: cover;
