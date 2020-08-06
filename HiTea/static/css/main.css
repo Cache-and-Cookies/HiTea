@@ -16,6 +16,33 @@
     height: auto;
 }
 
+.tea-image {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    bottom: -10px;
+}
+
+@media screen and (max-width: 1080px) {
+    .tea-image {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .tea-image {
+        width: 30%;
+    }
+}
+
+.pop {
+    transition: transform 1s;
+}
+
+.pop:hover {
+    transform: scale(1.05);
+}
+
 .horizontal-center {
     position: absolute;
     margin-top: 5vh;
