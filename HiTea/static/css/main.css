@@ -63,7 +63,25 @@
     transform: translateX(-50%);
 }
 
+.iframe-container {
+  padding-bottom: 1%;
+  position: relative;
+  height: 65vh;
+}
+
+.iframe-container iframe {
+   height: 100%;
+   width: 100%;
+}
+
 /* MENU CSS */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
 .cold-icon{
     width: 30px;
     height: auto;
@@ -90,22 +108,12 @@
 	border-radius: 15px;
 	padding: 5px;
     margin: 5px;
-    min-height: 350px;
 }
 
 @media screen and (max-width: 992px) {
     .menu-box-element {
         min-height: 330px;
     }
-=======
-.iframe-container {
-  padding-bottom: 1%;
-  position: relative;
-  height: 65vh;
-}
 
-.iframe-container iframe {
-   height: 100%;
-   width: 100%;
-}
+
 

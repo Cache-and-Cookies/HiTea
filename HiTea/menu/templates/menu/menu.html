@@ -40,7 +40,7 @@
 {% endblock navbar %}
 
 {% block content %}
-<div style="background-image: url({% static 'images/white-wood-background.jpg' %})">
+<div style="background: url({% static 'images/white-wood-background.jpg' %}) no-repeat center fixed; background-size: cover;">
     <div id="MilkTea">
         <div class="container row">
             {% for milkTeaProducts in milkTeaProducts %}
@@ -174,7 +174,7 @@
         </div>
     </div>
     <div id="FreshFruit">
-        <div class="container row">
+        <div class="container wrapper">
             {% for freshFruitProducts in freshFruitProducts %}
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
