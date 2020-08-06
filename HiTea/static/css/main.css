@@ -63,8 +63,6 @@
     transform: translateX(-50%);
 }
 
-<<<<<<< HEAD
-
 /* MENU CSS */
 .modal-image{
     width: 40%;
@@ -101,6 +99,5 @@
 .iframe-container iframe {
    height: 100%;
    width: 100%;
->>>>>>> fec3d88970e6cda8e47ff4ac09b5e62d20aab875
 }
 
