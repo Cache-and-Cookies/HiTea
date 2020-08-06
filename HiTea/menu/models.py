@@ -24,6 +24,7 @@ class Product(models.Model):
         MaxValueValidator(999999),
         MinValueValidator(0),
     ])
+    isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
         return self.name
@@ -37,8 +38,6 @@ class Product(models.Model):
         return url
 
 
-
-
 class FreshFruit(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
@@ -47,14 +46,7 @@ class FreshFruit(models.Model):
         return self.product.name
 
 
-class HotMilkTea(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
-
-    def __str__(self):
-        return self.product.name
-
-class IcedMilkTea(models.Model):
+class MilkTea(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
 
@@ -62,7 +54,7 @@ class IcedMilkTea(models.Model):
         return self.product.name
 
 
-class HotLemonTea(models.Model):
+class LemonTea(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
 
@@ -70,7 +62,7 @@ class HotLemonTea(models.Model):
         return self.product.name
 
 
-class IcedLemonTea(models.Model):
+class CheeseFoam(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
 
@@ -78,17 +70,9 @@ class IcedLemonTea(models.Model):
         return self.product.name
 
 
-class HotCheeseFoam(models.Model):
+class Food(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
-
-    def __str__(self):
-        return self.product.name
-
-
-class IcedCheeseFoam(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True)
 
     def __str__(self):
         return self.product.name
