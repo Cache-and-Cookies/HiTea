@@ -3,15 +3,15 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from multiselectfield import MultiSelectField
 
 TOPPING_CHOICES = (
-    ('a', 'Pearl ($0.50)'),
-    ('b', 'Red Beans ($0.50)'),
-    ('c', 'Coconut Jelly ($0.50)'),
-    ('d', 'Pudding ($0.50)'),
-    ('e', 'Agar Ball ($0.75)'),
-    ('f', 'Aloe ($0.75)'),
-    ('g', 'Popping Boba ($0.75)'),
-    ('h', 'Oreo ($1.00)'),
-    ('i', 'Cheese Foam ($1.00)'),
+    ('Pearl ($0.50)', 'Pearl ($0.50)'),
+    ('Red Beans ($0.50)', 'Red Beans ($0.50)'),
+    ('Coconut Jelly ($0.50)', 'Coconut Jelly ($0.50)'),
+    ('Pudding ($0.50)', 'Pudding ($0.50)'),
+    ('Agar Ball ($0.75)', 'Agar Ball ($0.75)'),
+    ('Aloe ($0.75)', 'Aloe ($0.75)'),
+    ('Popping Boba ($0.75)', 'Popping Boba ($0.75)'),
+    ('Oreo ($1.00)', 'Oreo ($1.00)'),
+    ('Cheese Foam ($1.00)', 'Cheese Foam ($1.00)'),
 )
 
 
@@ -19,7 +19,7 @@ TOPPING_CHOICES = (
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=99, decimal_places=2)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(default='bbt.png', null=True, blank=True)
     calories = models.IntegerField(default=0, validators=[
         MaxValueValidator(999999),
         MinValueValidator(0),

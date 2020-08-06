@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block navbar %}
-<nav class="nav-extended teal">
-    <div class="nav-wrapper">
+<nav class="nav-extended teal darken-2">
+    <div class="nav-wrapper teal">
         <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
             <li><a href="{% url 'home' %}#location">Location</a></li>
             <li><a href="#">Menu</a></li>
             <li><a href="{% url 'home' %}#introduction">About</a></li>
@@ -13,51 +14,69 @@
         </ul>
     </div>
     <div class="nav-content">
-        <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="#HotMilkTea">Hot Milk Tea</a></li>
-            <li class="tab"><a href="#IcedMilkTea">Iced Milk Tea</a></li>
-            <li class="tab"><a href="#HotLemonTea">Hot Lemon Tea</a></li>
-            <li class="tab"><a href="#IcedLemonTea">Iced Lemon Tea</a></li>
-            <li class="tab"><a href="#FreshFruit">Fresh Fruit</a></li>
-            <li class="tab"><a href="#HotCheeseFoam">Hot Cheese Foam</a></li>
-            <li class="tab"><a href="#IcedCheeseFoam">Iced Cheese Foam</a></li>
-
+        <ul class="tabs tabs-transparent hide-on-med-and-down">
+            <li class="tab"><a href="#HotMilkTea">     Hot Milk Tea     </a></li>
+            <li class="tab"><a href="#IcedMilkTea">    Iced Milk Tea    </a></li>
+            <li class="tab"><a href="#HotLemonTea">    Hot Lemon Tea    </a></li>
+            <li class="tab"><a href="#IcedLemonTea">   Iced Lemon Tea   </a></li>
+            <li class="tab"><a href="#FreshFruit">     Fresh Fruit      </a></li>
+            <li class="tab"><a href="#HotCheeseFoam">  Hot Cheese Foam  </a></li>
+            <li class="tab"><a href="#IcedCheeseFoam"> Iced Cheese Foam </a></li>
         </ul>
     </div>
 </nav>
+
+<!-- sidenav links-->
+<ul class="sidenav" id="mobile-links">
+    <li><a href="{% url 'home' %}#location">Location</a></li>
+    <li><a href="#">Menu</a></li>
+    <li><a href="{% url 'home' %}#introduction">About</a></li>
+    <li><a href="{% url 'home' %}#contact">Contact</a></li>
+    <div class="divider"></div>
+    <li class="tab"><a href="{% url 'menu-search' %}#HotMilkTea">     Hot Milk Tea     </a></li>
+    <li class="tab"><a href="#IcedMilkTea">    Iced Milk Tea    </a></li>
+    <li class="tab"><a href="#HotLemonTea">    Hot Lemon Tea    </a></li>
+    <li class="tab"><a href="#IcedLemonTea">   Iced Lemon Tea   </a></li>
+    <li class="tab"><a href="#FreshFruit">     Fresh Fruit      </a></li>
+    <li class="tab"><a href="#HotCheeseFoam">  Hot Cheese Foam  </a></li>
+    <li class="tab"><a href="#IcedCheeseFoam"> Iced Cheese Foam </a></li>
+</ul>
 {% endblock navbar %}
 
 {% block content %}
-<div class="page-section">
+<div style="background-image: url({% static 'images/white-wood-background.jpg' %})">
     <div id="HotMilkTea">
         <div class="container row">
             {% for hotMilkTeaProducts in hotMilkTeaProducts %}
-            <div class="col s6 l4">
-                <div class="menu-box-element">
+            <div class="col s6 m5 offset-m1 l4">
+                <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger menu-image" href="#{{hotMilkTeaProducts.product.name}}"><img
-                            src="{{hotMilkTeaProducts.product.imageURL}}" alt="filler"
-                            height="250" width="250" style="object-fit"></a>
-                    <p align="center">
-                        {{hotMilkTeaProducts.product.name}}
-                        <br>
-                    </p>
+                    <a class="modal-trigger" href="#{{hotMilkTeaProducts.product.name}}">
+                        <img class="menu-image" src="{{hotMilkTeaProducts.product.imageURL}}" alt="filler">
+                    </a>
+                    <p align="center">{{hotMilkTeaProducts.product.name}}</p>
 
                     <!-- Modal Structure -->
-                    <div id="{{hotMilkTeaProducts.product.name}}" class="modal" style="margin:auto">
+                    <div id="{{hotMilkTeaProducts.product.name}}" class="modal">
                         <div class="modal-content">
-                            <h3 align="center">{{hotMilkTeaProducts.product.name}}</h3>
-                            <img class="modal-image" src="{{hotMilkTeaProducts.product.imageURL}}" alt="filler"
-                                 height="250"
-                                 width="250"
-                                 style="object-fit">
-                            <h6 align="center">Price: ${{hotMilkTeaProducts.product.price}}</h6>
-                            <h6 align="center">Calories: {{hotMilkTeaProducts.product.calories}}</h6>
-                            <h6 align="center">Available Toppings: {{hotMilkTeaProducts.toppings}}</h6>
+                            <h5 align="center">{{hotMilkTeaProducts.product.name}}</h5>
+                            <div class="divider"></div>
 
+                            <div class="row">
+                                <div class="col s12 m7"><img class="modal-image" src="{{hotMilkTeaProducts.product.imageURL}}" alt="filler"></div>
+                                <div class="col s12 m5">
+                                    <h6>Price: ${{hotMilkTeaProducts.product.price}}</h6>
+                                    <h6>Calories: {{hotMilkTeaProducts.product.calories}}</h6>
+                                    <small>Available Toppings:
+                                        {% for topping in hotMilkTeaProducts.toppings %}
+                                            <p>{{topping}}</p>
+                                        {% endfor %}
+                                    </small>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok!</a>
+                        <div class="modal-footer teal lighten-2">
+                            <a href="#" class="modal-close waves-effect btn-flat white-text">Exit</a>
                         </div>
                     </div>
                 </div>
@@ -204,5 +223,7 @@
             </div>
         </div>
     </div>
+    <!-- IDK why i need to put this div to cover background!! cmon clark... -->
+    <div style="height: 20px;"></div>
 </div>
 {% endblock content %}
