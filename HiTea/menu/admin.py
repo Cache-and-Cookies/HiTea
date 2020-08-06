@@ -20,11 +20,10 @@ class FoodAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
+admin.site.register(Topping)
 admin.site.register(Product)
 admin.site.register(FreshFruit, FoodAdmin)
-admin.site.register(HotMilkTea, FoodAdmin)
-admin.site.register(IcedMilkTea, FoodAdmin)
-admin.site.register(HotLemonTea, FoodAdmin)
-admin.site.register(IcedLemonTea, FoodAdmin)
-admin.site.register(HotCheeseFoam, FoodAdmin)
-admin.site.register(IcedCheeseFoam, FoodAdmin)
+admin.site.register(MilkTea, FoodAdmin)
+admin.site.register(LemonTea, FoodAdmin)
+admin.site.register(CheeseFoam, FoodAdmin)
+admin.site.register(Food, FoodAdmin)

@@ -100,10 +100,18 @@
 }
 
 /* MENU CSS */
-.modal-image{
-    width: 40%;
+.cold-icon{
+    width: 30px;
     height: auto;
-    transform: translate(70%, 0);
+}
+.warm-icon{
+    width: 30px;
+    height: auto;
+}
+.modal-image{
+    width: 80%;
+    height: auto;
+    transform: translate(13%, 0);
 }
 
 .menu-image{
