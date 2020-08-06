@@ -68,6 +68,14 @@
                                             <p>{{topping}}</p>
                                         {% endfor %}
                                     </small>
+                                    <div>
+                                        <h8>Temperature:</h8>
+                                        <br>
+                                        <img class="cold-icon" src="{% static 'images/cold.png' %}">
+                                        {% if milkTeaProducts.isHot %}
+                                            <img class ="warm-icon" src="{% static 'images/hot.png' %}">
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>
                         </div>

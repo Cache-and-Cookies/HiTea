@@ -24,7 +24,6 @@ class Product(models.Model):
         MaxValueValidator(999999),
         MinValueValidator(0),
     ])
-    isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
         return self.name
@@ -41,6 +40,7 @@ class Product(models.Model):
 class FreshFruit(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
         return self.product.name
@@ -49,6 +49,7 @@ class FreshFruit(models.Model):
 class MilkTea(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
         return self.product.name
@@ -57,6 +58,7 @@ class MilkTea(models.Model):
 class LemonTea(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
         return self.product.name
@@ -65,6 +67,7 @@ class LemonTea(models.Model):
 class CheeseFoam(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
     toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
         return self.product.name

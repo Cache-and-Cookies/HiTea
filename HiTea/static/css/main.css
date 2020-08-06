@@ -64,6 +64,14 @@
 }
 
 /* MENU CSS */
+.cold-icon{
+    width: 50px;
+    height: auto;
+}
+.warm-icon{
+    width: 40px;
+    height: auto;
+}
 .modal-image{
     width: 80%;
     height: auto;
