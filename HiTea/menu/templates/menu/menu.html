@@ -220,7 +220,7 @@
                                         <li>No Ice</li>
                                     </small>
                                     <div>
-                                        <small>Temperature:</small>
+                                        <small>Temperatures Available:</small>
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if freshFruitProducts.isHot %}
@@ -286,7 +286,7 @@
                                         <li>No Ice</li>
                                     </small>
                                     <div>
-                                        <small>Temperature:</small>
+                                        <small>Temperatures Available:</small>
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if cheeseFoamProducts.isHot %}
@@ -314,7 +314,7 @@
                     <a class="modal-trigger" href="#{{foodProducts.product.name}}">
                         <img class="menu-image" src="{{foodProducts.product.imageURL}}" alt="filler">
                     </a>
-                    <p align="center">{{cheeseFoamProducts.product.name}}</p>
+                    <p align="center">{{foodProducts.product.name}}</p>
 
                     <!-- Modal Structure -->
                     <div id="{{foodProducts.product.name}}" class="modal">
@@ -328,7 +328,7 @@
                                 <div class="col s12 m5">
                                     <h6>Price: ${{foodProducts.product.price}}</h6>
                                     <h6>Calories: {{foodProducts.product.calories}}</h6>
-                                    <h6>Description: {{foodProducts.description</h6>
+                                    <h6>Description: {{foodProducts.description}}</h6>
                                 </div>
                             </div>
                         </div>
