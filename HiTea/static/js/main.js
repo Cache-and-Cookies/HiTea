@@ -4,7 +4,7 @@ M.AutoInit();
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = {
     threshold: 0,
-    rootMargin: "0px 0px -250px 0px"
+    rootMargin: "0px 0px -200px 0px"
   };
 const appearOnScroll = new IntersectionObserver(function(
     entries,
@@ -30,5 +30,15 @@ const appearOnScroll = new IntersectionObserver(function(
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.scrollspy');
     var instances = M.ScrollSpy.init(elems, {scrollOffset: 0});
+});
+
+//fixes issues with sidenav not reloading tabs in menu
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {
+    onCloseEnd: function() {
+      location.reload();
+    }
+  });
 });
 
