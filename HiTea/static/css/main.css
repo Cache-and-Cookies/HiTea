@@ -118,6 +118,12 @@
   grid-gap: 10px;
 }
 
+@media screen and (max-width: 720px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .cold-icon{
     width: 30px;
     height: auto;
