@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block navbar %}
-<nav class="nav-extended teal">
-    <div class="nav-wrapper">
+<nav>
+    <div class="nav-wrapper teal">
         <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
             <li><a href="#location">Location</a></li>
             <li><a href="{% url 'menu-search' %}">Menu</a></li>
             <li><a href="#introduction">About</a></li>
@@ -13,19 +14,27 @@
         </ul>
     </div>
 </nav>
+
+<ul class="sidenav" id="mobile-links">
+    <li><a href="#location">Location</a></li>
+    <li><a href="{% url 'menu-search' %}">Menu</a></li>
+    <li><a href="#introduction">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
 {% endblock navbar %}
 
-{% block content %}
 
-<div class="parallax-container">
+{% block content %}
+<div class="parallax-container baseline">
     <div class="parallax"><img src="{% static 'images/store.jpg' %}"></div>
-    <img class="logo" src="{% static 'images/HiTea Logo.png' %}">
+    <img class="logo pop" src="{% static 'images/HiTea Logo.png' %}">
     <i class="horizontal-center large material-icons"><a class="white-text" href="#introduction">keyboard_arrow_down</a></i>
+    <img class="tea-image fade-in from-left" style="left: 13vw" src="{% static 'images/tea.png' %}" alt="">
+    <img class="tea-image fade-in from-right" style="right: 13vw" src="{% static 'images/tea.png' %}" alt="">
 </div>
 
+
 <!--INTRO-->
-
-
 <div class="page-section extended">
     <div class="scrollspy container row" id="introduction">
         <div class="col s12 l7 box-element fade-in from-right">
@@ -33,7 +42,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ducimus accusantium iure quos voluptas
                 recusandae illo repellendus, atque dignissimos animi amet? Itaque, facere! Culpa quam suscipit optio
                 laborum dignissimos soluta!</p>
-            <img src="{% static 'images/contest-winner.jpg' %}" height="200" width="267">
+            <img class="home-image" src="{% static 'images/contest-winner.jpg' %}">
 
         </div>
 
@@ -42,13 +51,13 @@
             <!--   REPLACE WITH DJANGO HOURS OF OPERATIONS-->
             <div style="overflow-x:auto;">
             <table class="highlight">
-                <tr><th>Sunday</th><td>Closed</td></tr>
-                <tr><th>Monday</th><td>9am - 5pm</td></tr>
-                <tr><th>Tuesday</th><td>9am - 5pm</td></tr>
-                <tr><th>Wednesday</th><td>9am - 5pm</td></tr>
-                <tr><th>Thursday</th><td>9am - 5pm</td></tr>
-                <tr><th>Friday</th><td>9am - 5pm</td></tr>
-                <tr><th>Saturday</th><td>9am - 5pm</td></tr>
+                <tr><th>Sunday</th><td>     12pm - 11pm</td></tr>
+                <tr><th>Monday</th><td>     12pm - 11pm</td></tr>
+                <tr><th>Tuesday</th><td>    12pm - 11pm</td></tr>
+                <tr><th>Wednesday</th><td>  12pm - 11pm</td></tr>
+                <tr><th>Thursday</th><td>   12pm - 11pm</td></tr>
+                <tr><th>Friday</th><td>     12pm - 11pm</td></tr>
+                <tr><th>Saturday</th><td>   12pm - 11pm</td></tr>
             </table>
             </div>      
         </div>
@@ -62,11 +71,10 @@
 <div class="page-section" style="background-image: url({% static 'images/wood-background.jpg' %})">
     <div class="scrollspy container row" id="location">
         <div class="col s12 l12 box-element fade-in">
-            <h5 style="text-align: center">Location</h5>
-            <p style="text-align: center">Come visit us</p>
+            <h5 class="center">Location</h5>
             <div class="iframe-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719.845812924635!2d-79.28914381427607!3d43.80640925118799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d17a1f227f41%3A0x98421bb116545141!2zSGkuVGVh6Iy25a6k!5e0!3m2!1sen!2sca!4v1596601311016!5m2!1sen!2sca"
-                    width="100%" height="450" style="border:0;" allowfullscreen=""
+                    width="100%" height="400" style="border:0;" allowfullscreen=""
                     aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
@@ -81,8 +89,23 @@
     <div class="scrollspy container row" id="contact">
         <div class="col s12 l12 box-element fade-in">
             <h5>Contact Us</h5>
-            <p>implement django form here!</p>
-            <p>form.as_p!!</p>
+            <div class="container">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" id="name">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="text" id="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">message</i>
+                    <textarea class="materialize-textarea" data-length="50" id="message"></textarea>
+                    <label for="message">Message</label>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -95,8 +118,39 @@
     <div class="scrollspy container row">
         <div class="col s12 l12 box-element fade-in">
             <h5>Leave a Rating</h5>
-            <p>implement django form here!</p>
-            <p>form.as_p!!</p>
+            <div style="height: 10vh;"></div>
+            <div class="row">
+                <div class="col s6">
+                    <div class="card">
+                        <a target="_blank" href="https://www.google.com/search?rlz=1C1NHXL_enCA717CA717&ei=7nErX9zcJYSoytMPwLSf4AQ&q=hi+tea+midland+finch+google+review&oq=hi+tea+midland+finch+google+review&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAE6BAgAEEc6BwghEAoQoAFQksdJWI_aSWCC3UloAHABeACAAYoBiAH7C5IBBDQuMTCYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwjci93ZyoXrAhUElHIEHUDaB0wQ4dUDCAw&uact=5#lrd=0x89d4d17a1f227f41:0x98421bb116545141,1,,,">
+                            <div class="card-image"><img src="{% static 'images/google.png' %}" alt=""></div>
+                        </a>
+                        <div class="card-content center">
+                            <i class="material-icons yellow-text">star</i>
+                            <i class="material-icons yellow-text">star</i>
+                            <i class="material-icons yellow-text">star</i>
+                            <i class="material-icons yellow-text">star</i>
+                            <i class="material-icons yellow-text">star_half</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s6">
+                    <div class="card">
+                        <a target="_blank" href="https://www.yelp.ca/biz/hi-tea-scarborough">
+                        <div class="card-image"><img src="{% static 'images/yelp.png' %}" alt=""></div>
+                        </a>
+                        <div class="card-content center">
+                            <i class="material-icons yellow-text">star</i>
+                            <i class="material-icons yellow-text">star</i>
+                            <i class="material-icons yellow-text">star</i>
+                            <i class="material-icons yellow-text">star</i>
+                            <i class="material-icons yellow-text">star_half</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 10vh;"></div>
         </div>
     </div>
 </div>
@@ -104,26 +158,5 @@
 <div class="parallax-container">
     <div class="parallax"><img src="{% static 'images/flowers.jpg' %}"></div>
 </div>
-
-<footer class="page-footer teal">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 l6">
-                <h5>Footer Content</h5>
-                <p>You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col s12 l4 offset-l2">
-                <h5>Follow Us!</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container"> HiTea 2020 &copy; All rights reservered</div>
-    </div>
-</footer>
 
 {% endblock content %}

@@ -16,6 +16,33 @@
     height: auto;
 }
 
+.tea-image {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    bottom: -10px;
+}
+
+@media screen and (max-width: 1080px) {
+    .tea-image {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .tea-image {
+        width: 30%;
+    }
+}
+
+.pop {
+    transition: transform 1s;
+}
+
+.pop:hover {
+    transform: scale(1.05);
+}
+
 .horizontal-center {
     position: absolute;
     margin-top: 5vh;
@@ -31,35 +58,24 @@
     margin: 10vh 0px 0px 100px;
 }
 
+.home-image {
+    width: 60%; 
+    height: auto; 
+    text-align: center;
+    transform: translate(30%, 0);
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
 .page-section {
     background-image: url(../images/white-background.jpg);
     background-size: cover;
     height: 100vh;
 }
 
-.modal-image{
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:30px
-}
-
-.menu-image{
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:10px;
-}
-.menu-box-element{
-    box-shadow: gray 0 0 16px;
-	background-color: #fff;
-	border-radius: 4px;
-	padding: 10px;
-    margin: 10px 0px 0px 10px;
-}
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 992px) {
     .extended {
-      height: 160vh;
+        height: 180vh;
     }
 }
 
@@ -83,14 +99,53 @@
     transform: translateX(-50%);
 }
 
+/* MENU CSS */
+.cold-icon{
+    width: 30px;
+    height: auto;
+}
+.warm-icon{
+    width: 30px;
+    height: auto;
+}
+.modal-image{
+    width: 80%;
+    height: auto;
+    transform: translate(13%, 0);
+}
+
+.menu-image{
+   width: 80%;
+   height: auto;
+   transform: translate(13%, 0);
+}
+
+.menu-box-element{
+    box-shadow: gray 0 0 10px;
+	background-color: #fff;
+	border-radius: 15px;
+	padding: 5px;
+    margin: 5px;
+    min-height: 350px;
+}
+
+.topping-list {
+    margin: 0 0 0 0;
+}
+
+@media screen and (max-width: 992px) {
+    .menu-box-element {
+        min-height: 330px;
+    }
+}
+
 .iframe-container {
-  padding-bottom: 1%;
-  position: relative;
-  height: 65vh;
+    padding-bottom: 1%;
+    position: relative;
+    height: 65vh;
 }
 
 .iframe-container iframe {
-   height: 100%;
-   width: 100%;
+    height: 100%;
+    width: 100%;
 }
-
