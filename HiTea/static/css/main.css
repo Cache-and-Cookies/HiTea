@@ -111,6 +111,13 @@
 }
 
 /* MENU CSS */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
 .cold-icon{
     width: 30px;
     height: auto;
@@ -137,7 +144,6 @@
 	border-radius: 15px;
 	padding: 5px;
     margin: 5px;
-    min-height: 350px;
 }
 
 .topping-list {
@@ -149,5 +155,3 @@
         min-height: 330px;
     }
 }
-
-
