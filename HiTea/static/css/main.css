@@ -58,6 +58,14 @@
     margin: 10vh 0px 0px 100px;
 }
 
+.contact-box-element {
+	box-shadow: gray 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+    margin: 10vh 0px 0px 10px;
+}
+
 .home-image {
     width: 60%; 
     height: auto; 
