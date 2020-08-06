@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block navbar %}
-<nav class="nav-extended teal">
-    <div class="nav-wrapper">
+<nav>
+    <div class="nav-wrapper teal">
         <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
             <li><a href="#location">Location</a></li>
             <li><a href="{% url 'menu-search' %}">Menu</a></li>
             <li><a href="#introduction">About</a></li>
@@ -13,19 +14,25 @@
         </ul>
     </div>
 </nav>
+
+<ul class="sidenav" id="mobile-links">
+    <li><a href="#location">Location</a></li>
+    <li><a href="{% url 'menu-search' %}">Menu</a></li>
+    <li><a href="#introduction">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
 {% endblock navbar %}
 
-{% block content %}
 
+{% block content %}
 <div class="parallax-container">
     <div class="parallax"><img src="{% static 'images/store.jpg' %}"></div>
     <img class="logo" src="{% static 'images/HiTea Logo.png' %}">
     <i class="horizontal-center large material-icons"><a class="white-text" href="#introduction">keyboard_arrow_down</a></i>
 </div>
 
+
 <!--INTRO-->
-
-
 <div class="page-section extended">
     <div class="scrollspy container row" id="introduction">
         <div class="col s12 l7 box-element fade-in from-right">
@@ -34,6 +41,7 @@
                 recusandae illo repellendus, atque dignissimos animi amet? Itaque, facere! Culpa quam suscipit optio
                 laborum dignissimos soluta!</p>
             <img src="{% static 'images/contest-winner.jpg' %}" height="200" width="267">
+
         </div>
 
         <div class="col s12 l4 box-element offset-l1 fade-in from-left">
@@ -49,7 +57,7 @@
                 <tr><th>Friday</th><td>9am - 5pm</td></tr>
                 <tr><th>Saturday</th><td>9am - 5pm</td></tr>
             </table>
-            </div>
+            </div>      
         </div>
     </div>
 </div>
@@ -61,10 +69,13 @@
 <div class="page-section" style="background-image: url({% static 'images/wood-background.jpg' %})">
     <div class="scrollspy container row" id="location">
         <div class="col s12 l12 box-element fade-in">
-            <h5>Location</h5>
-            <p>Come visit us</p>
-            <p>GOOGLE MAPS API</p>
-            <p>Midland and Finch!</p>
+            <h5 style="text-align: center">Location</h5>
+            <p style="text-align: center">Come visit us</p>
+            <div class="iframe-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719.845812924635!2d-79.28914381427607!3d43.80640925118799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d17a1f227f41%3A0x98421bb116545141!2zSGkuVGVh6Iy25a6k!5e0!3m2!1sen!2sca!4v1596601311016!5m2!1sen!2sca"
+                    width="100%" height="450" style="border:0;" allowfullscreen=""
+                    aria-hidden="false" tabindex="0"></iframe>
+            </div>
         </div>
     </div>
 </div>
@@ -100,26 +111,5 @@
 <div class="parallax-container">
     <div class="parallax"><img src="{% static 'images/flowers.jpg' %}"></div>
 </div>
-
-<footer class="page-footer teal">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 l6">
-                <h5>Footer Content</h5>
-                <p>You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col s12 l4 offset-l2">
-                <h5>Follow Us!</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container"> HiTea 2020 &copy; All rights reservered</div>
-    </div>
-</footer>
 
 {% endblock content %}

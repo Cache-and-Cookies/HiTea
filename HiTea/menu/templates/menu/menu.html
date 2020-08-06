@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block navbar %}
-<nav class="nav-extended teal">
-    <div class="nav-wrapper">
+<nav class="nav-extended teal darken-2">
+    <div class="nav-wrapper teal">
         <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
             <li><a href="{% url 'home' %}#location">Location</a></li>
             <li><a href="#">Menu</a></li>
             <li><a href="{% url 'home' %}#introduction">About</a></li>
@@ -13,51 +14,92 @@
         </ul>
     </div>
     <div class="nav-content">
-        <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="#HotMilkTea">Hot Milk Tea</a></li>
-            <li class="tab"><a href="#IcedMilkTea">Iced Milk Tea</a></li>
-            <li class="tab"><a href="#HotLemonTea">Hot Lemon Tea</a></li>
-            <li class="tab"><a href="#IcedLemonTea">Iced Lemon Tea</a></li>
-            <li class="tab"><a href="#FreshFruit">Fresh Fruit</a></li>
-            <li class="tab"><a href="#HotCheeseFoam">Hot Cheese Foam</a></li>
-            <li class="tab"><a href="#IcedCheeseFoam">Iced Cheese Foam</a></li>
-
+        <ul class="tabs tabs-transparent hide-on-med-and-down">
+            <li class="tab"><a href="#MilkTea"> Milk Tea </a></li>
+            <li class="tab"><a href="#LemonTea"> Lemon Tea </a></li>
+            <li class="tab"><a href="#FreshFruit"> Fresh Fruit </a></li>
+            <li class="tab"><a href="#CheeseFoam"> Cheese Foam </a></li>
+            <li class="tab"><a href="#Food"> Food </a></li>
         </ul>
     </div>
 </nav>
+
+<!-- sidenav links-->
+<ul class="sidenav" id="mobile-links">
+    <li><a href="{% url 'home' %}#location">Location</a></li>
+    <li><a href="#">Menu</a></li>
+    <li><a href="{% url 'home' %}#introduction">About</a></li>
+    <li><a href="{% url 'home' %}#contact">Contact</a></li>
+    <div class="divider"></div>
+    <li class="tab"><a href="{% url 'menu-search' %}#MilkTea"> Milk Tea </a></li>
+    <li class="tab"><a href="#LemonTea"> Lemon Tea </a></li>
+    <li class="tab"><a href="#FreshFruit"> Fresh Fruit </a></li>
+    <li class="tab"><a href="#CheeseFoam"> Cheese Foam </a></li>
+    <li class="tab"><a href="#Food"> Food </a></li>
+</ul>
 {% endblock navbar %}
 
 {% block content %}
-<div class="page-section">
-    <div id="HotMilkTea">
+<div style="background-image: url({% static 'images/white-wood-background.jpg' %})">
+    <div id="MilkTea">
         <div class="container row">
-            {% for hotMilkTeaProducts in hotMilkTeaProducts %}
-            <div class="col s6 l4">
-                <div class="menu-box-element">
+            {% for milkTeaProducts in milkTeaProducts %}
+            <div class="col s6 m5 offset-m1 l4">
+                <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger menu-image" href="#{{hotMilkTeaProducts.product.name}}"><img
-                            src="{{hotMilkTeaProducts.product.imageURL}}" alt="filler"
-                            height="250" width="250" style="object-fit"></a>
-                    <p align="center">
-                        {{hotMilkTeaProducts.product.name}}
-                        <br>
-                    </p>
+                    <a class="modal-trigger" href="#{{milkTeaProducts.product.name}}">
+                        <img class="menu-image" src="{{milkTeaProducts.product.imageURL}}" alt="filler">
+                    </a>
+                    <p align="center">{{milkTeaProducts.product.name}}</p>
 
                     <!-- Modal Structure -->
-                    <div id="{{hotMilkTeaProducts.product.name}}" class="modal" style="margin:auto">
+                    <div id="{{milkTeaProducts.product.name}}" class="modal">
                         <div class="modal-content">
-                            <h3 align="center">{{hotMilkTeaProducts.product.name}}</h3>
-                            <img class="modal-image" src="{{hotMilkTeaProducts.product.imageURL}}" alt="filler"
-                                 height="250"
-                                 width="250"
-                                 style="object-fit">
-                            <h6 align="center">Price: ${{hotMilkTeaProducts.product.price}}</h6>
-                            <h6 align="center">Calories: {{hotMilkTeaProducts.product.calories}}</h6>
-                            <h6 align="center">Available Toppings: {{hotMilkTeaProducts.toppings}}</h6>
+                            <h6 align="center">{{milkTeaProducts.product.name}}</h6>
+                            <div class="divider"></div>
 
+                            <div class="row">
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{milkTeaProducts.product.imageURL}}" alt="filler">
+                                </div>
+                                <div class="col s12 m5">
+                                    <small>Price: ${{milkTeaProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{milkTeaProducts.product.calories}}</small>
+                                    <br>
+                                    {% if milkTeaProducts.toppings.count > 0 %}
+                                    <small>Available Toppings:
+                                        {% for toppings in milkTeaProducts.toppings.all %}
+                                        <li>{{toppings.name}} ${{toppings.price}}</li>
+                                        {% endfor %}
+                                    </small>
+                                    {% endif %}
+                                    <small>
+                                        Sugar Levels:
+                                        <li>Full Sugar (100%)</li>
+                                        <li>Less Sugar (80%)</li>
+                                        <li>Half Sugar (50%)</li>
+                                        <li>Slight Sugar (30%)</li>
+                                        <li>No Sugar (0%)</li>
+                                        Ice Levels:
+                                        <li>Extra Ice</li>
+                                        <li>Regular Ice</li>
+                                        <li>Less Ice</li>
+                                        <li>No Ice</li>
+                                    </small>
+                                    <div>
+                                        <small>Temperatures Available:</small>
+                                        <br>
+                                        <img class="cold-icon" src="{% static 'images/cold.png' %}">
+                                        {% if milkTeaProducts.isHot %}
+                                        <img class="warm-icon" src="{% static 'images/hot.png' %}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok!</a>
+                        <div class="modal-footer teal lighten-2">
+                            <a href="#" class="modal-close waves-effect btn-flat white-text">Exit</a>
                         </div>
                     </div>
                 </div>
@@ -65,104 +107,65 @@
             {% endfor %}
         </div>
     </div>
-    <div id="IcedMilkTea">
+    <div id="LemonTea">
         <div class="container row">
-            {% for icedMilkTeaProducts in icedMilkTeaProducts %}
-            <div class="col s6 l4">
-                <div class="menu-box-element">
+            {% for lemonTeaProducts in lemonTeaProducts %}
+            <div class="col s6 m5 offset-m1 l4">
+                <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger menu-image" href="#{{icedMilkTeaProducts.product.name}}"><img
-                            src="{{icedMilkTeaProducts.product.imageURL}}" alt="filler"
-                            height="250" width="250" style="object-fit"></a>
-                    <p align="center">
-                        {{icedMilkTeaProducts.product.name}}
-                        <br>
-                    </p>
+                    <a class="modal-trigger" href="#{{lemonTeaProducts.product.name}}">
+                        <img class="menu-image" src="{{lemonTeaProducts.product.imageURL}}" alt="filler">
+                    </a>
+                    <p align="center">{{lemonTeaProducts.product.name}}</p>
 
                     <!-- Modal Structure -->
-                    <div id="{{icedMilkTeaProducts.product.name}}" class="modal" style="margin:auto">
+                    <div id="{{lemonTeaProducts.product.name}}" class="modal">
                         <div class="modal-content">
-                            <h4 align="center">{{icedMilkTeaProducts.product.name}}</h4>
-                            <img class="modal-image" src="{{icedMilkTeaProducts.product.imageURL}}" alt="filler"
-                                 height="250"
-                                 width="250"
-                                 style="object-fit">
-                            <h6 align="center">Price: ${{icedMilkTeaProducts.product.price}}</h6>
-                            <h6 align="center">Calories: {{icedMilkTeaProducts.product.calories}}</h6>
-                            <h6 align="center">Toppings: {{icedMilkTeaProducts.toppings}}</h6>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div id="HotLemonTea">
-        <div class="container row">
-            {% for hotLemonTeaProducts in hotLemonTeaProducts %}
-            <div class="col s6 l4">
-                <div class="menu-box-element">
-                    <!-- Modal Trigger -->
-                    <a class="modal-trigger menu-image" href="#{{hotLemonTeaProducts.product.name}}"><img
-                            src="{{hotLemonTeaProducts.product.imageURL}}" alt="filler"
-                            height="250" width="250" style="object-fit"></a>
-                    <p align="center">
-                        {{hotLemonTeaProducts.product.name}}
-                        <br>
-                    </p>
+                            <h6 align="center">{{lemonTeaProducts.product.name}}</h6>
+                            <div class="divider"></div>
 
-                    <!-- Modal Structure -->
-                    <div id="{{hotLemonTeaProducts.product.name}}" class="modal" style="margin:auto">
-                        <div class="modal-content">
-                            <h4 align="center">{{hotLemonTeaProducts.product.name}}</h4>
-                            <img class="modal-image" src="{{hotLemonTeaProducts.product.imageURL}}" alt="filler"
-                                 height="250"
-                                 width="250"
-                                 style="object-fit">
-                            <h6 align="center">Price: ${{hotLemonTeaProducts.product.price}}</h6>
-                            <h6 align="center">Calories: {{hotLemonTeaProducts.product.calories}}</h6>
-                            <h6 align="center">Toppings: {{hotLemonTeaProducts.toppings}}</h6>
+                            <div class="row">
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{lemonTeaProducts.product.imageURL}}" alt="filler">
+                                </div>
+                                <div class="col s12 m5">
+                                    <small>Price: ${{lemonTeaProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{lemonTeaProducts.product.calories}}</small>
+                                    <br>
+                                    {% if lemonTeaProducts.toppings.count > 0 %}
+                                    <small>Available Toppings:
+                                        {% for toppings in lemonTeaProducts.toppings.all %}
+                                        <li>{{toppings.name}} ${{toppings.price}}</li>
+                                        {% endfor %}
+                                    </small>
+                                    {% endif %}
+                                    <small>
+                                        Sugar Levels:
+                                        <li>Full Sugar (100%)</li>
+                                        <li>Less Sugar (80%)</li>
+                                        <li>Half Sugar (50%)</li>
+                                        <li>Slight Sugar (30%)</li>
+                                        <li>No Sugar (0%)</li>
+                                        Ice Levels:
+                                        <li>Extra Ice</li>
+                                        <li>Regular Ice</li>
+                                        <li>Less Ice</li>
+                                        <li>No Ice</li>
+                                    </small>
+                                    <div>
+                                        <small>Temperatures Available:</small>
+                                        <br>
+                                        <img class="cold-icon" src="{% static 'images/cold.png' %}">
+                                        {% if lemonTeaProducts.isHot %}
+                                        <img class="warm-icon" src="{% static 'images/hot.png' %}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div id="IcedLemonTea">
-        <div class="container row">
-            {% for icedLemonTeaProducts in icedLemonTeaProducts %}
-            <div class="col s6 l4">
-                <div class="menu-box-element">
-                    <!-- Modal Trigger -->
-                    <a class="modal-trigger menu-image" href="#{{icedLemonTeaProducts.product.name}}"><img
-                            src="{{icedLemonTeaProducts.product.imageURL}}" alt="filler"
-                            height="250" width="250" style="object-fit"></a>
-                    <p align="center">
-                        {{icedLemonTeaProducts.product.name}}
-                        <br>
-                    </p>
-
-                    <!-- Modal Structure -->
-                    <div id="{{icedLemonTeaProducts.product.name}}" class="modal" style="margin:auto">
-                        <div class="modal-content">
-                            <h4 align="center">{{icedLemonTeaProducts.product.name}}</h4>
-                            <img class="modal-image" src="{{icedLemonTeaProducts.product.imageURL}}" alt="filler"
-                                 height="250"
-                                 width="250"
-                                 style="object-fit">
-                            <h6 align="center">Price: ${{icedLemonTeaProducts.product.price}}</h6>
-                            <h6 align="center">Calories: {{icedLemonTeaProducts.product.calories}}</h6>
-                            <h6 align="center">Toppings: {{icedLemonTeaProducts.toppings}}</h6>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok!</a>
+                        <div class="modal-footer teal lighten-2">
+                            <a href="#" class="modal-close waves-effect btn-flat white-text">Exit</a>
                         </div>
                     </div>
                 </div>
@@ -171,38 +174,175 @@
         </div>
     </div>
     <div id="FreshFruit">
-
-    </div>
-    <div id="HotCheeseFoam">
-
-    </div>
-    <div id="IcedCheeseFoam">
         <div class="container row">
-            <div class="col s6 l4 box-element">
-                <!-- Modal Trigger -->
-                <a class="modal-trigger menu-image" href="#modal1"><img src="{{product.product.imageURL}}" alt="filler"
-                                                                        height="250" width="250" style="object-fit"></a>
-                <p align="center">
-                    {{product.product.name}}
-                    <br>
-                </p>
+            {% for freshFruitProducts in freshFruitProducts %}
+            <div class="col s6 m5 offset-m1 l4">
+                <div class="hoverable menu-box-element">
+                    <!-- Modal Trigger -->
+                    <a class="modal-trigger" href="#{{freshFruitProducts.product.name}}">
+                        <img class="menu-image" src="{{freshFruitProducts.product.imageURL}}" alt="filler">
+                    </a>
+                    <p align="center">{{freshFruitProducts.product.name}}</p>
 
-                <!-- Modal Structure -->
-                <div id="modal1" class="col l4 offset-l2 modal">
-                    <div class="modal-content">
-                        <h2 align="center">{{product.product.name}}</h2>
-                        <img class="modal-image" src="{{product.product.imageURL}}" alt="filler" height="250"
-                             width="250"
-                             style="object-fit">
-                        <h4 align="center">Price: ${{product.product.price}}</h4>
-                        <h4 align="center">Calories: {{product.product.calories}}</h4>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">ok!</a>
+                    <!-- Modal Structure -->
+                    <div id="{{freshFruitProducts.product.name}}" class="modal">
+                        <div class="modal-content">
+                            <h6 align="center">{{freshFruitProducts.product.name}}</h6>
+                            <div class="divider"></div>
+
+                            <div class="row">
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{freshFruitProducts.product.imageURL}}" alt="filler">
+                                </div>
+                                <div class="col s12 m5">
+                                    <small>Price: ${{freshFruitProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{freshFruitProducts.product.calories}}</small>
+                                    <br>
+                                    {% if freshFruitProducts.toppings.count > 0 %}
+                                    <small>Available Toppings:
+                                        {% for toppings in freshFruitProducts.toppings.all %}
+                                        <li>{{toppings.name}} ${{toppings.price}}</li>
+                                        {% endfor %}
+                                    </small>
+                                    {% endif %}
+                                    <small>
+                                        Sugar Levels:
+                                        <li>Full Sugar (100%)</li>
+                                        <li>Less Sugar (80%)</li>
+                                        <li>Half Sugar (50%)</li>
+                                        <li>Slight Sugar (30%)</li>
+                                        <li>No Sugar (0%)</li>
+                                        Ice Levels:
+                                        <li>Extra Ice</li>
+                                        <li>Regular Ice</li>
+                                        <li>Less Ice</li>
+                                        <li>No Ice</li>
+                                    </small>
+                                    <div>
+                                        <small>Temperatures Available:</small>
+                                        <br>
+                                        <img class="cold-icon" src="{% static 'images/cold.png' %}">
+                                        {% if freshFruitProducts.isHot %}
+                                        <img class="warm-icon" src="{% static 'images/hot.png' %}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer teal lighten-2">
+                            <a href="#" class="modal-close waves-effect btn-flat white-text">Exit</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
+    <div id="CheeseFoam">
+        <div class="container row">
+            {% for cheeseFoamProducts in cheeseFoamProducts %}
+            <div class="col s6 m5 offset-m1 l4">
+                <div class="hoverable menu-box-element">
+                    <!-- Modal Trigger -->
+                    <a class="modal-trigger" href="#{{cheeseFoamProducts.product.name}}">
+                        <img class="menu-image" src="{{cheeseFoamProducts.product.imageURL}}" alt="filler">
+                    </a>
+                    <p align="center">{{cheeseFoamProducts.product.name}}</p>
+
+                    <!-- Modal Structure -->
+                    <div id="{{cheeseFoamProducts.product.name}}" class="modal">
+                        <div class="modal-content">
+                            <h6 align="center">{{cheeseFoamProducts.product.name}}</h6>
+                            <div class="divider"></div>
+
+                            <div class="row">
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{cheeseFoamProducts.product.imageURL}}" alt="filler">
+                                </div>
+                                <div class="col s12 m5">
+                                    <small>Price: ${{cheeseFoamProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{cheeseFoamProducts.product.calories}}</small>
+                                    <br>
+                                    {% if cheeseFoamProducts.toppings.count > 0 %}
+                                    <small>Available Toppings:
+                                        {% for toppings in cheeseFoamProducts.toppings.all %}
+                                        <li>{{toppings.name}} ${{toppings.price}}</li>
+                                        {% endfor %}
+                                    </small>
+                                    {% endif %}
+                                    <small>
+                                        Sugar Levels:
+                                        <li>Full Sugar (100%)</li>
+                                        <li>Less Sugar (80%)</li>
+                                        <li>Half Sugar (50%)</li>
+                                        <li>Slight Sugar (30%)</li>
+                                        <li>No Sugar (0%)</li>
+                                        Ice Levels:
+                                        <li>Extra Ice</li>
+                                        <li>Regular Ice</li>
+                                        <li>Less Ice</li>
+                                        <li>No Ice</li>
+                                    </small>
+                                    <div>
+                                        <small>Temperatures Available:</small>
+                                        <br>
+                                        <img class="cold-icon" src="{% static 'images/cold.png' %}">
+                                        {% if cheeseFoamProducts.isHot %}
+                                        <img class="warm-icon" src="{% static 'images/hot.png' %}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer teal lighten-2">
+                            <a href="#" class="modal-close waves-effect btn-flat white-text">Exit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="Food">
+        <div class="container row">
+            {% for foodProducts in foodProducts %}
+            <div class="col s6 m5 offset-m1 l4">
+                <div class="hoverable menu-box-element">
+                    <!-- Modal Trigger -->
+                    <a class="modal-trigger" href="#{{foodProducts.product.name}}">
+                        <img class="menu-image" src="{{foodProducts.product.imageURL}}" alt="filler">
+                    </a>
+                    <p align="center">{{foodProducts.product.name}}</p>
+
+                    <!-- Modal Structure -->
+                    <div id="{{foodProducts.product.name}}" class="modal">
+                        <div class="modal-content">
+                            <h5 align="center">{{foodProducts.product.name}}</h5>
+                            <div class="divider"></div>
+                            <div class="row">
+                                <div class="col s12 m7"><img class="modal-image" src="{{foodProducts.product.imageURL}}" alt="filler"></div>
+                                <div class="col s12 m5">
+                                    <p>Price: ${{foodProducts.product.price}}</p>
+                                    <p>Calories: {{foodProducts.product.calories}}</p>
+                                    <p>Description:
+                                        <br>
+                                        {{foodProducts.description}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer teal lighten-2">
+                            <a href="#" class="modal-close waves-effect btn-flat white-text">Exit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- IDK why i need to put this div to cover background!! cmon clark... -->
+    <div style="height: 20px;"></div>
 </div>
 {% endblock content %}
