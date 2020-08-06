@@ -55,7 +55,7 @@
                     <!-- Modal Structure -->
                     <div id="{{milkTeaProducts.product.name}}" class="modal">
                         <div class="modal-content">
-                            <h5 align="center">{{milkTeaProducts.product.name}}</h5>
+                            <h6 align="center">{{milkTeaProducts.product.name}}</h6>
                             <div class="divider"></div>
 
                             <div class="row">
@@ -63,17 +63,32 @@
                                                              src="{{milkTeaProducts.product.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
-                                    <h6>Price: ${{milkTeaProducts.product.price}}</h6>
-                                    <h6>Calories: {{milkTeaProducts.product.calories}}</h6>
+                                    <small>Price: ${{milkTeaProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{milkTeaProducts.product.calories}}</small>
+                                    <br>
                                     {% if milkTeaProducts.toppings.count > 0 %}
-                                        <small>Available Toppings:
-                                            {% for toppings in milkTeaProducts.toppings.all %}
-                                            <p>{{toppings.name}} ${{toppings.price}}</p>
-                                            {% endfor %}
-                                        </small>
+                                    <small>Available Toppings:
+                                        {% for toppings in milkTeaProducts.toppings.all %}
+                                        <li>{{toppings.name}} ${{toppings.price}}</li>
+                                        {% endfor %}
+                                    </small>
                                     {% endif %}
+                                    <small>
+                                        Sugar Levels:
+                                        <li>Full Sugar (100%)</li>
+                                        <li>Less Sugar (80%)</li>
+                                        <li>Half Sugar (50%)</li>
+                                        <li>Slight Sugar (30%)</li>
+                                        <li>No Sugar (0%)</li>
+                                        Ice Levels:
+                                        <li>Extra Ice</li>
+                                        <li>Regular Ice</li>
+                                        <li>Less Ice</li>
+                                        <li>No Ice</li>
+                                    </small>
                                     <div>
-                                        <h8>Temperature:</h8>
+                                        <small>Temperatures Available:</small>
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if milkTeaProducts.isHot %}
@@ -106,7 +121,7 @@
                     <!-- Modal Structure -->
                     <div id="{{lemonTeaProducts.product.name}}" class="modal">
                         <div class="modal-content">
-                            <h5 align="center">{{lemonTeaProducts.product.name}}</h5>
+                            <h6 align="center">{{lemonTeaProducts.product.name}}</h6>
                             <div class="divider"></div>
 
                             <div class="row">
@@ -114,15 +129,32 @@
                                                              src="{{lemonTeaProducts.product.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
-                                    <h6>Price: ${{lemonTeaProducts.product.price}}</h6>
-                                    <h6>Calories: {{lemonTeaProducts.product.calories}}</h6>
+                                    <small>Price: ${{lemonTeaProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{lemonTeaProducts.product.calories}}</small>
+                                    <br>
+                                    {% if lemonTeaProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
                                         {% for toppings in lemonTeaProducts.toppings.all %}
-                                            <p>{{toppings.name}} ${{toppings.price}}</p>
+                                        <li>{{toppings.name}} ${{toppings.price}}</li>
                                         {% endfor %}
                                     </small>
+                                    {% endif %}
+                                    <small>
+                                        Sugar Levels:
+                                        <li>Full Sugar (100%)</li>
+                                        <li>Less Sugar (80%)</li>
+                                        <li>Half Sugar (50%)</li>
+                                        <li>Slight Sugar (30%)</li>
+                                        <li>No Sugar (0%)</li>
+                                        Ice Levels:
+                                        <li>Extra Ice</li>
+                                        <li>Regular Ice</li>
+                                        <li>Less Ice</li>
+                                        <li>No Ice</li>
+                                    </small>
                                     <div>
-                                        <h8>Temperature:</h8>
+                                        <small>Temperatures Available:</small>
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if lemonTeaProducts.isHot %}
@@ -155,7 +187,7 @@
                     <!-- Modal Structure -->
                     <div id="{{freshFruitProducts.product.name}}" class="modal">
                         <div class="modal-content">
-                            <h5 align="center">{{freshFruitProducts.product.name}}</h5>
+                            <h6 align="center">{{freshFruitProducts.product.name}}</h6>
                             <div class="divider"></div>
 
                             <div class="row">
@@ -163,15 +195,32 @@
                                                              src="{{freshFruitProducts.product.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
-                                    <h6>Price: ${{freshFruitProducts.product.price}}</h6>
-                                    <h6>Calories: {{freshFruitProducts.product.calories}}</h6>
+                                    <small>Price: ${{freshFruitProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{freshFruitProducts.product.calories}}</small>
+                                    <br>
+                                    {% if freshFruitProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
                                         {% for toppings in freshFruitProducts.toppings.all %}
-                                            <p>{{toppings.name}} ${{toppings.price}}</p>
+                                        <li>{{toppings.name}} ${{toppings.price}}</li>
                                         {% endfor %}
                                     </small>
+                                    {% endif %}
+                                    <small>
+                                        Sugar Levels:
+                                        <li>Full Sugar (100%)</li>
+                                        <li>Less Sugar (80%)</li>
+                                        <li>Half Sugar (50%)</li>
+                                        <li>Slight Sugar (30%)</li>
+                                        <li>No Sugar (0%)</li>
+                                        Ice Levels:
+                                        <li>Extra Ice</li>
+                                        <li>Regular Ice</li>
+                                        <li>Less Ice</li>
+                                        <li>No Ice</li>
+                                    </small>
                                     <div>
-                                        <h8>Temperature:</h8>
+                                        <small>Temperature:</small>
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if freshFruitProducts.isHot %}
@@ -204,7 +253,7 @@
                     <!-- Modal Structure -->
                     <div id="{{cheeseFoamProducts.product.name}}" class="modal">
                         <div class="modal-content">
-                            <h5 align="center">{{cheeseFoamProducts.product.name}}</h5>
+                            <h6 align="center">{{cheeseFoamProducts.product.name}}</h6>
                             <div class="divider"></div>
 
                             <div class="row">
@@ -212,15 +261,32 @@
                                                              src="{{cheeseFoamProducts.product.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
-                                    <h6>Price: ${{cheeseFoamProducts.product.price}}</h6>
-                                    <h6>Calories: {{cheeseFoamProducts.product.calories}}</h6>
+                                    <small>Price: ${{cheeseFoamProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{cheeseFoamProducts.product.calories}}</small>
+                                    <br>
+                                    {% if cheeseFoamProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
                                         {% for toppings in cheeseFoamProducts.toppings.all %}
-                                            <p>{{toppings.name}} ${{toppings.price}}</p>
+                                        <li>{{toppings.name}} ${{toppings.price}}</li>
                                         {% endfor %}
                                     </small>
+                                    {% endif %}
+                                    <small>
+                                        Sugar Levels:
+                                        <li>Full Sugar (100%)</li>
+                                        <li>Less Sugar (80%)</li>
+                                        <li>Half Sugar (50%)</li>
+                                        <li>Slight Sugar (30%)</li>
+                                        <li>No Sugar (0%)</li>
+                                        Ice Levels:
+                                        <li>Extra Ice</li>
+                                        <li>Regular Ice</li>
+                                        <li>Less Ice</li>
+                                        <li>No Ice</li>
+                                    </small>
                                     <div>
-                                        <h8>Temperature:</h8>
+                                        <small>Temperature:</small>
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if cheeseFoamProducts.isHot %}
