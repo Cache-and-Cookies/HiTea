@@ -3,15 +3,15 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from multiselectfield import MultiSelectField
 
 TOPPING_CHOICES = (
-    ('a', 'Pearl ($0.50)'),
-    ('b', 'Red Beans ($0.50)'),
-    ('c', 'Coconut Jelly ($0.50)'),
-    ('d', 'Pudding ($0.50)'),
-    ('e', 'Agar Ball ($0.75)'),
-    ('f', 'Aloe ($0.75)'),
-    ('g', 'Popping Boba ($0.75)'),
-    ('h', 'Oreo ($1.00)'),
-    ('i', 'Cheese Foam ($1.00)'),
+    ('Pearl ($0.50)', 'Pearl ($0.50)'),
+    ('Red Beans ($0.50)', 'Red Beans ($0.50)'),
+    ('Coconut Jelly ($0.50)', 'Coconut Jelly ($0.50)'),
+    ('Pudding ($0.50)', 'Pudding ($0.50)'),
+    ('Agar Ball ($0.75)', 'Agar Ball ($0.75)'),
+    ('Aloe ($0.75)', 'Aloe ($0.75)'),
+    ('Popping Boba ($0.75)', 'Popping Boba ($0.75)'),
+    ('Oreo ($1.00)', 'Oreo ($1.00)'),
+    ('Cheese Foam ($1.00)', 'Cheese Foam ($1.00)'),
 )
 
 
