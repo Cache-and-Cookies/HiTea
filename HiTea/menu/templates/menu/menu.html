@@ -15,11 +15,11 @@
     </div>
     <div class="nav-content">
         <ul class="tabs tabs-transparent hide-on-med-and-down">
-            <li class="tab"><a href="#MilkTea">     Milk Tea     </a></li>
-            <li class="tab"><a href="#LemonTea">     Lemon Tea    </a></li>
-            <li class="tab"><a href="#FreshFruit">     Fresh Fruit      </a></li>
-            <li class="tab"><a href="#CheeseFoam">     Cheese Foam     </a></li>
-            <li class="tab"><a href="#Food">     Food     </a></li>
+            <li class="tab"><a href="#MilkTea"> Milk Tea </a></li>
+            <li class="tab"><a href="#LemonTea"> Lemon Tea </a></li>
+            <li class="tab"><a href="#FreshFruit"> Fresh Fruit </a></li>
+            <li class="tab"><a href="#CheeseFoam"> Cheese Foam </a></li>
+            <li class="tab"><a href="#Food"> Food </a></li>
         </ul>
     </div>
 </nav>
@@ -31,11 +31,11 @@
     <li><a href="{% url 'home' %}#introduction">About</a></li>
     <li><a href="{% url 'home' %}#contact">Contact</a></li>
     <div class="divider"></div>
-    <li class="tab"><a href="{% url 'menu-search' %}#MilkTea">     Milk Tea     </a></li>
-    <li class="tab"><a href="#LemonTea">    Lemon Tea    </a></li>
-    <li class="tab"><a href="#FreshFruit">     Fresh Fruit      </a></li>
-    <li class="tab"><a href="#CheeseFoam">  Cheese Foam  </a></li>
-    <li class="tab"><a href="#Food">  Food  </a></li>
+    <li class="tab"><a href="{% url 'menu-search' %}#MilkTea"> Milk Tea </a></li>
+    <li class="tab"><a href="#LemonTea"> Lemon Tea </a></li>
+    <li class="tab"><a href="#FreshFruit"> Fresh Fruit </a></li>
+    <li class="tab"><a href="#CheeseFoam"> Cheese Foam </a></li>
+    <li class="tab"><a href="#Food"> Food </a></li>
 </ul>
 {% endblock navbar %}
 
@@ -59,21 +59,25 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image" src="{{milkTeaProducts.product.imageURL}}" alt="filler"></div>
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{milkTeaProducts.product.imageURL}}" alt="filler">
+                                </div>
                                 <div class="col s12 m5">
                                     <h6>Price: ${{milkTeaProducts.product.price}}</h6>
                                     <h6>Calories: {{milkTeaProducts.product.calories}}</h6>
-                                    <small>Available Toppings:
-                                        {% for topping in milkTeaProducts.toppings %}
-                                            <p>{{topping}}</p>
-                                        {% endfor %}
-                                    </small>
+                                    {% if milkTeaProducts.toppings.count > 0 %}
+                                        <small>Available Toppings:
+                                            {% for toppings in milkTeaProducts.toppings.all %}
+                                            <p>{{toppings.name}} ${{toppings.price}}</p>
+                                            {% endfor %}
+                                        </small>
+                                    {% endif %}
                                     <div>
                                         <h8>Temperature:</h8>
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if milkTeaProducts.isHot %}
-                                            <img class ="warm-icon" src="{% static 'images/hot.png' %}">
+                                        <img class="warm-icon" src="{% static 'images/hot.png' %}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -106,13 +110,15 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image" src="{{lemonTeaProducts.product.imageURL}}" alt="filler"></div>
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{lemonTeaProducts.product.imageURL}}" alt="filler">
+                                </div>
                                 <div class="col s12 m5">
                                     <h6>Price: ${{lemonTeaProducts.product.price}}</h6>
                                     <h6>Calories: {{lemonTeaProducts.product.calories}}</h6>
                                     <small>Available Toppings:
-                                        {% for topping in lemonTeaProducts.toppings %}
-                                            <p>{{topping}}</p>
+                                        {% for toppings in lemonTeaProducts.toppings.all %}
+                                            <p>{{toppings.name}} ${{toppings.price}}</p>
                                         {% endfor %}
                                     </small>
                                     <div>
@@ -120,7 +126,7 @@
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if lemonTeaProducts.isHot %}
-                                            <img class ="warm-icon" src="{% static 'images/hot.png' %}">
+                                        <img class="warm-icon" src="{% static 'images/hot.png' %}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -153,13 +159,15 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image" src="{{freshFruitProducts.product.imageURL}}" alt="filler"></div>
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{freshFruitProducts.product.imageURL}}" alt="filler">
+                                </div>
                                 <div class="col s12 m5">
                                     <h6>Price: ${{freshFruitProducts.product.price}}</h6>
                                     <h6>Calories: {{freshFruitProducts.product.calories}}</h6>
                                     <small>Available Toppings:
-                                        {% for topping in freshFruitProducts.toppings %}
-                                            <p>{{topping}}</p>
+                                        {% for toppings in freshFruitProducts.toppings.all %}
+                                            <p>{{toppings.name}} ${{toppings.price}}</p>
                                         {% endfor %}
                                     </small>
                                     <div>
@@ -167,7 +175,7 @@
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if freshFruitProducts.isHot %}
-                                            <img class ="warm-icon" src="{% static 'images/hot.png' %}">
+                                        <img class="warm-icon" src="{% static 'images/hot.png' %}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -200,13 +208,15 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image" src="{{cheeseFoamProducts.product.imageURL}}" alt="filler"></div>
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{cheeseFoamProducts.product.imageURL}}" alt="filler">
+                                </div>
                                 <div class="col s12 m5">
                                     <h6>Price: ${{cheeseFoamProducts.product.price}}</h6>
                                     <h6>Calories: {{cheeseFoamProducts.product.calories}}</h6>
                                     <small>Available Toppings:
-                                        {% for topping in cheeseFoamProducts.toppings %}
-                                            <p>{{topping}}</p>
+                                        {% for toppings in cheeseFoamProducts.toppings.all %}
+                                            <p>{{toppings.name}} ${{toppings.price}}</p>
                                         {% endfor %}
                                     </small>
                                     <div>
@@ -214,7 +224,7 @@
                                         <br>
                                         <img class="cold-icon" src="{% static 'images/cold.png' %}">
                                         {% if cheeseFoamProducts.isHot %}
-                                            <img class ="warm-icon" src="{% static 'images/hot.png' %}">
+                                        <img class="warm-icon" src="{% static 'images/hot.png' %}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -247,7 +257,8 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image" src="{{foodProducts.product.imageURL}}" alt="filler"></div>
+                                <div class="col s12 m7"><img class="modal-image" src="{{foodProducts.product.imageURL}}"
+                                                             alt="filler"></div>
                                 <div class="col s12 m5">
                                     <h6>Price: ${{foodProducts.product.price}}</h6>
                                     <h6>Calories: {{foodProducts.product.calories}}</h6>

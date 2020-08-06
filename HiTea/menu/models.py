@@ -16,6 +16,23 @@ TOPPING_CHOICES = (
 
 
 # Create your models here.
+class Topping(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    price = models.DecimalField(max_digits=99, decimal_places=2)
+    image = models.ImageField(default='bbt.png', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
+
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=99, decimal_places=2)
@@ -39,7 +56,7 @@ class Product(models.Model):
 
 class FreshFruit(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    toppings = models.ManyToManyField(Topping)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
@@ -48,7 +65,7 @@ class FreshFruit(models.Model):
 
 class MilkTea(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    toppings = models.ManyToManyField(Topping)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
@@ -57,7 +74,7 @@ class MilkTea(models.Model):
 
 class LemonTea(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    toppings = models.ManyToManyField(Topping)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
@@ -66,7 +83,7 @@ class LemonTea(models.Model):
 
 class CheeseFoam(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = MultiSelectField(max_choices=10, choices=TOPPING_CHOICES, null=True, blank=True)
+    toppings = models.ManyToManyField(Topping)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
@@ -79,3 +96,5 @@ class Food(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
