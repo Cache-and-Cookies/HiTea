@@ -106,25 +106,46 @@
     <div class="parallax"><img src="{% static 'images/darling.jpg' %}"></div>
 </div>
 
-<div class="page-section" style="background-image: url({% static 'images/white-wood-background.jpg' %})">
+<div class="page-section extended" style="background-image: url({% static 'images/white-wood-background.jpg' %})">
     <div class="scrollspy container row" id="contact">
-        <div class="col s12 l12 box-element fade-in">
-            <h5>Contact Us</h5>
-            <div class="container">
-                <div class="input-field">
-                    <i class="material-icons prefix">person</i>
-                    <input type="text" id="name">
-                    <label for="name">Name</label>
-                </div>
-                <div class="input-field">
-                    <i class="material-icons prefix">email</i>
-                    <input type="text" id="email">
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-field">
-                    <i class="material-icons prefix">message</i>
-                    <textarea class="materialize-textarea" data-length="50" id="message"></textarea>
-                    <label for="message">Message</label>
+        <h3 style="text-align: center">Contact Us</h3>
+        <div class="col s12 l6 fade-in">
+            <div class="contact-box-element">
+
+            </div>
+        </div>
+        <div class="col s12 l6 fade-in">
+            <div class="contact-box-element">
+                <div class="row" style="max-height: 65vh; overflow-y: scroll; overflow-x: hidden">
+                    <form class="col s12" method="POST">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" class="validate">
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">message</i>
+                                <textarea id="message" type="text" class="materialize-textarea"></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -136,50 +157,12 @@
 </div>
 
 <div class="page-section extended" style="background-image: url({% static 'images/wall-background.jpg' %})">
-    <div class="scrollspy container row">
+    <div class="container row">
         <div class="col s12 l12 box-element fade-in">
-
             <!--Elfsight plugin limited to 200 views a month-->
-            <div class="row">
-                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div class="row" style="max-height: 80vh; overflow-y: scroll; overflow-x: hidden">
                 <div class="elfsight-app-329a7c8e-c8db-49ac-b2a0-f2ca94c9b5fd"></div>
             </div>
-
-            <!--Jimmy's old code-->
-            <!-- <h5>Leave a Rating</h5>
-            <div style="height: 10vh;"></div>
-            <div class="row">
-                <div class="col s6">
-                    <div class="card">
-                        <a target="_blank" href="https://www.google.com/search?rlz=1C1NHXL_enCA717CA717&ei=7nErX9zcJYSoytMPwLSf4AQ&q=hi+tea+midland+finch+google+review&oq=hi+tea+midland+finch+google+review&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAE6BAgAEEc6BwghEAoQoAFQksdJWI_aSWCC3UloAHABeACAAYoBiAH7C5IBBDQuMTCYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwjci93ZyoXrAhUElHIEHUDaB0wQ4dUDCAw&uact=5#lrd=0x89d4d17a1f227f41:0x98421bb116545141,1,,,">
-                            <div class="card-image"><img src="{% static 'images/google.png' %}" alt=""></div>
-                        </a>
-                        <div class="card-content center">
-                            <i class="material-icons yellow-text">star</i>
-                            <i class="material-icons yellow-text">star</i>
-                            <i class="material-icons yellow-text">star</i>
-                            <i class="material-icons yellow-text">star</i>
-                            <i class="material-icons yellow-text">star_half</i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s6">
-                    <div class="card">
-                        <a target="_blank" href="https://www.yelp.ca/biz/hi-tea-scarborough">
-                        <div class="card-image"><img src="{% static 'images/yelp.png' %}" alt=""></div>
-                        </a>
-                        <div class="card-content center">
-                            <i class="material-icons yellow-text">star</i>
-                            <i class="material-icons yellow-text">star</i>
-                            <i class="material-icons yellow-text">star</i>
-                            <i class="material-icons yellow-text">star</i>
-                            <i class="material-icons yellow-text">star_half</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="height: 10vh;"></div> -->
         </div>
     </div>
 </div>
@@ -188,4 +171,6 @@
     <div class="parallax"><img src="{% static 'images/flowers.jpg' %}"></div>
 </div>
 
+
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
 {% endblock content %}
