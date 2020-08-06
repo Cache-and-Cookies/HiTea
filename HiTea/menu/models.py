@@ -2,18 +2,6 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from multiselectfield import MultiSelectField
 
-TOPPING_CHOICES = (
-    ('Pearl ($0.50)', 'Pearl ($0.50)'),
-    ('Red Beans ($0.50)', 'Red Beans ($0.50)'),
-    ('Coconut Jelly ($0.50)', 'Coconut Jelly ($0.50)'),
-    ('Pudding ($0.50)', 'Pudding ($0.50)'),
-    ('Agar Ball ($0.75)', 'Agar Ball ($0.75)'),
-    ('Aloe ($0.75)', 'Aloe ($0.75)'),
-    ('Popping Boba ($0.75)', 'Popping Boba ($0.75)'),
-    ('Oreo ($1.00)', 'Oreo ($1.00)'),
-    ('Cheese Foam ($1.00)', 'Cheese Foam ($1.00)'),
-)
-
 
 # Create your models here.
 class Topping(models.Model):
