@@ -46,3 +46,15 @@ document.addEventListener('DOMContentLoaded', function() {
 function contactFormAlert(){
     alert("Contact Form Successful Submitted!")
 }
+
+// Removing Elfsight Cover
+function removeCover(){
+    var aTags = document.getElementsByTagName('a')
+    for (i = 0; i < aTags.length; i++){
+        if (aTags[i].textContent == 'Widget is deactivated. Please, visit Elfsight Apps.'){
+            console.log(aTags[i]);
+            aTags[i].remove();
+            break;
+        }
+    }
+}

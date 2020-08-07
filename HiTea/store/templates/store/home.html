@@ -42,18 +42,27 @@
 <div class="page-section extended">
     <div class="scrollspy container row" id="introduction">
         <div class="col s12 l7 box-element fade-in from-right">
-            <h5>About</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ducimus accusantium iure quos voluptas
-                recusandae illo repellendus, atque dignissimos animi amet? Itaque, facere! Culpa quam suscipit optio
-                laborum dignissimos soluta!</p>
-            <img class="home-image" src="{% static 'images/contest-winner.jpg' %}">
-
+            <ul class="collapsible">
+                <li class="active">
+                    <div class="collapsible-header"><i class="material-icons">face</i>About</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <img class="home-image" src="{% static 'images/contest-winner.jpg' %}"> </span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">insert_emoticon</i>Our Story</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_tilt_shift</i>What's to Come</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                </li>
+            </ul>
         </div>
 
         <div class="col s12 l4 box-element offset-l1 fade-in from-left">
             <h5>Hours of Operation</h5>
             <!--   REPLACE WITH DJANGO HOURS OF OPERATIONS-->
-            <div style="overflow-x:auto;">
+            <div style="overflow-x: hideen;">
                 <table class="highlight">
                     <tr>
                         <th>Sunday</th>
@@ -116,7 +125,21 @@
             <h3 style="text-align: center">Contact Us</h3>
         </div>
         <div class="col s12 l6 fade-in">
-            <div class="contact-box-element">
+            <div class="contact-box-element" style="min-height: 417px">
+                <br>
+                <h3 class="flow-text"><strong>Phone:</strong> (416) 335-6161</h3>
+                <br>
+                <hr>
+                <br>
+                <h3 class="flow-text"><strong>Email:</strong> example@gmail.com</h3>
+                <br>
+                <hr>
+                <br>
+                <h3 class="flow-text"><strong>Order:</strong>
+                    <a href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ/?utm_source=google&utm_medium=organic&utm_campaign=place-action-link" target="_blank">ubereats.com</a>,
+                    <a href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa" target="_blank">skipthedishes.com</a>
+                </h3>
+                <br>
             </div>
         </div>
         <div class="col s12 l6 fade-in">
