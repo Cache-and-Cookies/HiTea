@@ -42,7 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-//alerts user after contact form has been successfully submitted
+// Constantly updates copyright message in footer
+var date = new Date()
+var copyrightMsg = document.getElementById("copyright")
+copyrightMsg.innerText = "HiTea " + date.getFullYear() + " \u00A9 All rights reservered"
+
+// Alerts user after contact form has been successfully submitted
 function contactFormAlert(){
     alert("Contact Form Successful Submitted!")
 }
