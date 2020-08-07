@@ -8,10 +8,16 @@
         <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li><a href="{% url 'home' %}#location">Location</a></li>
-            <li><a href="#">Menu</a></li>
             <li><a href="{% url 'home' %}#introduction">About</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="{% url 'home' %}#location">Location</a></li>
             <li><a href="{% url 'home' %}#contact">Contact</a></li>
+        </ul>
+        <ul class="right">
+            <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            <li><a target="_blank" class="green btn-floating btn-small waves-effect" href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i class="fab fa-uber"></i></a></li>
+            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img src="{%static 'images/skipdishes.png'%}" alt=""><i class="skipdishes"></i></a></li>
         </ul>
     </div>
     <div class="nav-content">
@@ -27,9 +33,9 @@
 
 <!-- sidenav links-->
 <ul class="sidenav" id="mobile-links">
-    <li><a href="{% url 'home' %}#location">Location</a></li>
-    <li><a href="#">Menu</a></li>
     <li><a href="{% url 'home' %}#introduction">About</a></li>
+    <li><a href="#">Menu</a></li>
+    <li><a href="{% url 'home' %}#location">Location</a></li>
     <li><a href="{% url 'home' %}#contact">Contact</a></li>
     <div class="divider"></div>
     <li class="tab"><a href="{% url 'menu-search' %}#MilkTea"> Milk Tea </a></li>
@@ -37,13 +43,16 @@
     <li class="tab"><a href="#FreshFruit"> Fresh Fruit </a></li>
     <li class="tab"><a href="#CheeseFoam"> Cheese Foam </a></li>
     <li class="tab"><a href="#Food"> Food </a></li>
+    <div class="divider"></div>
+    <li><a target="_blank" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f indigo-text"></i>Facebook</a></li>
+    <li><a target="_blank" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram pink-text"></i>Instagram</a></li>
 </ul>
 {% endblock navbar %}
 
 {% block content %}
 <div style="background: url({% static 'images/white-wood-background.jpg' %}) no-repeat center fixed; background-size: cover;">
     <div id="MilkTea">
-        <div class="container row">
+        <div class="container wrapper">
             {% for milkTeaProducts in milkTeaProducts %}
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
@@ -109,7 +118,7 @@
         </div>
     </div>
     <div id="LemonTea">
-        <div class="container row">
+        <div class="container wrapper">
             {% for lemonTeaProducts in lemonTeaProducts %}
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
@@ -241,7 +250,7 @@
         </div>
     </div>
     <div id="CheeseFoam">
-        <div class="container row">
+        <div class="container wrapper">
             {% for cheeseFoamProducts in cheeseFoamProducts %}
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
@@ -307,7 +316,7 @@
         </div>
     </div>
     <div id="Food">
-        <div class="container row">
+        <div class="container wrapper">
             {% for foodProducts in foodProducts %}
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
@@ -320,17 +329,19 @@
                     <!-- Modal Structure -->
                     <div id="{{foodProducts.product.name}}" class="modal">
                         <div class="modal-content">
-                            <h5 align="center">{{foodProducts.product.name}}</h5>
+                            <h6 align="center">{{foodProducts.product.name}}</h6>
                             <div class="divider"></div>
+
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image" src="{{foodProducts.product.imageURL}}" alt="filler"></div>
+                                <div class="col s12 m7"><img class="modal-image"
+                                                             src="{{foodProducts.product.imageURL}}" alt="filler">
+                                </div>
                                 <div class="col s12 m5">
-                                    <p>Price: ${{foodProducts.product.price}}</p>
-                                    <p>Calories: {{foodProducts.product.calories}}</p>
-                                    <p>Description:
-                                        <br>
-                                        {{foodProducts.description}}
-                                    </p>
+                                    <small>Price: ${{foodProducts.product.price}}</small>
+                                    <br>
+                                    <small>Calories: {{foodProducts.product.calories}}</small>
+                                    <br>
+                                    <small>{{foodProducts.description}}</small>
                                 </div>
                             </div>
                         </div>

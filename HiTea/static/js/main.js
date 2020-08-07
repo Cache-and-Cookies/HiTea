@@ -42,7 +42,24 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-//alerts user after contact form has been successfully submitted
+// Constantly updates copyright message in footer
+var date = new Date()
+var copyrightMsg = document.getElementById("copyright")
+copyrightMsg.innerText = "HiTea " + date.getFullYear() + " \u00A9 All rights reservered"
+
+// Alerts user after contact form has been successfully submitted
 function contactFormAlert(){
     alert("Contact Form Successful Submitted!")
+}
+
+// Removing Elfsight Cover
+function removeCover(){
+    var aTags = document.getElementsByTagName('a')
+    for (i = 0; i < aTags.length; i++){
+        if (aTags[i].textContent == 'Widget is deactivated. Please, visit Elfsight Apps.'){
+            console.log(aTags[i]);
+            aTags[i].remove();
+            break;
+        }
+    }
 }

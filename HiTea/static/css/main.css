@@ -103,6 +103,18 @@
     transform: translateX(50%);
 }
 
+.from-right-but {
+    transform: translateX(50%);
+}
+
+@media screen and (max-width: 991px) {
+    .from-right-but {
+        transform: translateX(-50%);
+        /* fade from right large then left on mid and down; fixes bug where screen is horizontally scrollable*/
+    }
+}
+
+
 .from-left {
     transform: translateX(-50%);
 }
@@ -124,6 +136,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+}
+
+@media screen and (max-width: 720px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .cold-icon{
@@ -162,4 +180,11 @@
     .menu-box-element {
         min-height: 330px;
     }
+}
+
+.skipdishes {
+    background: url(../images/test.svg);
+    height: 20px;
+    width: 20px;
+    display: block;
 }
