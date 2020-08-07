@@ -103,6 +103,18 @@
     transform: translateX(50%);
 }
 
+.from-right-but {
+    transform: translateX(50%);
+}
+
+@media screen and (max-width: 991px) {
+    .from-right-but {
+        transform: translateX(-50%);
+        /* fade from right large then left on mid and down; fixes bug where screen is horizontally scrollable*/
+    }
+}
+
+
 .from-left {
     transform: translateX(-50%);
 }
@@ -168,4 +180,11 @@
     .menu-box-element {
         min-height: 330px;
     }
+}
+
+.skipdishes {
+    background: url(../images/test.svg);
+    height: 20px;
+    width: 20px;
+    display: block;
 }
