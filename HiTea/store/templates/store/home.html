@@ -1,5 +1,9 @@
 {% extends "store/base.html" %}
 {% load static %}
+{% load materializecss %}
+
+{% block materialize_forms_css %}
+{% endblock materialize_forms_css %}
 
 {% block navbar %}
 <nav>
@@ -118,6 +122,7 @@
 <!--Contact Us Form-->
 <div class="page-section extended" style="background-image: url({% static 'images/white-wood-background.jpg' %})">
     <div class="scrollspy container row" id="contact">
+<<<<<<< HEAD
         <div class="row">
             <h5 class="center fade-in" style="margin: 0; padding: 2vh;">Contact Us</h5>
             <!-- Contact Information -->
@@ -166,6 +171,27 @@
                             </button>
                         </form>
                     </div>
+=======
+        <div class="col s12 l12">
+            <h3 style="text-align: center">Contact Us</h3>
+        </div>
+        <div class="col s12 l6 fade-in">
+            <div class="contact-box-element">
+            </div>
+        </div>
+        <div class="col s12 l6 fade-in">
+            <div class="contact-box-element">
+                <div class="row">
+                    <form class="col s12" method="POST"
+                          style="max-height: 60vh; overflow-y: scroll; overflow-x: hidden"
+                          onsubmit="contactFormAlert()">
+                        {% csrf_token %}
+                        {{c_form|materializecss}}
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+>>>>>>> 1dc6d64984d562b18921f58e97a3acacd6dd9f8b
                 </div>
             </div>
         </div>
@@ -194,4 +220,6 @@
 
 
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+{% block materialize_forms_javascript %}
+{% endblock materialize_forms_javascript %}
 {% endblock content %}
