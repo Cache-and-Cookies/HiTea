@@ -42,3 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+//alerts user after contact form has been successfully submitted
+function contactFormAlert(){
+    alert("Contact Form Successful Submitted!")
+}

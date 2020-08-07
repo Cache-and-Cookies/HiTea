@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
     'menu.apps.MenuConfig',
     'multiselectfield',
+    'materializecssform',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# Change timezone from default UTC to EST so datetime field in django admin is accurate
+TIME_ZONE = 'America/Toronto'
 
 USE_I18N = True
 
