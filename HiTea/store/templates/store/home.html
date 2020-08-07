@@ -11,19 +11,28 @@
         <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li><a href="#location">Location</a></li>
-            <li><a href="{% url 'menu-search' %}">Menu</a></li>
             <li><a href="#introduction">About</a></li>
+            <li><a href="{% url 'menu-search' %}">Menu</a></li>
+            <li><a href="#location">Location</a></li>
             <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="right">
+            <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a></li>
+            <li><a target="_blank" class="green btn-floating btn-small waves-effect" href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i class="fab fa-uber"></i></a></li>
+            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img src="{%static 'images/skipdishes.png'%}" alt=""><i class="skipdishes"></i></a></li>
         </ul>
     </div>
 </nav>
 
 <ul class="sidenav" id="mobile-links">
-    <li><a href="#location">Location</a></li>
-    <li><a href="{% url 'menu-search' %}">Menu</a></li>
     <li><a href="#introduction">About</a></li>
+    <li><a href="{% url 'menu-search' %}">Menu</a></li>
+    <li><a href="#location">Location</a></li>
     <li><a href="#contact">Contact</a></li>
+    <div class="divider"></div>
+    <li><a target="_blank" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f indigo-text"></i>Facebook</a></li>
+    <li><a target="_blank" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram pink-text"></i>Instagram</a></li>
 </ul>
 {% endblock navbar %}
 
@@ -119,11 +128,10 @@
     <div class="parallax"><img src="{% static 'images/darling.jpg' %}"></div>
 </div>
 
+<!--Contact Us Form-->
 <div class="page-section extended" style="background-image: url({% static 'images/white-wood-background.jpg' %})">
     <div class="scrollspy container row" id="contact">
-        <div class="col s12 l12">
-            <h3 style="text-align: center">Contact Us</h3>
-        </div>
+        <h4 class="center fade-in" style="margin: 0; padding: 2vh;">Contact Us</h4>
         <div class="col s12 l6 fade-in">
             <div class="contact-box-element" style="min-height: 417px">
                 <br>
@@ -164,7 +172,7 @@
     <div class="parallax"><img src="{% static 'images/tables.jpg' %}"></div>
 </div>
 
-<div class="page-section extended" style="background-image: url({% static 'images/wall-background.jpg' %})">
+<div class="page-section" style="background-image: url({% static 'images/wall-background.jpg' %})">
     <div class="container row">
         <div class="col s12 l12 box-element fade-in">
             <!--Elfsight plugin limited to 200 views a month-->
@@ -175,6 +183,7 @@
     </div>
 </div>
 
+
 <div class="parallax-container">
     <div class="parallax"><img src="{% static 'images/flowers.jpg' %}"></div>
 </div>
@@ -184,3 +193,6 @@
 {% block materialize_forms_javascript %}
 {% endblock materialize_forms_javascript %}
 {% endblock content %}
+<!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-b2bdd353-f056-42e0-a9c8-3ce6c8964725"></div>
+ANOTEHR ELFSIGHTS KEY-->
