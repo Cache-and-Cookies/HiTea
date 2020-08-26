@@ -7,7 +7,7 @@
 
 {% block navbar %}
 <nav>
-    <div class="nav-wrapper teal">
+    <div class="nav-wrapper grey darken-3">
         <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
@@ -48,7 +48,7 @@
 
 
 <!--INTRO-->
-<div class="page-section extended">
+<div class="page-section">
     <div class="scrollspy container row" id="introduction">
         <div class="col s12 l7 box-element fade-in from-right-but">
             <ul class="collapsible">
@@ -71,7 +71,7 @@
         <div class="col s12 l4 box-element offset-l1 fade-in from-left">
             <h5>Hours of Operation</h5>
             <!--   REPLACE WITH DJANGO HOURS OF OPERATIONS-->
-            <div style="overflow-x: hideen;">
+            <div>
                 <table class="highlight">
                     <tr>
                         <th>Sunday</th>
@@ -129,10 +129,10 @@
 </div>
 
 <!--Contact Us Form-->
-<div class="page-section extended" style="background-image: url({% static 'images/white-wood-background.jpg' %})">
+<div class="page-section" style="background-image: url({% static 'images/white-wood-background.jpg' %})">
     <div class="scrollspy container row" id="contact">
         <br>
-        <h4 class="center fade-in" style="margin: 0; padding: 2vh;">Contact Us</h4>
+        <h4 class="center fade-in" style="margin: 0; padding: 2vh; font-weight: 500;">Contact Us</h4>
         <div class="col s12 l6 fade-in">
             <div class="contact-box-element" style="min-height: 417px">
                 <h4 class="flow-text"><strong>Phone:</strong> (416) 335-6161</h4>
@@ -141,7 +141,7 @@
                 <h4 class="flow-text"><strong>Email:</strong> example@gmail.com</h4>
                 <hr>
                 <br>
-                <h4 class="flow-text"><strong>Order:</strong></h4>
+                <h4 class="flow-text"><strong>Order From:</strong></h4>
                 <img class="affiliate" src="{% static 'images/foodhwy.png' %}" alt="affiliate">
                 <img class="affiliate" src="{% static 'images/hungrypanda.jpg' %}" alt="affiliate">
                 <img class="affiliate" src="{% static 'images/lanyangyang.jpg' %}" alt="affiliate">
