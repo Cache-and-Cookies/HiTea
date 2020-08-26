@@ -1,6 +1,6 @@
 .parallax-container {
     position: relative;
-    height: 91vh;
+    height: 94vh;
 }
 
 .parallax {
@@ -16,6 +16,33 @@
     height: auto;
 }
 
+.tea-image {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    bottom: -10px;
+}
+
+@media screen and (max-width: 1080px) {
+    .tea-image {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .tea-image {
+        width: 30%;
+    }
+}
+
+.pop {
+    transition: transform 1s;
+}
+
+.pop:hover {
+    transform: scale(1.05);
+}
+
 .horizontal-center {
     position: absolute;
     margin-top: 5vh;
@@ -29,6 +56,23 @@
 	border-radius: 4px;
 	padding: 10px;
     margin: 10vh 0px 0px 100px;
+}
+
+.contact-box-element {
+	box-shadow: gray 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+    margin: 10vh 0px 0px 10px;
+}
+
+.home-image {
+    width: 60%; 
+    height: auto; 
+    text-align: center;
+    transform: translate(30%, 0);
+    border: 1px solid gray;
+    border-radius: 4px;
 }
 
 .page-section {
@@ -59,19 +103,31 @@
     transform: translateX(50%);
 }
 
+.from-right-but {
+    transform: translateX(50%);
+}
+
+@media screen and (max-width: 991px) {
+    .from-right-but {
+        transform: translateX(-50%);
+        /* fade from right large then left on mid and down; fixes bug where screen is horizontally scrollable*/
+    }
+}
+
+
 .from-left {
     transform: translateX(-50%);
 }
 
 .iframe-container {
-  padding-bottom: 1%;
-  position: relative;
-  height: 65vh;
+    padding-bottom: 1%;
+    position: relative;
+    height: 65vh;
 }
 
 .iframe-container iframe {
-   height: 100%;
-   width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 /* MENU CSS */
@@ -80,6 +136,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+}
+
+@media screen and (max-width: 720px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .cold-icon{
@@ -110,10 +172,17 @@
     margin: 5px;
 }
 
+.topping-list {
+    margin: 0 0 0 0;
+}
+
 @media screen and (max-width: 992px) {
     .menu-box-element {
         min-height: 330px;
     }
+}
 
-
-
+.affiliate {
+    width: 140px;
+    height: 50px;
+}
