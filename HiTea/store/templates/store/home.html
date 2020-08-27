@@ -7,7 +7,7 @@
 
 {% block navbar %}
 <nav>
-    <div class="nav-wrapper teal">
+    <div class="nav-wrapper grey darken-3">
         <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
@@ -20,7 +20,7 @@
             <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a></li>
             <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a></li>
             <li><a target="_blank" class="green btn-floating btn-small waves-effect" href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i class="fab fa-uber"></i></a></li>
-            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img src="{%static 'images/skipdishes.png'%}" alt=""><i class="skipdishes"></i></a></li>
+            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img src="{%static 'images/skipdishes.png'%}" alt=""></a></li>
         </ul>
     </div>
 </nav>
@@ -48,9 +48,9 @@
 
 
 <!--INTRO-->
-<div class="page-section extended">
+<div class="page-section">
     <div class="scrollspy container row" id="introduction">
-        <div class="col s12 l7 box-element fade-in from-right">
+        <div class="col s12 l7 box-element fade-in from-right-but">
             <ul class="collapsible">
                 <li class="active">
                     <div class="collapsible-header"><i class="material-icons">face</i>About</div>
@@ -71,7 +71,7 @@
         <div class="col s12 l4 box-element offset-l1 fade-in from-left">
             <h5>Hours of Operation</h5>
             <!--   REPLACE WITH DJANGO HOURS OF OPERATIONS-->
-            <div style="overflow-x: hideen;">
+            <div>
                 <table class="highlight">
                     <tr>
                         <th>Sunday</th>
@@ -129,26 +129,27 @@
 </div>
 
 <!--Contact Us Form-->
-<div class="page-section extended" style="background-image: url({% static 'images/white-wood-background.jpg' %})">
+<div class="page-section" style="background-image: url({% static 'images/white-wood-background.jpg' %})">
     <div class="scrollspy container row" id="contact">
         <br>
-        <h4 class="center fade-in" style="margin: 0; padding: 2vh;">Contact Us</h4>
+        <h4 class="center fade-in" style="margin: 0; padding: 2vh; font-weight: 500;">Contact Us</h4>
         <div class="col s12 l6 fade-in">
             <div class="contact-box-element" style="min-height: 417px">
-                <br>
-                <h3 class="flow-text"><strong>Phone:</strong> (416) 335-6161</h3>
-                <br>
+                <h4 class="flow-text"><strong>Phone:</strong> (416) 335-6161</h4>
                 <hr>
                 <br>
-                <h3 class="flow-text"><strong>Email:</strong> example@gmail.com</h3>
-                <br>
+                <h4 class="flow-text"><strong>Email:</strong> example@gmail.com</h4>
                 <hr>
                 <br>
-                <h3 class="flow-text"><strong>Order:</strong>
-                    <a href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ/?utm_source=google&utm_medium=organic&utm_campaign=place-action-link" target="_blank">ubereats.com</a>,
-                    <a href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa" target="_blank">skipthedishes.com</a>
-                </h3>
-                <br>
+                <h4 class="flow-text"><strong>Order From:</strong></h4>
+                <img class="affiliate" src="{% static 'images/foodhwy.png' %}" alt="affiliate">
+                <img class="affiliate" src="{% static 'images/hungrypanda.jpg' %}" alt="affiliate">
+                <img class="affiliate" src="{% static 'images/lanyangyang.jpg' %}" alt="affiliate">
+                <img class="affiliate" src="{% static 'images/fantuan.png' %}" alt="affiliate">
+                <a href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"
+                   target="_blank"><img class="affiliate" src="{% static 'images/ubereats.png' %}" alt="affiliate"></a>
+                <a href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"
+                   target="_blank"><img class="affiliate" src="{% static 'images/skipthedishes.jpg' %}" alt="affiliate"></a>
             </div>
         </div>
         <div class="col s12 l6 fade-in">

@@ -26,14 +26,14 @@
     <link rel="shortcut icon" href="{% static 'images/HiTea Logo.png'%}"/>
 </head>
 
-<body onload="removeCover()">
+<body onload="removeCover() removeWaterMark()">
 {% block navbar %}
 {% endblock navbar %}
 
 {% block content %}
 {% endblock content %}
 
-<footer class="page-footer teal">
+<footer class="page-footer grey darken-3">
     <div class="container">
         <div class="row">
             <div class="col s12 l8">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
+    <div class="footer-copyright grey darken-4">
         <div class="container" id="copyright"> HiTea 2020 &copy; All rights reservered</div>
     </div>
 </footer>
