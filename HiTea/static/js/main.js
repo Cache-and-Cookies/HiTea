@@ -73,3 +73,9 @@ function removeCover(){
         }
     }
 }
+function removeWaterMark(){
+    var aTags = document.getElementsByTagName('a')
+    for(i=0;i<aTags.length;i++){
+        if (aTags[i].textContent.includes('Free Google Reviews Widget'))
+    }
+}
