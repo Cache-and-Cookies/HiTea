@@ -65,19 +65,19 @@ function contactFormAlert(){
 
 // Removing Elfsight Cover
 function removeCover(){
-    var aTags = document.getElementsByTagName('a')
+    var aTags = document.getElementsByTagName('a');
+    //console.log(aTags.length);
     for (i = 0; i < aTags.length; i++){
-        if (aTags[i].textContent == 'Widget is deactivated. Please, visit Elfsight Apps.'){
+        //console.log(aTags[i].innerText);
+        if (aTags[i].innerText.includes('Free Google Reviews widget')){
             aTags[i].remove();
-            break;
+            //console.log('hi');
         }
-    }
-}
-function removeWaterMark(){
-    var aTags = document.getElementsByTagName('a')
-    for(i=0;i<aTags.length;i++){
-      if (aTags[i].textContent.includes('Free Google Reviews Widget')){
-        aTags[i].remove();
-      }
+
+        if (aTags[i].innerText.includes('Widget is deactivated. Please, visit Elfsight Apps.')){
+            aTags[i].remove();
+            //console.log('hi');
+        }
+
     }
 }
