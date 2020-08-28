@@ -4,7 +4,7 @@ M.AutoInit();
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = {
     threshold: 0,
-    rootMargin: "0px 0px -200px 0px"
+    rootMargin: "0px 0px -100px 0px"
   };
 const appearOnScroll = new IntersectionObserver(function(
     entries,
@@ -33,14 +33,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //fixes issues with sidenav not reloading tabs in menu
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.sidenav');
-  var instances = M.Sidenav.init(elems, {
-    onCloseEnd: function() {
+const menuItems = document.querySelectorAll("#mobile-links a.loadMenu");
+menuItems.forEach(element => {
+  element.addEventListener('click', () => {
+    $('.sidenav').sidenav('close');
+    setTimeout(() => {
       location.reload();
-    }
+    }, 30);
   });
 });
+
+const homeNavItems = document.querySelectorAll("#mobile-links a.closeNav");
+homeNavItems.forEach(element => {
+  element.addEventListener('click', () => {
+    $('.sidenav').sidenav('close');
+  });
+});
+
+
+
 
 // Constantly updates copyright message in footer
 var date = new Date()
@@ -57,9 +68,16 @@ function removeCover(){
     var aTags = document.getElementsByTagName('a')
     for (i = 0; i < aTags.length; i++){
         if (aTags[i].textContent == 'Widget is deactivated. Please, visit Elfsight Apps.'){
-            console.log(aTags[i]);
             aTags[i].remove();
             break;
         }
+    }
+}
+function removeWaterMark(){
+    var aTags = document.getElementsByTagName('a')
+    for(i=0;i<aTags.length;i++){
+      if (aTags[i].textContent.includes('Free Google Reviews Widget')){
+        aTags[i].remove();
+      }
     }
 }

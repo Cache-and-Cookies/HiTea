@@ -1,3 +1,7 @@
+.nav-wrapper .brand-logo {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
 .parallax-container {
     position: relative;
     height: 94vh;
@@ -33,6 +37,10 @@
     .tea-image {
         width: 30%;
     }
+
+    .nav-wrapper .btn-floating {
+        margin: 0 0.2rem;
+    }
 }
 
 .pop {
@@ -56,6 +64,7 @@
 	border-radius: 4px;
 	padding: 10px;
     margin: 10vh 0px 0px 100px;
+    z-index: 1000;
 }
 
 .contact-box-element {
@@ -78,20 +87,16 @@
 .page-section {
     background-image: url(../images/white-background.jpg);
     background-size: cover;
-    height: 100vh;
-}
-
-@media screen and (max-width: 992px) {
-    .extended {
-        height: 180vh;
-    }
+    min-height: 100vh;
+    display: flex;
 }
 
 .fade-in {
     opacity: 0;
     grid-column: 3/4;
     transform: translateY(50%);
-    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition: opacity 200ms ease-in, transform 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
 }
 
 .fade-in.appear {
@@ -179,6 +184,12 @@
 @media screen and (max-width: 992px) {
     .menu-box-element {
         min-height: 330px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .menu-box-element {
+        min-height: 210px;
     }
 }
 
