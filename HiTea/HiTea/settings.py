@@ -87,6 +87,9 @@ WSGI_APPLICATION = 'HiTea.wsgi.application'
 # }
 
 # [START db_setup]
+# Line to connect to db:
+#   cloud_sql_proxy -instances="hitea-287522:us-east4:hitea"=tcp:3306
+
 if os.getenv('GAE_APPLICATION', None):
     # Running on production App Engine, so connect to Google Cloud SQL using
     # the unix socket at /cloudsql/<your-cloudsql-connection string>

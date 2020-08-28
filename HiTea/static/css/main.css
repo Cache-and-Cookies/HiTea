@@ -64,6 +64,7 @@
 	border-radius: 4px;
 	padding: 10px;
     margin: 10vh 0px 0px 100px;
+    z-index: 1000;
 }
 
 .contact-box-element {
@@ -94,7 +95,8 @@
     opacity: 0;
     grid-column: 3/4;
     transform: translateY(50%);
-    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition: opacity 200ms ease-in, transform 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
 }
 
 .fade-in.appear {
