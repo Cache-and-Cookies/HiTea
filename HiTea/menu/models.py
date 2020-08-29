@@ -23,7 +23,7 @@ class Topping(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
-    price = models.DecimalField(max_digits=32, decimal_places=2)
+    price = models.DecimalField(max_digits=16, decimal_places=2)
     image = models.ImageField(default='bbt.png', null=True, blank=True)
     calories = models.IntegerField(default=0, validators=[
         MaxValueValidator(99999),
@@ -63,22 +63,22 @@ class Product(models.Model):
 
 
 class FreshFruit(Product, models.Model):
-    toppings = models.ManyToManyField(Topping, null=True)
+    toppings = models.ManyToManyField(Topping)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
 
 class MilkTea(Product, models.Model):
-    toppings = models.ManyToManyField(Topping, null=True)
+    toppings = models.ManyToManyField(Topping)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
 
 class LemonTea(Product, models.Model):
-    toppings = models.ManyToManyField(Topping, null=True)
+    toppings = models.ManyToManyField(Topping)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
 
 class CheeseFoam(Product, models.Model):
-    toppings = models.ManyToManyField(Topping, null=True)
+    toppings = models.ManyToManyField(Topping)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
 

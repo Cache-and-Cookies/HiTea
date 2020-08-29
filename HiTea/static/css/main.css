@@ -92,11 +92,10 @@
 }
 
 .fade-in {
-    opacity: 0.2;
+    opacity: 0;
     grid-column: 3/4;
-    transform: translateY(50%);
-    transition: opacity 200ms ease-in, transform 200ms ease-in;
-    -webkit-transition: all 200ms ease-in;
+    transform: translateY(15%);
+    transition: opacity 300ms ease-in, transform 300ms ease-in;
 }
 
 .fade-in.appear {

@@ -1,5 +1,4 @@
 // M.AutoInit();
-let message = "welcome"
 $(document).ready(function(){
   $('.parallax').parallax();
 });
@@ -20,10 +19,6 @@ $(document).ready(function(){
   $('.modal').modal();
 });
       
-message +='/hjere'
-   
-// alert(message);
-
 
 // all fading shit
 const faders = document.querySelectorAll('.fade-in');
@@ -49,17 +44,13 @@ appearOptions);
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
-  
-  message+="/fade"
-  // alert(message);
+
 
 // Overwrite scrollOffset option for scrollspy to 0px
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.scrollspy');
-    var instances = M.ScrollSpy.init(elems, {scrollOffset: 0});
+    let elems = document.querySelectorAll('.scrollspy');
+    let instances = M.ScrollSpy.init(elems, {scrollOffset: 0});
 });
-
-message+="/scroll"
 
 
 //fixes issues with sidenav not reloading tabs in menu
@@ -73,8 +64,6 @@ menuItems.forEach(element => {
   });
 });
 
-// message+="/menu"
-
 const homeNavItems = document.querySelectorAll("#mobile-links a.closeNav");
 homeNavItems.forEach(element => {
   element.addEventListener('click', () => {
@@ -82,45 +71,28 @@ homeNavItems.forEach(element => {
   });
 });
 
-// alert(message);
-
-// const p = document.querySelector('.test #p');
-// const but = document.querySelector('.test #but')
-// but.addEventListener('click', function() {
-//   p.innerText = 'helo'
-// });
-
-// const butt = document.querySelector('.test #butt')
-// butt.addEventListener('click', () => {
-//   p.innerText = 'helo2'
-// });
-
-
 // Constantly updates copyright message in footer
-var date = new Date()
-var copyrightMsg = document.getElementById("copyright")
+let date = new Date()
+let copyrightMsg = document.getElementById("copyright")
 copyrightMsg.innerText = "HiTea " + date.getFullYear() + " \u00A9 All rights reservered"
 
 // Alerts user after contact form has been successfully submitted
 function contactFormAlert(){
-    alert("Contact Form Successful Submitted!")
+  alert("Contact Form Successful Submitted!")
 }
 
 // Removing Elfsight Cover
 function removeCover(){
-    var aTags = document.getElementsByTagName('a');
-    //console.log(aTags.length);
+  setTimeout(() => {
+    const aTags = document.querySelectorAll('a');
     for (i = 0; i < aTags.length; i++){
-        //console.log(aTags[i].innerText);
-        if (aTags[i].innerText.includes('Free Google Reviews widget')){
-            aTags[i].remove();
-            //console.log('hi');
-        }
+      if (aTags[i].innerText.includes('Free Google Reviews widget')){
+        aTags[i].remove();
+      }
 
-        if (aTags[i].innerText.includes('Widget is deactivated. Please, visit Elfsight Apps.')){
-            aTags[i].remove();
-            //console.log('hi');
-        }
-
+      if (aTags[i].innerText.includes('Widget is deactivated. Please, visit Elfsight Apps.')){
+        aTags[i].remove();
+      }
     }
+  }, 1000);
 }
