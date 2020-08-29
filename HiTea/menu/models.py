@@ -41,47 +41,47 @@ class Product(models.Model):
             url = ''
         return url
 
+    @property
+    def is_FreshFruit(self):
+        return hasattr(self, "FreshFruit")
 
-class FreshFruit(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = models.ManyToManyField(Topping)
+    @property
+    def is_MilkTea(self):
+        return hasattr(self, "MilkTea")
+
+    @property
+    def is_LemonTea(self):
+        return hasattr(self, "LemonTea")
+
+    @property
+    def is_CheeseFoam(self):
+        return hasattr(self, "CheeseFoam")
+
+    @property
+    def is_Food(self):
+        return hasattr(self, "Food")
+
+
+class FreshFruit(Product, models.Model):
+    toppings = models.ManyToManyField(Topping, null=True)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
-    def __str__(self):
-        return self.product.name
 
-
-class MilkTea(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = models.ManyToManyField(Topping)
+class MilkTea(Product, models.Model):
+    toppings = models.ManyToManyField(Topping, null=True)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
-    def __str__(self):
-        return self.product.name
 
-
-class LemonTea(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = models.ManyToManyField(Topping)
+class LemonTea(Product, models.Model):
+    toppings = models.ManyToManyField(Topping, null=True)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
-    def __str__(self):
-        return self.product.name
 
-
-class CheeseFoam(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
-    toppings = models.ManyToManyField(Topping)
+class CheeseFoam(Product, models.Model):
+    toppings = models.ManyToManyField(Topping, null=True)
     isHot = models.BooleanField(default=False, null=False, blank=False)
 
-    def __str__(self):
-        return self.product.name
 
-
-class Food(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE, null=True, blank=True)
+class Food(Product, models.Model):
     description = models.CharField(max_length=1000, null=True)
-
-    def __str__(self):
-        return self.product.name
 
