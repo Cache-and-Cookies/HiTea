@@ -92,7 +92,7 @@
 }
 
 .fade-in {
-    opacity: 0;
+    opacity: 0.2;
     grid-column: 3/4;
     transform: translateY(50%);
     transition: opacity 200ms ease-in, transform 200ms ease-in;

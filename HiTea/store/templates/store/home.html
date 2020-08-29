@@ -48,14 +48,16 @@
 
 
 <!--INTRO-->
-<div style="z-index: 100">hello_</div>
-<div style="border: 2px solid black;">hello0</div>
+<div class="test">
+    <button id="but">aye</button>
+    <button id="butt">byeeee</button>
+    <p id="p">text</p>
+    <button onclick="alert('c;ark gay')">ca</button>
+</div>
+
 <div class="page-section">
-    <div>hello1</div>
     <div class="scrollspy container row" id="introduction">
-        <div style="z-index: 100">zhello2</div>
         <div class="col s12 l7 box-element fade-in from-right-but">
-            <div>hello3</div>
             <ul class="collapsible">
                 <li class="active">
                     <div class="collapsible-header"><i class="material-icons">face</i>About</div>
@@ -195,8 +197,9 @@
     <div class="parallax"><img src="{% static 'images/flowers.jpg' %}"></div>
 </div>
 
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 {% block materialize_forms_javascript %}
 {% endblock materialize_forms_javascript %}
 {% endblock content %}
