@@ -14,7 +14,7 @@ RUN apk add --virtual build-deps gcc python3-dev musl-dev
 # RUN pip install psycopg2 
 RUN apk add jpeg-dev zlib-dev libjpeg 
 RUN pip install Pillow 
-# RUN apk del build-deps
+RUN apk del build-deps
 
 # install dependencies
 # RUN pip install --upgrade pip
