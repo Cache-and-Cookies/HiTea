@@ -1,6 +1,9 @@
 .idea/
 venv/
 __pycache__/
+**/__pycache__
 migrations/
 # **/__pycache__/
 # *.pyc
+cloud_sql_proxy.exe
+cloud_sql_proxy
