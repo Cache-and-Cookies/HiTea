@@ -25,7 +25,7 @@ SECRET_KEY = '&uibzcin(dm4)1hc%^@_z9)3jzpfdw8o8br(d*0l$$2fbo6d6-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hitea-287522.ue.r.appspot.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['hitea-287522.ue.r.appspot.com', 'localhost', '127.0.0.1', '*']
 
 
 # Application definition
@@ -153,11 +153,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'static'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Determines where media files are stores
 # Configures url path so images can be found and rendered properly
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/thumbnail')
-MEDIA_URL = '/images/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+
+from google.oauth2 import service_account
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'credential.json')
+)
+
+DEFAULT_FILE_STORAGE = 'django_blog_project.gcloud.GoogleCloudMediaFileStorage'
+GS_PROJECT_ID = 'hitea-287522'
+GS_BUCKET_NAME = 'hitea_bucket'
+MEDIA_ROOT = 'media/'
+UPLOAD_ROOT = 'media/uploads/'
+MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)
+
+
+
+

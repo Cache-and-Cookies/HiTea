@@ -51,6 +51,10 @@
 
 {% block content %}
 <div style="background: url({% static 'images/white-wood-background.jpg' %}) no-repeat center fixed; background-size: cover;">
+    <div>
+        <img src="{% static 'images/hot.png' %}" alt="helo">
+        <img src="{% static 'images/jenee.png' %}" alt="helo">
+    </div>
     <div id="MilkTea">
         <div class="container wrapper">
             {% for milkTeaProducts in milkTeaProducts %}
@@ -58,7 +62,7 @@
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
                     <a class="modal-trigger" href="#{{milkTeaProducts.name}}">
-                        <img class="menu-image" src="{{milkTeaProducts.imageURL}}" alt="filler">
+                        <img class="menu-image" src="{{milkTeaProducts.image.url}}" alt="filler">
                     </a>
                     <p align="center">{{milkTeaProducts.name}}</p>
 
