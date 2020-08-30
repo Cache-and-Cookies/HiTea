@@ -26,7 +26,9 @@ SECRET_KEY = '&uibzcin(dm4)1hc%^@_z9)3jzpfdw8o8br(d*0l$$2fbo6d6-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+
+ALLOWED_HOSTS = ['hitea-287522.ue.r.appspot.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -79,12 +81,42 @@ WSGI_APPLICATION = 'HiTea.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+
+# [START db_setup]
+# Line to connect to db:
+#   cloud_sql_proxy -instances="hitea-287522:us-east4:hitea"=tcp:3306
+
+if os.getenv('GAE_APPLICATION', None):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/hitea-287522:us-east4:hitea',
+            'USER': 'admin',
+            'PASSWORD': 'admin123',
+            'NAME': 'hitea_database',
+        }
     }
-}
+else:
+    if True:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'HOST': '127.0.0.1',
+                'PORT': '3306',
+                'NAME': 'hitea_database',
+                'USER': 'admin',
+                'PASSWORD': 'admin123',
+            }
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+# [END db_setup]
 
 
 # Password validation
@@ -126,6 +158,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
+# STATIC_ROOT = 'static'
 
 # Determines where media files are stores
 # Configures url path so images can be found and rendered properly
