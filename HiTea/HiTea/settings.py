@@ -27,8 +27,8 @@ SECRET_KEY = '&uibzcin(dm4)1hc%^@_z9)3jzpfdw8o8br(d*0l$$2fbo6d6-'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['hitea-287522.ue.r.appspot.com', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = ['hitea-287522.ue.r.appspot.com',
+                 'localhost', '127.0.0.1', "0.0.0.0"]
 
 
 # Application definition
@@ -80,7 +80,6 @@ WSGI_APPLICATION = 'HiTea.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 
 
 # [START db_setup]
