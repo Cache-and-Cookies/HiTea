@@ -167,7 +167,7 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.path.join(BASE_DIR, 'credential.json')
 )
 
-DEFAULT_FILE_STORAGE = 'django_blog_project.gcloud.GoogleCloudMediaFileStorage'
+DEFAULT_FILE_STORAGE = 'HiTea.gcloud.GoogleCloudMediaFileStorage'
 GS_PROJECT_ID = 'hitea-287522'
 GS_BUCKET_NAME = 'hitea_bucket'
 MEDIA_ROOT = 'media/'
