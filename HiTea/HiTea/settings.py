@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,13 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&uibzcin(dm4)1hc%^@_z9)3jzpfdw8o8br(d*0l$$2fbo6d6-'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['hitea-287522.ue.r.appspot.com', 'localhost', '127.0.0.1', '*']
-
 
 # Application definition
 
@@ -88,10 +88,10 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/hitea-287522:us-east4:hitea',
-            'USER': 'admin',
-            'PASSWORD': 'admin123',
-            'NAME': 'hitea_database',
+            'HOST': config('HOST'),
+            'USER': config('USER'),
+            'PASSWORD': config('USER_PASSWORD'),
+            'NAME': config('DATABASE_NAME'),
         }
     }
 else:
@@ -101,9 +101,9 @@ else:
                 'ENGINE': 'django.db.backends.mysql',
                 'HOST': '127.0.0.1',
                 'PORT': '3306',
-                'NAME': 'hitea_database',
-                'USER': 'admin',
-                'PASSWORD': 'admin123',
+                'NAME': config('DATABASE_NAME'),
+                'USER': config('USER'),
+                'PASSWORD': config('USER_PASSWORD'),
             }
         }
     else:
@@ -139,14 +139,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 # Change timezone from default UTC to EST so datetime field in django admin is accurate
 TIME_ZONE = 'America/Toronto'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -169,7 +165,7 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
 
 DEFAULT_FILE_STORAGE = 'HiTea.gcloud.GoogleCloudMediaFileStorage'
 GS_PROJECT_ID = 'hitea-287522'
-GS_BUCKET_NAME = 'hitea_bucket'
+GS_BUCKET_NAME = config('GS_BUCKET_NAME')
 MEDIA_ROOT = 'media/'
 UPLOAD_ROOT = 'media/uploads/'
 MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)

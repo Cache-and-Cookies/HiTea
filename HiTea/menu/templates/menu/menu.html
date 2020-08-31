@@ -51,10 +51,6 @@
 
 {% block content %}
 <div style="background: url({% static 'images/white-wood-background.jpg' %}) no-repeat center fixed; background-size: cover;">
-    <div>
-        <img src="{% static 'images/hot.png' %}" alt="helo">
-        <img src="{% static 'images/jenee.png' %}" alt="helo">
-    </div>
     <div id="MilkTea">
         <div class="container wrapper">
             {% for milkTeaProducts in milkTeaProducts %}
@@ -65,7 +61,6 @@
                         <img class="menu-image" src="{{milkTeaProducts.image.url}}" alt="filler">
                     </a>
                     <p align="center">{{milkTeaProducts.name}}</p>
-                    <p align="center">{{milkTeaProducts.image.url}}</p>
 
                     <!-- Modal Structure -->
                     <div id="{{milkTeaProducts.name}}" class="modal">
