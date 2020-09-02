@@ -20,6 +20,11 @@
     height: auto;
 }
 
+.skip {
+    width: 30px;
+    height: 30px;
+}
+
 .tea-image {
     width: 15%;
     height: auto;

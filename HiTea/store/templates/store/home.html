@@ -20,7 +20,7 @@
             <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a></li>
             <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a></li>
             <li><a target="_blank" class="green btn-floating btn-small waves-effect" href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i class="fab fa-uber"></i></a></li>
-            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img src="{%static 'images/skipdishes.png'%}" alt=""></a></li>
+            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img class="skip" src="{%static 'images/skipdishes.png'%}" alt=""></a></li>
         </ul>
     </div>
 </nav>
@@ -51,21 +51,10 @@
 <div class="page-section">
     <div class="scrollspy container row" id="introduction">
         <div class="col s12 l7 box-element fade-in from-right-but">
-            <ul class="collapsible">
-                <li class="active">
-                    <div class="collapsible-header"><i class="material-icons">face</i>About</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        <img class="home-image" src="{% static 'images/contest-winner.jpg' %}"> </span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">insert_emoticon</i>Our Story</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">filter_tilt_shift</i>What's to Come</div>
-                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-            </ul>
+            <h5>About</h5>
+            <p>HiTea has established 163 branches in China. Its unique flavors and delicately crafted foods and beverages have shown a strong popularity among customers. All of HiTea’s stores focus on providing customers with a satisfactory and relaxing dining and drinking experience. Their specialized, freshly cut, fruit tea recipe has been improving for the past few years, and they never fail to fascinate customers. All the tea leaves come from top tea farms in China, and cut fruits are the freshest seasonal choices. Nowadays, the company is still actively adapting to customers tastes to create the perfect signature drink. 
+            </p>
+            <img class="home-image" src="{% static 'images/contest-winner.jpg' %}">
         </div>
 
         <div class="col s12 l4 box-element offset-l1 fade-in from-left">
@@ -191,7 +180,6 @@
     <div class="parallax"><img src="{% static 'images/flowers.jpg' %}"></div>
 </div>
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 {% block materialize_forms_javascript %}
