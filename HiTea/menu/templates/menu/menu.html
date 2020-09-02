@@ -17,7 +17,7 @@
             <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a></li>
             <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a></li>
             <li><a target="_blank" class="green btn-floating btn-small waves-effect" href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i class="fab fa-uber"></i></a></li>
-            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img src="{%static 'images/skipdishes.png'%}" alt=""><i class="skipdishes"></i></a></li>
+            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img class="skip" src="{%static 'images/skipdishes.png'%}" alt=""><i class="skipdishes"></i></a></li>
         </ul>
     </div>
     <div class="nav-content">
@@ -38,11 +38,11 @@
     <li><a href="{% url 'home' %}#location">Location</a></li>
     <li><a href="{% url 'home' %}#contact">Contact</a></li>
     <div class="divider"></div>
-    <li><a class="loadMenu" href="#MilkTea"> Milk Tea </a></li>
-    <li><a class="loadMenu" href="#LemonTea"> Lemon Tea </a></li>
-    <li><a class="loadMenu" href="#FreshFruit"> Fresh Fruit </a></li>
-    <li><a class="loadMenu" href="#CheeseFoam"> Cheese Foam </a></li>
-    <li><a class="loadMenu" href="#Food"> Food </a></li>
+    <li><a class="loadMenu closeNav" href="#MilkTea"> Milk Tea </a></li>
+    <li><a class="loadMenu closeNav" href="#LemonTea"> Lemon Tea </a></li>
+    <li><a class="loadMenu closeNav" href="#FreshFruit"> Fresh Fruit </a></li>
+    <li><a class="loadMenu closeNav" href="#CheeseFoam"> Cheese Foam </a></li>
+    <li><a class="loadMenu closeNav" href="#Food"> Food </a></li>
     <div class="divider"></div>
     <li><a target="_blank" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f indigo-text"></i>Facebook</a></li>
     <li><a target="_blank" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram pink-text"></i>Instagram</a></li>
@@ -58,7 +58,7 @@
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
                     <a class="modal-trigger" href="#{{milkTeaProducts.name}}">
-                        <img class="menu-image" src="{{milkTeaProducts.imageURL}}" alt="filler">
+                        <img class="menu-image" src="{{milkTeaProducts.image.url}}" alt="filler">
                     </a>
                     <p align="center">{{milkTeaProducts.name}}</p>
 
@@ -354,7 +354,6 @@
             {% endfor %}
         </div>
     </div>
-    <!-- IDK why i need to put this div to cover background!! cmon clark... -->
     <div style="height: 20px;"></div>
 </div>
 
