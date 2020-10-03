@@ -161,16 +161,26 @@
     width: 30px;
     height: auto;
 }
-.modal-image{
-    width: 80%;
-    height: auto;
-    transform: translate(13%, 0);
-}
 
+.image-frame {
+    /* border: 2px solid blue; */
+    /* height: 250px; */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+/* .image-frame img{
+    border: 2px solid red;
+} */
+.modal-image{
+    width: 150%;
+    height: auto;
+    /* transform: translate(13%, 0); */
+}
 .menu-image{
-   width: 80%;
+   width: 150%;
    height: auto;
-   transform: translate(13%, 0);
+   /* transform: translate(-17%, 0); */
 }
 
 .menu-box-element{

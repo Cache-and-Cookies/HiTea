@@ -25,7 +25,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=16, decimal_places=2)
     image = models.ImageField(default='thumbnails/bbt.png', upload_to='thumbnails')
-    calories = models.IntegerField(default=0, validators=[
+    calories = models.IntegerField(default=1000, validators=[
         MaxValueValidator(9999),
         MinValueValidator(0),
     ])

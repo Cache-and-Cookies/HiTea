@@ -57,8 +57,8 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{milkTeaProducts.name}}">
-                        <img class="menu-image" src="{{milkTeaProducts.image.url}}" alt="filler">
+                    <a class="modal-trigger image-frame" href="#{{milkTeaProducts.name}}">
+                        <img class="menu-image" src="{{milkTeaProducts.image.url}}" alt="Product Image">
                     </a>
                     <p align="center">{{milkTeaProducts.name}}</p>
 
@@ -69,13 +69,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
                                                              src="{{milkTeaProducts.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{milkTeaProducts.price}}</small>
                                     <br>
-                                    <small>Calories: {{milkTeaProducts.calories}}</small>
+                                    <!-- <small>Calories: {{milkTeaProducts.calories}}</small> -->
                                     <br>
                                     {% if milkTeaProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
@@ -123,7 +123,7 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{lemonTeaProducts.name}}">
+                    <a class="modal-trigger image-frame" href="#{{lemonTeaProducts.name}}">
                         <img class="menu-image" src="{{lemonTeaProducts.imageURL}}" alt="filler">
                     </a>
                     <p align="center">{{lemonTeaProducts.name}}</p>
@@ -135,13 +135,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
                                                              src="{{lemonTeaProducts.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{lemonTeaProducts.price}}</small>
                                     <br>
-                                    <small>Calories: {{lemonTeaProducts.calories}}</small>
+                                    <!-- <small>Calories: {{lemonTeaProducts.calories}}</small> -->
                                     <br>
                                     {% if lemonTeaProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
@@ -189,7 +189,7 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{freshFruitProducts.name}}">
+                    <a class="modal-trigger image-frame" href="#{{freshFruitProducts.name}}">
                         <img class="menu-image" src="{{freshFruitProducts.imageURL}}" alt="filler">
                     </a>
                     <p align="center">{{freshFruitProducts.name}}</p>
@@ -201,13 +201,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
                                                              src="{{freshFruitProducts.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{freshFruitProducts.price}}</small>
                                     <br>
-                                    <small>Calories: {{freshFruitProducts.calories}}</small>
+                                    <!-- <small>Calories: {{freshFruitProducts.calories}}</small> -->
                                     <br>
                                     {% if freshFruitProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
@@ -255,7 +255,7 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{cheeseFoamProducts.name}}">
+                    <a class="modal-trigger image-frame" href="#{{cheeseFoamProducts.name}}">
                         <img class="menu-image" src="{{cheeseFoamProducts.imageURL}}" alt="filler">
                     </a>
                     <p align="center">{{cheeseFoamProducts.name}}</p>
@@ -267,13 +267,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
                                                              src="{{cheeseFoamProducts.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{cheeseFoamProducts.price}}</small>
                                     <br>
-                                    <small>Calories: {{cheeseFoamProducts.calories}}</small>
+                                    <!-- <small>Calories: {{cheeseFoamProducts.calories}}</small> -->
                                     <br>
                                     {% if cheeseFoamProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
@@ -321,8 +321,8 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{foodProducts.name}}">
-                        <img class="menu-image" src="{{foodProducts.imageURL}}" alt="filler">
+                    <a class="modal-trigger image-frame" href="#{{foodProducts.name}}">
+                        <img style="width: 70%;" class="menu-images" src="{{foodProducts.imageURL}}" alt="filler">
                     </a>
                     <p align="center">{{foodProducts.name}}</p>
 
@@ -333,13 +333,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
+                                <div class="col s12 m7 image-frame"><img style="width: 50%;" class="modal-images"
                                                              src="{{foodProducts.imageURL}}" alt="filler">
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{foodProducts.price}}</small>
                                     <br>
-                                    <small>Calories: {{foodProducts.calories}}</small>
+                                    <!-- <small>Calories: {{foodProducts.calories}}</small> -->
                                     <br>
                                     <small>{{foodProducts.description}}</small>
                                 </div>
