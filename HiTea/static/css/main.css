@@ -165,22 +165,22 @@
 .image-frame {
     /* border: 2px solid blue; */
     /* height: 250px; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    overflow: hidden;
+    overflow: hidden; */
 }
 /* .image-frame img{
     border: 2px solid red;
 } */
 .modal-image{
-    width: 150%;
+    width: 70%;
     height: auto;
-    /* transform: translate(13%, 0); */
+    transform: translate(22%, 0);
 }
 .menu-image{
-   width: 150%;
+   width: 70%;
    height: auto;
-   /* transform: translate(-17%, 0); */
+   transform: translate(22%, 0);
 }
 
 .menu-box-element{

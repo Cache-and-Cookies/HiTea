@@ -7,7 +7,7 @@ from multiselectfield import MultiSelectField
 class Topping(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=16, decimal_places=2)
-    image = models.ImageField(default='thumbnails/bbt.png', upload_to='thumbnails')
+    image = models.ImageField(default='thumbnails/default_coming_soon.png', upload_to='thumbnails')
 
     def __str__(self):
         return self.name
@@ -24,7 +24,7 @@ class Topping(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=16, decimal_places=2)
-    image = models.ImageField(default='thumbnails/bbt.png', upload_to='thumbnails')
+    image = models.ImageField(default='thumbnails/default_coming_soon.png', upload_to='thumbnails')
     calories = models.IntegerField(default=1000, validators=[
         MaxValueValidator(9999),
         MinValueValidator(0),
