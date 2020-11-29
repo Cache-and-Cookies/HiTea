@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
   entrypoint: "gcloud"
   args:
   - "kms"
@@ -9,7 +9,7 @@ steps:
   - "--location=us"
   - "--keyring=hitea"
   - "--key=hitea-env"
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
   entrypoint: "gcloud"
   args:
   - "kms"
@@ -19,7 +19,7 @@ steps:
   - "--location=us"
   - "--keyring=hitea"
   - "--key=hitea-env"
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
   entrypoint: "gcloud"
   args:
   - "app"
