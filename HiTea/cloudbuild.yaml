@@ -1,23 +1,25 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  - kms
-  - decrypt
-  - --ciphertext-file=./HiTea/.env.enc
-  - --plaintext-file=./HiTea/.env
-  - --location=us
-  - --keyring=hitea
-  - --key=hitea-env
+  args:
+  - "kms"
+  - "decrypt"
+  - "--ciphertext-file=./HiTea/.env.enc"
+  - "--plaintext-file=./HiTea/.env"
+  - "--location=us"
+  - "--keyring=hitea"
+  - "--key=hitea-env"
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  - kms
-  - decrypt
-  - --ciphertext-file=./HiTea/credential.json.enc
-  - --plaintext-file=./HiTea/credential.json
-  - --location=us
-  - --keyring=hitea
-  - --key=hitea-env
+  args:
+  - "kms"
+  - "decrypt"
+  - "--ciphertext-file=./HiTea/credential.json.enc"
+  - "--plaintext-file=./HiTea/credential.json"
+  - "--location=us"
+  - "--keyring=hitea"
+  - "--key=hitea-env"
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
-  - app
-  - deploy
+  entrypoint: "gcloud"
+  - "app"
+  - "deploy"
