@@ -25,3 +25,4 @@ steps:
   - "app"
   - "deploy"
   - "./HiTea/app.yaml"
+timeout: 360s
