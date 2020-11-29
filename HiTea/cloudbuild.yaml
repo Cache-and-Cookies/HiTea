@@ -20,6 +20,6 @@ steps:
   - "--keyring=hitea"
   - "--key=hitea-env"
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: "gcloud"
+  entrypoint: gcloud
   - "app"
   - "deploy"
