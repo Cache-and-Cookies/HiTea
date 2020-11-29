@@ -1,0 +1,20 @@
+steps:
+- name: "gcr.io/cloud-builders/gcloud"
+  - kms
+  - decrypt
+  - --ciphertext-file=./HiTea/.env.enc
+  - --plaintext-file=./HiTea/.env
+  - --location=us
+  - --keyring=hitea
+  - --key=hitea-env
+- name: "gcr.io/cloud-builders/gcloud"
+  - kms
+  - decrypt
+  - --ciphertext-file=./HiTea/credential.json.enc
+  - --plaintext-file=./HiTea/credential.json
+  - --location=us
+  - --keyring=hitea
+  - --key=hitea-env
+- name: "gcr.io/cloud-builders/gcloud"
+  - app
+  - deploy
