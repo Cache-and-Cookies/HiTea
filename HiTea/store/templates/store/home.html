@@ -16,6 +16,7 @@
             <li><a href="#location">Location</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <!--Social Media Links-->
         <ul class="right">
             <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a></li>
             <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a></li>
@@ -25,6 +26,7 @@
     </div>
 </nav>
 
+<!-- sidenav links-->
 <ul class="sidenav" id="mobile-links">
     <li><a class="closeNav" href="#introduction">About</a></li>
     <li><a class="closeNav" href="{% url 'menu-search' %}">Menu</a></li>
@@ -42,8 +44,6 @@
     <div class="parallax"><img src="{% static 'images/store.jpg' %}"></div>
     <img class="logo pop" src="{% static 'images/HiTea Logo.png' %}">
     <i class="horizontal-center large material-icons"><a class="white-text" href="#introduction">keyboard_arrow_down</a></i>
-    <img class="tea-image fade-in from-left" style="left: 13vw" src="{% static 'images/tea.png' %}" alt="">
-    <img class="tea-image fade-in from-right" style="right: 13vw" src="{% static 'images/tea.png' %}" alt="">
 </div>
 
 
@@ -185,6 +185,3 @@
 {% block materialize_forms_javascript %}
 {% endblock materialize_forms_javascript %}
 {% endblock content %}
-<!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-b2bdd353-f056-42e0-a9c8-3ce6c8964725"></div>
-ANOTEHR ELFSIGHTS KEY-->
