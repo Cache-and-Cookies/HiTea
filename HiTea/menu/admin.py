@@ -3,13 +3,14 @@ from .models import *
 
 admin.site.site_header = 'Hi Tea Admin Dashboard'
 
-@admin.register(Product)
+# @admin.register(Product)
 class FoodAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Product
 
 
+admin.site.register(Product)
 admin.site.register(Topping)
 admin.site.register(FreshFruit, FoodAdmin)
 admin.site.register(MilkTea, FoodAdmin)
