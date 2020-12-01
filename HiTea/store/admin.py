@@ -14,4 +14,5 @@ class MessageAdmin(admin.ModelAdmin):
 
     get_date_submitted.admin_order_field = 'date_submitted'
 
+
 admin.site.register(Message, MessageAdmin)

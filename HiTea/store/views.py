@@ -11,7 +11,8 @@ def home(request):
             return redirect(request.path_info + '#contact')
     else:
         c_form = ContactForm
-        context = {
-            'c_form': c_form,
-        }
-        return render(request, 'store/home.html', context)
+        
+    context = {
+        'c_form': c_form,
+    }
+    return render(request, 'store/home.html', context)

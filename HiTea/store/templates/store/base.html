@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -21,9 +21,17 @@
     {% endblock materialize_forms_css %}
 
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1"/>
+
+    <!-- seo -->
+    <meta property="og:site_name" content="HiTea"/>
+    <meta property="og:description" content="HiTea's unique flavors and delicately crafted foods and beverages have shown a strong popularity among customers."/>
+    <meta property="og:image" content="{% static 'images/HiTea Logo.png' %}" />
+    <meta property="og:type" content="restaurant" />
+
     <!-- Adding Favicon -->
     <link rel="shortcut icon" href="{% static 'images/HiTea Logo.png'%}"/>
+    <title>HiTea</title>
 </head>
 
 <body onload="removeCover()">
@@ -33,7 +41,8 @@
 {% block content %}
 {% endblock content %}
 
-<footer class="page-footer teal">
+
+<footer class="page-footer grey darken-3">
     <div class="container">
         <div class="row">
             <div class="col s12 l8">
@@ -46,11 +55,9 @@
             <div class="col s12 l3 offset-l1">
                 <h5>Follow Us!</h5>
                 <div class="row">
-                    <div class="col s2 m4">
+                    <div class="col s12">
                         <a target="_blank" class="indigo btn-floating btn-large waves-effect"
                            href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                    <div class="col s2 m4">
                         <a target="_blank" class="pink btn-floating btn-large waves-effect"
                            href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -58,32 +65,34 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
+    <div class="footer-copyright grey darken-4">
         <div class="container" id="copyright"> HiTea 2020 &copy; All rights reservered</div>
     </div>
 </footer>
 
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 {% block materialize_forms_javascript %}
 <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
-        integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
 
 <script>
-$(document).ready(function(){
-
-    // Initialize materialize data picker
-    $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
-    $('select').formSelect();
-
-});
-
+    $(document).ready(function(){
+        
+        // Initialize materialize data picker
+        $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+        $('select').formSelect();
+        
+    });
+    
 </script>
 {% endblock materialize_forms_javascript %}
 </body>
