@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from socket import gethostname, gethostbyname
 import os
 from decouple import config
 
@@ -77,7 +78,6 @@ WSGI_APPLICATION = 'HiTea.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 
 
 # [START db_setup]

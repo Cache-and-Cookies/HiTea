@@ -1,66 +1,11 @@
-.nav-wrapper .brand-logo {
-    font-family: 'Trebuchet MS', sans-serif;
-}
-
-.parallax-container {
-    position: relative;
-    height: 94vh;
-}
-
-.parallax {
-    filter: brightness(50%);
-}
-
-.logo {
-    display: flex;
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
-    width: 35%;
-    height: auto;
-}
-
-.skip {
-    width: 30px;
-    height: 30px;
-}
-
-.tea-image {
-    width: 15%;
-    height: auto;
-    position: absolute;
-    bottom: -10px;
-}
-
-@media screen and (max-width: 1080px) {
-    .tea-image {
-        width: 20%;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    .tea-image {
-        width: 30%;
-    }
-
-    .nav-wrapper .btn-floating {
-        margin: 0 0.2rem;
-    }
-}
-
-.pop {
-    transition: transform 1s;
-}
-
-.pop:hover {
-    transform: scale(1.05);
-}
-
-.horizontal-center {
-    position: absolute;
-    margin-top: 5vh;
-    left: 50%;
-    transform: translate(-50%,-50%);
+/* ------------------------------------------------------------------------------------------------------------------
+*********************************************************************************************************************
+Home CSS
+*********************************************************************************************************************
+------------------------------------------------------------------------------------------------------------------ */
+.affiliate {
+    width: 140px;
+    height: 50px;
 }
 
 .box-element {
@@ -80,22 +25,6 @@
     margin: 10vh 0px 0px 10px;
 }
 
-.home-image {
-    width: 60%; 
-    height: auto; 
-    text-align: center;
-    transform: translate(30%, 0);
-    border: 1px solid gray;
-    border-radius: 4px;
-}
-
-.page-section {
-    background-image: url(../images/white-background.jpg);
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-}
-
 .fade-in {
     opacity: 0;
     grid-column: 3/4;
@@ -106,6 +35,10 @@
 .fade-in.appear {
     opacity: 1;
     transform: translateX(0);
+}
+
+.from-left {
+    transform: translateX(-50%);
 }
 
 .from-right {
@@ -123,11 +56,6 @@
     }
 }
 
-
-.from-left {
-    transform: translateX(-50%);
-}
-
 .iframe-container {
     padding-bottom: 1%;
     position: relative;
@@ -139,27 +67,69 @@
     width: 100%;
 }
 
-/* MENU CSS */
-
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+.home-image {
+    width: 60%;
+    height: auto;
+    text-align: center;
+    transform: translate(30%, 0);
+    border: 1px solid gray;
+    border-radius: 4px;
 }
 
-@media screen and (max-width: 720px) {
-    .wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.horizontal-center {
+    position: absolute;
+    margin-top: 5vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
-.cold-icon{
-    width: 30px;
+.logo {
+    display: flex;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
     height: auto;
 }
-.warm-icon{
+
+.nav-wrapper .brand-logo {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.page-section {
+    background-image: url(../images/white-background.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+}
+
+.parallax {
+    filter: brightness(50%);
+}
+
+.parallax-container {
+    position: relative;
+    height: 94vh;
+}
+
+.pop {
+    transition: transform 1s;
+}
+
+.pop:hover {
+    transform: scale(1.05);
+}
+
+.skip {
     width: 30px;
+    height: 30px;
+}
+
+.tea-image {
+    width: 15%;
     height: auto;
+    position: absolute;
+    bottom: -10px;
 }
 
 .image-frame {
@@ -176,6 +146,31 @@
     width: 70%;
     height: auto;
     transform: translate(22%, 0);
+@media screen and (max-width: 1080px) {
+    .tea-image {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .tea-image {
+        width: 30%;
+    }
+
+    .nav-wrapper .btn-floating {
+        margin: 0 0.2rem;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+*********************************************************************************************************************
+MENU CSS
+*********************************************************************************************************************
+------------------------------------------------------------------------------------------------------------------ */
+
+.cold-icon{
+    width: 30px;
+    height: auto;
 }
 .menu-image{
    width: 70%;
@@ -191,10 +186,6 @@
     margin: 5px;
 }
 
-.topping-list {
-    margin: 0 0 0 0;
-}
-
 @media screen and (max-width: 992px) {
     .menu-box-element {
         min-height: 330px;
@@ -207,7 +198,29 @@
     }
 }
 
-.affiliate {
-    width: 140px;
-    height: 50px;
+.modal-image{
+    width: 80%;
+    height: auto;
+    transform: translate(13%, 0);
+}
+
+.warm-icon{
+    width: 30px;
+    height: auto;
+}
+
+.topping-list {
+    margin: 0 0 0 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 720px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

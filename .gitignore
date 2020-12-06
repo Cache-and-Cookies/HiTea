@@ -1,6 +1,7 @@
 .idea/
 venv/
 __pycache__/
+**/__pycache__
 migrations/
 .env
 credential.json
@@ -8,3 +9,5 @@ cloud_sql_proxy.exe
 cloud_sql_proxy
 # **/__pycache__/
 # *.pyc
+cloud_sql_proxy.exe
+cloud_sql_proxy

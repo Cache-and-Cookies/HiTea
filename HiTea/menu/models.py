@@ -1,9 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from multiselectfield import MultiSelectField
 
 
-# Create your models here.
 class Topping(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=16, decimal_places=2)
@@ -61,6 +59,11 @@ class Product(models.Model):
     def is_Food(self):
         return hasattr(self, "Food")
 
+# ######################################################################################################################
+#
+# The following Models represent food items which inherit from Product in a one-to-one relationship.
+#
+# ######################################################################################################################
 
 class FreshFruit(Product, models.Model):
     toppings = models.ManyToManyField(Topping)

@@ -20,7 +20,7 @@ $(document).ready(function(){
 });
       
 
-// all fading shit
+// Fade Effect
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = {
   threshold: 0,
