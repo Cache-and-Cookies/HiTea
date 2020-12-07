@@ -146,6 +146,8 @@ Home CSS
     width: 70%;
     height: auto;
     transform: translate(22%, 0);
+}
+
 @media screen and (max-width: 1080px) {
     .tea-image {
         width: 20%;
