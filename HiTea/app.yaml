@@ -2,14 +2,12 @@ runtime: python37
 env: standard
 instance_class: F4
 handlers:
-  - url: /static/(.*)
-    static_files: static/\1
-    require_matching_file: false
-    upload: static/.*
-  - url: /.*
-    script: auto
-  - url: .*
-    script: auto
+- url: /static
+  static_dir: static/
+
+- url: /.*
+  script: auto
+
 automatic_scaling:
   min_idle_instances: automatic
   max_idle_instances: 4
