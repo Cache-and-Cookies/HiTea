@@ -1,6 +1,6 @@
 runtime: python37
 env: standard
-instance_class: F1
+instance_class: F4
 handlers:
   - url: /static/(.*)
     static_files: static/\1
