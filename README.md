@@ -1,5 +1,5 @@
 # HiTea
-Project for HiTea Canadian Divison
+Project for HiTea Canadian Branches
 
 ## Requirements
 Python 3.7
@@ -15,7 +15,9 @@ pip install -r requirements.txt
 ---
 ## Collaborators
 c.liu@cacheandcookies.ca
+
 j.yang@cacheandcookies.ca
+
 o.leung@cacheandcookies.ca
 
 ---
