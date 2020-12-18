@@ -59,7 +59,7 @@
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
                     <a class="modal-trigger image-frame" href="#{{milkTeaProducts.name}}">
-                        <img class="menu-image" src="{{milkTeaProducts.image.url}}" alt="{{milkTeaProducts.name}}">
+                        <img class="menu-image" src="{{milkTeaProducts.image.url}}" alt="{{milkTeaProducts.name}}" loading="lazy" >
                     </a>
                     <p align="center">{{milkTeaProducts.name}}</p>
 
@@ -71,7 +71,7 @@
 
                             <div class="row">
                                 <div class="col s12 m7 image-frame"><img class="modal-image"
-                                                             src="{{milkTeaProducts.imageURL}}" alt="{{milkTeaProducts.name}}">
+                                                             src="{{milkTeaProducts.imageURL}}" alt="{{milkTeaProducts.name}}" loading="lazy" >
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{milkTeaProducts.price}}</small>
@@ -125,7 +125,7 @@
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
                     <a class="modal-trigger image-frame" href="#{{lemonTeaProducts.name}}">
-                        <img class="menu-image" src="{{lemonTeaProducts.imageURL}}" alt="{{lemonTeaProducts.name}}">
+                        <img class="menu-image" src="{{lemonTeaProducts.imageURL}}" alt="{{lemonTeaProducts.name}}" loading="lazy">
                     </a>
                     <p align="center">{{lemonTeaProducts.name}}</p>
 
@@ -137,7 +137,7 @@
 
                             <div class="row">
                                 <div class="col s12 m7 image-frame"><img class="modal-image"
-                                                             src="{{lemonTeaProducts.imageURL}}" alt="{{lemonTeaProducts.name}}">
+                                                             src="{{lemonTeaProducts.imageURL}}" alt="{{lemonTeaProducts.name}}" loading="lazy" >
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{lemonTeaProducts.price}}</small>
@@ -191,7 +191,7 @@
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
                     <a class="modal-trigger image-frame" href="#{{freshFruitProducts.name}}">
-                        <img class="menu-image" src="{{freshFruitProducts.imageURL}}" alt="{{freshFruitProducts.name}}">
+                        <img class="menu-image" src="{{freshFruitProducts.imageURL}}" alt="{{freshFruitProducts.name}}" loading="lazy" >
                     </a>
                     <p align="center">{{freshFruitProducts.name}}</p>
 
@@ -203,7 +203,7 @@
 
                             <div class="row">
                                 <div class="col s12 m7 image-frame"><img class="modal-image"
-                                                             src="{{freshFruitProducts.imageURL}}" alt="{{freshFruitProducts.name}}">
+                                                             src="{{freshFruitProducts.imageURL}}" alt="{{freshFruitProducts.name}}" loading="lazy" >
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{freshFruitProducts.price}}</small>
@@ -299,7 +299,7 @@
                                     <div>
                                         <small>Temperatures Available:</small>
                                         <br>
-                                        <img class="cold-icon" src="{% static 'images/cold.png' %}">
+                                        <img class="cold-icon" src="{% static 'images/cold.png' %}" >
                                         {% if cheeseFoamProducts.isHot %}
                                         <img class="warm-icon" src="{% static 'images/hot.png' %}">
                                         {% endif %}
@@ -323,7 +323,7 @@
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
                     <a class="modal-trigger image-frame" href="#{{foodProducts.name}}">
-                        <img class="menu-image" src="{{foodProducts.imageURL}}" alt="{{foodProducts.name}}">
+                        <img class="menu-image" src="{{foodProducts.imageURL}}" alt="{{foodProducts.name}}" loading="lazy" >
                     </a>
                     <p align="center">{{foodProducts.name}}</p>
 
@@ -335,7 +335,7 @@
 
                             <div class="row">
                                 <div class="col s12 m7 image-frame"><img class="modal-image"
-                                                             src="{{foodProducts.imageURL}}" alt="{{foodProducts.name}}">
+                                                             src="{{foodProducts.imageURL}}" alt="{{foodProducts.name}}" loading="lazy" >
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{foodProducts.price}}</small>
