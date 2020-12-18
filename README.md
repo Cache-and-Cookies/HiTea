@@ -11,3 +11,10 @@ Django 3.1
 cd {repo_root}/HiTea
 pip install -r requirements.txt
 ```
+
+---
+## Collaborators
+c.liu@cacheandcookies.ca
+j.yang@cacheandcookies.ca
+o.leung@cacheandcookies.ca
+---
