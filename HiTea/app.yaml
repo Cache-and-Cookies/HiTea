@@ -1,14 +1,18 @@
-# [START django_app]
 runtime: python37
+env: standard
+instance_class: F1
 handlers:
-# This configures Google App Engine to serve the files in the app's
-# static directory.
-- url: /static
-  static_dir: static/
-# This handler routes all requests not caught above to the main app. 
-# It is required when static routes are defined, but can be omitted 
-# (along with the entire handlers section) when there are no static 
-# files defined.
-- url: /.*
-  script: auto
-# [END django_app]
+  - url: /static/(.*)
+    static_files: static/\1
+    require_matching_file: false
+    upload: static/.*
+  - url: /.*
+    script: auto
+  - url: .*
+    script: auto
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: 4
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+network: {}
