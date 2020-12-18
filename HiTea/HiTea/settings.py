@@ -83,6 +83,7 @@ WSGI_APPLICATION = 'HiTea.wsgi.application'
 # [START db_setup]
 # Line to connect to db:
 #   cloud_sql_proxy -instances="hitea-287522:us-east4:hitea"=tcp:3306
+#   cloud_sql_proxy -instances="hitea-production:us-east4:hitea-sql"=tcp:3306
 
 if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
@@ -164,7 +165,7 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
 )
 
 DEFAULT_FILE_STORAGE = 'HiTea.gcloud.GoogleCloudMediaFileStorage'
-GS_PROJECT_ID = 'hitea-287522'
+GS_PROJECT_ID = config('GS_PROJECT_ID')
 GS_BUCKET_NAME = config('GS_BUCKET_NAME')
 MEDIA_ROOT = 'media/'
 UPLOAD_ROOT = 'media/uploads/'
