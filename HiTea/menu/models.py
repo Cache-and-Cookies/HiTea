@@ -1,13 +1,11 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from multiselectfield import MultiSelectField
 
 
-# Create your models here.
 class Topping(models.Model):
     name = models.CharField(max_length=200, null=True)
-    price = models.DecimalField(max_digits=32, decimal_places=2)
-    image = models.ImageField(default='bbt.png', null=True, blank=True)
+    price = models.DecimalField(max_digits=16, decimal_places=2)
+    image = models.ImageField(default='thumbnails/default_coming_soon.png', upload_to='thumbnails')
 
     def __str__(self):
         return self.name
@@ -24,9 +22,9 @@ class Topping(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=16, decimal_places=2)
-    image = models.ImageField(default='bbt.png', null=True, blank=True)
-    calories = models.IntegerField(default=0, validators=[
-        MaxValueValidator(99999),
+    image = models.ImageField(default='thumbnails/default_coming_soon.png', upload_to='thumbnails')
+    calories = models.IntegerField(default=1000, validators=[
+        MaxValueValidator(9999),
         MinValueValidator(0),
     ])
 
@@ -61,6 +59,11 @@ class Product(models.Model):
     def is_Food(self):
         return hasattr(self, "Food")
 
+# ######################################################################################################################
+#
+# The following Models represent food items which inherit from Product in a one-to-one relationship.
+#
+# ######################################################################################################################
 
 class FreshFruit(Product, models.Model):
     toppings = models.ManyToManyField(Topping)

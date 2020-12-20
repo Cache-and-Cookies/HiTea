@@ -17,7 +17,7 @@
             <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a></li>
             <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a></li>
             <li><a target="_blank" class="green btn-floating btn-small waves-effect" href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i class="fab fa-uber"></i></a></li>
-            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img src="{%static 'images/skipdishes.png'%}" alt=""><i class="skipdishes"></i></a></li>
+            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img class="skip" src="{%static 'images/skipdishes.png'%}" alt=""><i class="skipdishes"></i></a></li>
         </ul>
     </div>
     <div class="nav-content">
@@ -31,34 +31,36 @@
     </div>
 </nav>
 
-<!-- sidenav links-->
+<!--SIDENAV-->
 <ul class="sidenav" id="mobile-links">
     <li><a href="{% url 'home' %}#introduction">About</a></li>
     <li><a href="#">Menu</a></li>
     <li><a href="{% url 'home' %}#location">Location</a></li>
     <li><a href="{% url 'home' %}#contact">Contact</a></li>
     <div class="divider"></div>
-    <li><a class="loadMenu" href="#MilkTea"> Milk Tea </a></li>
-    <li><a class="loadMenu" href="#LemonTea"> Lemon Tea </a></li>
-    <li><a class="loadMenu" href="#FreshFruit"> Fresh Fruit </a></li>
-    <li><a class="loadMenu" href="#CheeseFoam"> Cheese Foam </a></li>
-    <li><a class="loadMenu" href="#Food"> Food </a></li>
+    <li><a class="loadMenu closeNav" href="#MilkTea"> Milk Tea </a></li>
+    <li><a class="loadMenu closeNav" href="#LemonTea"> Lemon Tea </a></li>
+    <li><a class="loadMenu closeNav" href="#FreshFruit"> Fresh Fruit </a></li>
+    <li><a class="loadMenu closeNav" href="#CheeseFoam"> Cheese Foam </a></li>
+    <li><a class="loadMenu closeNav" href="#Food"> Food </a></li>
     <div class="divider"></div>
     <li><a target="_blank" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f indigo-text"></i>Facebook</a></li>
     <li><a target="_blank" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram pink-text"></i>Instagram</a></li>
 </ul>
+<!--/SIDENAV-->
 {% endblock navbar %}
 
 {% block content %}
-<div style="background: url({% static 'images/white-wood-background.jpg' %}) no-repeat center fixed; background-size: cover;">
+<div style="background: url({% static 'images/white-wood-background.jpg' %}) no-repeat center fixed; background-size: cover;"
+     class="myMenuWrapper">
     <div id="MilkTea">
         <div class="container wrapper">
             {% for milkTeaProducts in milkTeaProducts %}
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{milkTeaProducts.name}}">
-                        <img class="menu-image" src="{{milkTeaProducts.imageURL}}" alt="filler">
+                    <a class="modal-trigger image-frame" href="#{{milkTeaProducts.name}}">
+                        <img class="menu-image" src="{{milkTeaProducts.image.url}}" alt="{{milkTeaProducts.name}}">
                     </a>
                     <p align="center">{{milkTeaProducts.name}}</p>
 
@@ -69,13 +71,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
-                                                             src="{{milkTeaProducts.imageURL}}" alt="filler">
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
+                                                             src="{{milkTeaProducts.imageURL}}" alt="{{milkTeaProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
-                                    <small>Price: ${{milkTeaProducts.price}}</small>
+                                    <small><strong>Price: ${{milkTeaProducts.price}}</strong></small>
                                     <br>
-                                    <small>Calories: {{milkTeaProducts.calories}}</small>
+                                    <!-- <small>Calories: {{milkTeaProducts.calories}}</small> -->
                                     <br>
                                     {% if milkTeaProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
@@ -123,8 +125,8 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{lemonTeaProducts.name}}">
-                        <img class="menu-image" src="{{lemonTeaProducts.imageURL}}" alt="filler">
+                    <a class="modal-trigger image-frame" href="#{{lemonTeaProducts.name}}">
+                        <img class="menu-image" src="{{lemonTeaProducts.imageURL}}" alt="{{lemonTeaProducts.name}}">
                     </a>
                     <p align="center">{{lemonTeaProducts.name}}</p>
 
@@ -135,13 +137,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
-                                                             src="{{lemonTeaProducts.imageURL}}" alt="filler">
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
+                                                             src="{{lemonTeaProducts.imageURL}}" alt="{{lemonTeaProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
-                                    <small>Price: ${{lemonTeaProducts.price}}</small>
+                                    <small><strong>Price: ${{lemonTeaProducts.price}}</strong></small>
                                     <br>
-                                    <small>Calories: {{lemonTeaProducts.calories}}</small>
+                                    <!-- <small>Calories: {{lemonTeaProducts.calories}}</small> -->
                                     <br>
                                     {% if lemonTeaProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
@@ -189,8 +191,8 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{freshFruitProducts.name}}">
-                        <img class="menu-image" src="{{freshFruitProducts.imageURL}}" alt="filler">
+                    <a class="modal-trigger image-frame" href="#{{freshFruitProducts.name}}">
+                        <img class="menu-image" src="{{freshFruitProducts.imageURL}}" alt="{{freshFruitProducts.name}}">
                     </a>
                     <p align="center">{{freshFruitProducts.name}}</p>
 
@@ -201,13 +203,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
-                                                             src="{{freshFruitProducts.imageURL}}" alt="filler">
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
+                                                             src="{{freshFruitProducts.imageURL}}" alt="{{freshFruitProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
-                                    <small>Price: ${{freshFruitProducts.price}}</small>
+                                    <small><strong> ${{freshFruitProducts.price}}</strong></small>
                                     <br>
-                                    <small>Calories: {{freshFruitProducts.calories}}</small>
+                                    <!-- <small>Calories: {{freshFruitProducts.calories}}</small> -->
                                     <br>
                                     {% if freshFruitProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
@@ -255,8 +257,8 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{cheeseFoamProducts.name}}">
-                        <img class="menu-image" src="{{cheeseFoamProducts.imageURL}}" alt="filler">
+                    <a class="modal-trigger image-frame" href="#{{cheeseFoamProducts.name}}">
+                        <img class="menu-image" src="{{cheeseFoamProducts.imageURL}}" alt="{{cheeseFoamProducts.name}}">
                     </a>
                     <p align="center">{{cheeseFoamProducts.name}}</p>
 
@@ -267,13 +269,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
-                                                             src="{{cheeseFoamProducts.imageURL}}" alt="filler">
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
+                                                             src="{{cheeseFoamProducts.imageURL}}" alt="{{cheeseFoamProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
-                                    <small>Price: ${{cheeseFoamProducts.price}}</small>
+                                    <small><strong>Price: ${{cheeseFoamProducts.price}}</strong></small>
                                     <br>
-                                    <small>Calories: {{cheeseFoamProducts.calories}}</small>
+                                    <!-- <small>Calories: {{cheeseFoamProducts.calories}}</small> -->
                                     <br>
                                     {% if cheeseFoamProducts.toppings.count > 0 %}
                                     <small>Available Toppings:
@@ -321,8 +323,8 @@
             <div class="col s6 m5 offset-m1 l4">
                 <div class="hoverable menu-box-element">
                     <!-- Modal Trigger -->
-                    <a class="modal-trigger" href="#{{foodProducts.name}}">
-                        <img class="menu-image" src="{{foodProducts.imageURL}}" alt="filler">
+                    <a class="modal-trigger image-frame" href="#{{foodProducts.name}}">
+                        <img class="menu-image" src="{{foodProducts.imageURL}}" alt="{{foodProducts.name}}">
                     </a>
                     <p align="center">{{foodProducts.name}}</p>
 
@@ -333,13 +335,13 @@
                             <div class="divider"></div>
 
                             <div class="row">
-                                <div class="col s12 m7"><img class="modal-image"
-                                                             src="{{foodProducts.imageURL}}" alt="filler">
+                                <div class="col s12 m7 image-frame"><img class="modal-image"
+                                                             src="{{foodProducts.imageURL}}" alt="{{foodProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
                                     <small>Price: ${{foodProducts.price}}</small>
                                     <br>
-                                    <small>Calories: {{foodProducts.calories}}</small>
+                                    <!-- <small>Calories: {{foodProducts.calories}}</small> -->
                                     <br>
                                     <small>{{foodProducts.description}}</small>
                                 </div>
@@ -354,9 +356,8 @@
             {% endfor %}
         </div>
     </div>
-    <!-- IDK why i need to put this div to cover background!! cmon clark... -->
     <div style="height: 20px;"></div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 {% endblock content %}

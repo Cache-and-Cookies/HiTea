@@ -1,0 +1,28 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+  entrypoint: "gcloud"
+  args:
+  - "kms"
+  - "decrypt"
+  - "--ciphertext-file=./HiTea/.env.enc"
+  - "--plaintext-file=./HiTea/.env"
+  - "--location=us-east1"
+  - "--keyring=hitea-prod-keyring"
+  - "--key=hitea-prod-key"
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+  entrypoint: "gcloud"
+  args:
+  - "kms"
+  - "decrypt"
+  - "--ciphertext-file=./HiTea/credential.json.enc"
+  - "--plaintext-file=./HiTea/credential.json"
+  - "--location=us-east1"
+  - "--keyring=hitea-prod-keyring"
+  - "--key=hitea-prod-key"
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+  entrypoint: "gcloud"
+  args:
+  - "app"
+  - "deploy"
+  - "./HiTea/app.yaml"
+timeout: 360s

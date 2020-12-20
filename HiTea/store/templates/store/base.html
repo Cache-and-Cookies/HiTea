@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -22,19 +22,44 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1"/>
+
+    <!-- open graph -->
+    <meta property="og:title" content="HiTea" />
+    <meta property="og:site_name" content="HiTea"/>
+    <meta property="og:url" content="https://hiteatoronto.ca" />
+    <meta property="og:image" content="{% static 'images/HiTea Logo.png' %}" />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:description" content="HiTea's unique flavors and delicately crafted foods and beverages have shown a strong popularity among customers."/>
+
+    <meta name="keywords" content="HiTea, Midland, Finch, Toronto, bubble tea, boba, North York">
+
     <!-- Adding Favicon -->
     <link rel="shortcut icon" href="{% static 'images/HiTea Logo.png'%}"/>
+    <title>HiTea</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24BBTVJYPY"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-24BBTVJYPY');
+    </script>
+
 </head>
 
-<body onload="removeCover()">
+<!--Removing Elfsight Cover-->
+<body onload="removeCover()" class="myWrapper">
+
 {% block navbar %}
 {% endblock navbar %}
 
 {% block content %}
 {% endblock content %}
 
-
-<footer class="page-footer grey darken-3">
+<!--FOOTER-->
+<footer class="page-footer grey darken-3 myFooter">
     <div class="container">
         <div class="row">
             <div class="col s12 l8">
@@ -61,13 +86,17 @@
         <div class="container" id="copyright"> HiTea 2020 &copy; All rights reservered</div>
     </div>
 </footer>
+<!--/FOOTER-->
 
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
 {% block materialize_forms_javascript %}
 <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 

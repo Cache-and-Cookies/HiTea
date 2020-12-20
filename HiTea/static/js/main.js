@@ -20,7 +20,7 @@ $(document).ready(function(){
 });
       
 
-// all fading shit
+// Fade Effect
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = {
   threshold: 0,
@@ -60,7 +60,7 @@ menuItems.forEach(element => {
     $('.sidenav').sidenav('close');
     setTimeout(() => {
       location.reload();
-    }, 30);
+    }, 100);
   });
 });
 
