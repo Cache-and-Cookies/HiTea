@@ -92,6 +92,22 @@ Home CSS
     height: auto;
 }
 
+.modal-image{
+    width: 70%;
+    height: auto;
+    transform: translate(22%, 0);
+}
+
+.myFooter {
+    flex-shrink: 0;
+}
+
+.myWrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .nav-wrapper .brand-logo {
     font-family: 'Trebuchet MS', sans-serif;
 }
@@ -109,7 +125,7 @@ Home CSS
 
 .parallax-container {
     position: relative;
-    height: 94vh;
+    height: 100vh;
 }
 
 .pop {
@@ -130,22 +146,6 @@ Home CSS
     height: auto;
     position: absolute;
     bottom: -10px;
-}
-
-.image-frame {
-    /* border: 2px solid blue; */
-    /* height: 250px; */
-    /* display: flex;
-    justify-content: center;
-    overflow: hidden; */
-}
-/* .image-frame img{
-    border: 2px solid red;
-} */
-.modal-image{
-    width: 70%;
-    height: auto;
-    transform: translate(22%, 0);
 }
 
 @media screen and (max-width: 1080px) {
@@ -206,13 +206,18 @@ MENU CSS
     transform: translate(13%, 0);
 }
 
+.topping-list {
+    margin: 0 0 0 0;
+}
+
+.myMenuWrapper {
+    margin-top: 10px;
+    flex: 1 0 auto;
+}
+
 .warm-icon{
     width: 30px;
     height: auto;
-}
-
-.topping-list {
-    margin: 0 0 0 0;
 }
 
 .wrapper {

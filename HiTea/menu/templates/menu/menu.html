@@ -51,7 +51,8 @@
 {% endblock navbar %}
 
 {% block content %}
-<div style="background: url({% static 'images/white-wood-background.jpg' %}) no-repeat center fixed; background-size: cover;">
+<div style="background: url({% static 'images/white-wood-background.jpg' %}) no-repeat center fixed; background-size: cover;"
+     class="myMenuWrapper">
     <div id="MilkTea">
         <div class="container wrapper">
             {% for milkTeaProducts in milkTeaProducts %}
@@ -74,7 +75,7 @@
                                                              src="{{milkTeaProducts.imageURL}}" alt="{{milkTeaProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
-                                    <small>Price: ${{milkTeaProducts.price}}</small>
+                                    <small><strong>Price: ${{milkTeaProducts.price}}</strong></small>
                                     <br>
                                     <!-- <small>Calories: {{milkTeaProducts.calories}}</small> -->
                                     <br>
@@ -140,7 +141,7 @@
                                                              src="{{lemonTeaProducts.imageURL}}" alt="{{lemonTeaProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
-                                    <small>Price: ${{lemonTeaProducts.price}}</small>
+                                    <small><strong>Price: ${{lemonTeaProducts.price}}</strong></small>
                                     <br>
                                     <!-- <small>Calories: {{lemonTeaProducts.calories}}</small> -->
                                     <br>
@@ -206,7 +207,7 @@
                                                              src="{{freshFruitProducts.imageURL}}" alt="{{freshFruitProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
-                                    <small>Price: ${{freshFruitProducts.price}}</small>
+                                    <small><strong> ${{freshFruitProducts.price}}</strong></small>
                                     <br>
                                     <!-- <small>Calories: {{freshFruitProducts.calories}}</small> -->
                                     <br>
@@ -272,7 +273,7 @@
                                                              src="{{cheeseFoamProducts.imageURL}}" alt="{{cheeseFoamProducts.name}}">
                                 </div>
                                 <div class="col s12 m5">
-                                    <small>Price: ${{cheeseFoamProducts.price}}</small>
+                                    <small><strong>Price: ${{cheeseFoamProducts.price}}</strong></small>
                                     <br>
                                     <!-- <small>Calories: {{cheeseFoamProducts.calories}}</small> -->
                                     <br>
