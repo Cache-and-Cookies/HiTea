@@ -24,14 +24,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1"/>
 
     <!-- open graph -->
-    <meta property="og:title" content="HiTea" />
+    <meta property="og:title" content="HiTea"/>
     <meta property="og:site_name" content="HiTea"/>
-    <meta property="og:url" content="https://hiteatoronto.ca" />
-    <meta property="og:image" content="{% static 'images/HiTea Logo.png' %}" />
-    <meta property="og:type" content="restaurant" />
-    <meta property="og:description" content="HiTea's unique flavors and delicately crafted foods and beverages have shown a strong popularity among customers."/>
+    <meta property="og:url" content="https://hiteatoronto.ca"/>
+    <meta property="og:image" content="{% static 'images/HiTea Logo.png' %}"/>
+    <meta property="og:type" content="restaurant"/>
+    <meta property="og:description"
+          content="HiTea's unique flavors and delicately crafted foods and beverages have shown a strong popularity among customers."/>
 
-    <meta name="keywords" content="HiTea, Midland, Finch, Toronto, bubble tea, boba, North York">
+    <meta
+            name="description"
+            content="HiTea is a bubble tea chain from Guangdong, China that specializes in lots (and lots) of fruit bubble tea drinks!
+            There's a great, easy-going vibe with comfortable seats, perfect to kick back and relax or do some work as well."/>
+    <meta name="keywords" content="HiTea, Midland, Finch, Toronto, bubble tea, Lemon Tea, boba, North York"/>
 
     <!-- Adding Favicon -->
     <link rel="shortcut icon" href="{% static 'images/HiTea Logo.png'%}"/>
@@ -45,6 +50,7 @@
     gtag('js', new Date());
 
     gtag('config', 'G-24BBTVJYPY');
+
     </script>
 
 </head>
@@ -96,12 +102,12 @@
 
 {% block materialize_forms_javascript %}
 <script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
-integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+        integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
 
 <script>
     $(document).ready(function(){
@@ -112,6 +118,7 @@ integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="ano
         
     });
     
+
 </script>
 {% endblock materialize_forms_javascript %}
 </body>
