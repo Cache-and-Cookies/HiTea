@@ -23,4 +23,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Django Testing project
       run: |
-        python3 manage.py test # Don't forget to run tests
+        python3 HiTea/manage.py test # Don't forget to run tests
