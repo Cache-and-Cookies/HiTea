@@ -83,7 +83,6 @@ function contactFormAlert(){
 
 // Removing Elfsight Cover
 const body = document.getElementsByTagName("body")[0]
-console.log(body)
 body.addEventListener("load", removeCover)
 function removeCover(){
   setTimeout(() => {
