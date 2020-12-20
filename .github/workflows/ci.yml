@@ -3,7 +3,7 @@ name: Continous Integration
 on: [push]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
     steps:
@@ -24,3 +24,5 @@ jobs:
     - name: Django Testing project
       run: |
         python3 HiTea/manage.py test # Don't forget to run tests
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
