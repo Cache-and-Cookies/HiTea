@@ -24,5 +24,5 @@ steps:
   args:
   - "app"
   - "deploy"
-  - "./HiTea/dev.app.yaml"
+  - "./HiTea/staging.app.yaml"
 timeout: 360s
