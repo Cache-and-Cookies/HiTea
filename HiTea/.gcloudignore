@@ -21,3 +21,9 @@ db.sqlite3
 static/images-optimize/
 */static/images-optimize/*
 static/images-optimize/*
+Dockerfile
+docker-compose.yml
+image-optimize.md
+scripts/*
+static/images-optimize/
+*~
