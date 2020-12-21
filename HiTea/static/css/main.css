@@ -4,8 +4,8 @@ Home CSS
 *********************************************************************************************************************
 ------------------------------------------------------------------------------------------------------------------ */
 .affiliate {
-    width: 140px;
-    height: 50px;
+	width: 140px;
+	height: 50px;
 }
 
 .box-element {
@@ -13,8 +13,8 @@ Home CSS
 	background-color: #fff;
 	border-radius: 4px;
 	padding: 10px;
-    margin: 10vh 0px 0px 100px;
-    z-index: 1000;
+	margin: 10vh 0px 0px 100px;
+	z-index: 1000;
 }
 
 .contact-box-element {
@@ -22,146 +22,146 @@ Home CSS
 	background-color: #fff;
 	border-radius: 4px;
 	padding: 10px;
-    margin: 10vh 0px 0px 10px;
+	margin: 10vh 0px 0px 10px;
 }
 
 .fade-in {
-    opacity: 0;
-    grid-column: 3/4;
-    transform: translateY(15%);
-    transition: opacity 300ms ease-in, transform 300ms ease-in;
+	opacity: 0;
+	grid-column: 3/4;
+	transform: translateY(15%);
+	transition: opacity 300ms ease-in, transform 300ms ease-in;
 }
 
 .fade-in.appear {
-    opacity: 1;
-    transform: translateX(0);
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .from-left {
-    transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .from-right {
-    transform: translateX(50%);
+	transform: translateX(50%);
 }
 
 .from-right-but {
-    transform: translateX(50%);
+	transform: translateX(50%);
 }
 
 @media screen and (max-width: 991px) {
-    .from-right-but {
-        transform: translateX(-50%);
-        /* fade from right large then left on mid and down; fixes bug where screen is horizontally scrollable*/
-    }
+	.from-right-but {
+		transform: translateX(-50%);
+		/* fade from right large then left on mid and down; fixes bug where screen is horizontally scrollable*/
+	}
 }
 
 .iframe-container {
-    padding-bottom: 1%;
-    position: relative;
-    height: 65vh;
+	padding-bottom: 1%;
+	position: relative;
+	height: 65vh;
 }
 
 .iframe-container iframe {
-    height: 100%;
-    width: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 .home-image {
-    width: 60%;
-    height: auto;
-    text-align: center;
-    transform: translate(30%, 0);
-    border: 1px solid gray;
-    border-radius: 4px;
+	width: 60%;
+	height: auto;
+	text-align: center;
+	transform: translate(30%, 0);
+	border: 1px solid gray;
+	border-radius: 4px;
 }
 
 .horizontal-center {
-    position: absolute;
-    margin-top: 5vh;
-    left: 50%;
-    transform: translate(-50%,-50%);
+	position: absolute;
+	margin-top: 5vh;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .logo {
-    display: flex;
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
-    width: 35%;
-    height: auto;
+	display: flex;
+	margin-top: 5vh;
+	margin-left: auto;
+	margin-right: auto;
+	width: 35%;
+	height: auto;
 }
 
-.modal-image{
-    width: 70%;
-    height: auto;
-    transform: translate(22%, 0);
+.modal-image {
+	width: 70%;
+	height: auto;
+	transform: translate(22%, 0);
 }
 
 .myFooter {
-    flex-shrink: 0;
+	flex-shrink: 0;
 }
 
 .myWrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .nav-wrapper .brand-logo {
-    font-family: 'Trebuchet MS', sans-serif;
+	font-family: 'Trebuchet MS', sans-serif;
 }
 
 .page-section {
-    background-image: url("https://storage.googleapis.com/hitea_bucket_pics/images-optimize/white-wall-background.jpg");
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
+	background-image: url("https://storage.googleapis.com/hitea_bucket_pics/images-optimize/white-wall-background.jpg");
+	background-size: cover;
+	min-height: 100vh;
+	display: flex;
 }
 
 .parallax {
-    filter: brightness(50%);
+	filter: brightness(50%);
 }
 
 .parallax-container {
-    position: relative;
-    height: 100vh;
+	position: relative;
+	height: 100vh;
 }
 
 .pop {
-    transition: transform 1s;
+	transition: transform 1s;
 }
 
 .pop:hover {
-    transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .skip {
-    width: 30px;
-    height: 30px;
+	width: 30px;
+	height: 30px;
 }
 
 .tea-image {
-    width: 15%;
-    height: auto;
-    position: absolute;
-    bottom: -10px;
+	width: 15%;
+	height: auto;
+	position: absolute;
+	bottom: -10px;
 }
 
 @media screen and (max-width: 1080px) {
-    .tea-image {
-        width: 20%;
-    }
+	.tea-image {
+		width: 20%;
+	}
 }
 
 @media screen and (max-width: 720px) {
-    .tea-image {
-        width: 30%;
-    }
+	.tea-image {
+		width: 30%;
+	}
 
-    .nav-wrapper .btn-floating {
-        margin: 0 0.2rem;
-    }
+	.nav-wrapper .btn-floating {
+		margin: 0 0.2rem;
+	}
 }
 
 /* ------------------------------------------------------------------------------------------------------------------
@@ -170,64 +170,69 @@ MENU CSS
 *********************************************************************************************************************
 ------------------------------------------------------------------------------------------------------------------ */
 
-.cold-icon{
-    width: 30px;
-    height: auto;
+.cold-icon {
+	width: 30px;
+	height: auto;
 }
-.menu-image{
-   width: 70%;
-   height: auto;
-   transform: translate(22%, 0);
+.menu-image {
+	width: 70%;
+	height: auto;
+	transform: translate(22%, 0);
 }
 
-.menu-box-element{
-    box-shadow: gray 0 0 10px;
+.menu-box-element {
+	box-shadow: gray 0 0 10px;
 	background-color: #fff;
 	border-radius: 15px;
 	padding: 5px;
-    margin: 5px;
+	margin: 5px;
 }
 
 @media screen and (max-width: 992px) {
-    .menu-box-element {
-        min-height: 330px;
-    }
+	.menu-box-element {
+		min-height: 330px;
+	}
 }
 
 @media screen and (max-width: 550px) {
-    .menu-box-element {
-        min-height: 210px;
-    }
+	.menu-box-element {
+		min-height: 210px;
+	}
 }
 
-.modal-image{
-    width: 80%;
-    height: auto;
-    transform: translate(13%, 0);
+.modal-image {
+	width: 80%;
+	height: auto;
+	transform: translate(13%, 0);
 }
 
 .topping-list {
-    margin: 0 0 0 0;
+	margin: 0 0 0 0;
 }
 
 .myMenuWrapper {
-    margin-top: 10px;
-    flex: 1 0 auto;
+    background-image: url("https://storage.googleapis.com/hitea_bucket_pics/images-optimize/white-wood-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+	margin-top: 10px;
+	flex: 1 0 auto;
 }
 
-.warm-icon{
-    width: 30px;
-    height: auto;
+.warm-icon {
+	width: 30px;
+	height: auto;
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
 }
 
 @media screen and (max-width: 720px) {
-    .wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
+	.wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
