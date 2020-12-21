@@ -200,6 +200,10 @@ MENU CSS
 	}
 }
 
+.modal-content {
+	background-color: white;
+}
+
 .modal-image {
 	width: 80%;
 	height: auto;
