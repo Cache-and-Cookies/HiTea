@@ -2,9 +2,10 @@
 
 
 ## Before 
-4.6 MB transffered, 6.8 MB resourcest
+4.6 MB transffered, 6.8 MB resources
 
-## After
+## After Image Optimization
+3.1 MB transferred, 5.4 MB resources
 
 ## Squoosh
 wood-background.jpg 372.kB -> 240 kB <br/>
