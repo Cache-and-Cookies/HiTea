@@ -1,0 +1,59 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+{% block navbar %}
+<nav>
+    <div class="nav-wrapper grey darken-3">
+        <a href="{% url 'home' %}" class="brand-logo center">Hi Tea 茶室</a>
+        <a href="#" class="sidenav-trigger" data-target="mobile-links"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
+            <li><a href="#introduction">About</a></li>
+            <li><a href="{% url 'menu-search' %}">Menu</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!--Social Media Links-->
+        <ul class="right">
+            <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect"
+                                                href="https://www.facebook.com/Hi.teacanada/"><i
+                    class="fab fa-facebook-f"></i></a></li>
+            <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect"
+                                                href="https://www.instagram.com/hi.tea_canada/?hl=en"><i
+                    class="fab fa-instagram"></i></a></li>
+            <li><a target="_blank" class="green btn-floating btn-small waves-effect"
+                   href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i
+                    class="fab fa-uber"></i></a></li>
+            <li><a target="_blank" class="red btn-floating btn-small waves-effect"
+                   href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img
+                    alt="Skip the Dishes" class="skip" src="{%static 'images/skipdishes.png'%}"></a></li>
+        </ul>
+    </div>
+</nav>
+
+<!--SIDENAV-->
+<ul class="sidenav" id="mobile-links">
+    <li><a class="closeNav" href="#introduction">About</a></li>
+    <li><a class="closeNav" href="{% url 'menu-search' %}">Menu</a></li>
+    <li><a class="closeNav" href="#location">Location</a></li>
+    <li><a class="closeNav" href="#contact">Contact</a></li>
+    <div class="divider"></div>
+    <li><a target="_blank" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f indigo-text"></i>Facebook</a>
+    </li>
+    <li><a target="_blank" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i
+            class="fab fa-instagram pink-text"></i>Instagram</a></li>
+</ul>
+{% endblock navbar %}
+
+
+{% block content %}
+
+<div class="jumbotron">
+    <div class="myContainer">
+        <h1>404 Page Not Found</h1>
+        <p>Sorry, we can't find the page you're looking for!</p>
+        <hr>
+        <a href="{% url 'home' %}"><button class="waves-effect waves-light btn">Return Home</button><a>
+    </div>
+</div>
+
+{% endblock content %}
