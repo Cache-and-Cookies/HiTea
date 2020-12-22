@@ -74,7 +74,7 @@ homeNavItems.forEach(element => {
 // Constantly updates copyright message in footer
 let date = new Date()
 let copyrightMsg = document.getElementById("copyright")
-copyrightMsg.innerText = "HiTea " + date.getFullYear() + " \u00A9 All rights reservered"
+copyrightMsg.innerText = "HiTea " + date.getFullYear() + " \u00A9 All rights reserved"
 
 // Alerts user after contact form has been successfully submitted
 function contactFormAlert(){
