@@ -15,3 +15,7 @@ def home(request):
         'c_form': c_form,
     }
     return render(request, 'store/home.html', context)
+
+
+def error_404_view(request, exception):
+    return render(request, 'store/404.html')
