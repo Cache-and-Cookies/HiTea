@@ -1,24 +1,24 @@
 // M.AutoInit();
-$(document).ready(function(){
+$(document).ready(function () {
   $('.parallax').parallax();
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.sidenav').sidenav();
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.tabs').tabs();
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.modal').modal();
 });
-      
+
 
 // Fade Effect
 const faders = document.querySelectorAll('.fade-in');
@@ -26,7 +26,7 @@ const appearOptions = {
   threshold: 0,
   rootMargin: "0px 0px -100px 0px"
 };
-const appearOnScroll = new IntersectionObserver(function(
+const appearOnScroll = new IntersectionObserver(function (
   entries,
   appearOnScroll
 ) {
@@ -39,7 +39,7 @@ const appearOnScroll = new IntersectionObserver(function(
     }
   });
 },
-appearOptions);
+  appearOptions);
 
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
@@ -47,9 +47,9 @@ faders.forEach(fader => {
 
 
 // Overwrite scrollOffset option for scrollspy to 0px
-document.addEventListener('DOMContentLoaded', function() {
-    let elems = document.querySelectorAll('.scrollspy');
-    let instances = M.ScrollSpy.init(elems, {scrollOffset: 0});
+document.addEventListener('DOMContentLoaded', function () {
+  let elems = document.querySelectorAll('.scrollspy');
+  let instances = M.ScrollSpy.init(elems, { scrollOffset: 0 });
 });
 
 
@@ -77,26 +77,29 @@ let copyrightMsg = document.getElementById("copyright")
 copyrightMsg.innerText = "HiTea " + date.getFullYear() + " \u00A9 All rights reserved"
 
 // Alerts user after contact form has been successfully submitted
-function contactFormAlert(){
+function contactFormAlert() {
   alert("Contact Form Successful Submitted!")
 }
 
 // Removing Elfsight Cover
 const body = document.getElementsByTagName("body")[0]
+const removeInterval = setInterval(removeCover(), 1000)
 body.addEventListener("load", () => {
-    for (let i = 0; i < 3; i++)
-    removeCover()
+  setTimeout(() => {
+    clearInterval(removeInterval)
+  }, 5000);
 })
-function removeCover(){
+function removeCover() {
+  // console.log('remo')
   setTimeout(() => {
     const aTags = document.querySelectorAll('a');
-    for (i = 0; i < aTags.length; i++){
+    for (i = 0; i < aTags.length; i++) {
       if (aTags[i].innerText.includes('Free Google Reviews widget')){
-        aTags[i].remove();
+        aTags[i].style.display = 'none'
       }
 
-      if (aTags[i].innerText.includes('Widget is deactivated. Please, visit Elfsight Apps.')){
-        aTags[i].remove();
+      if (aTags[i].innerText.includes('Widget is deactivated. Please, visit Elfsight Apps.')) {
+        aTags[i].style.display = 'none'
       }
     }
   }, 1000);
