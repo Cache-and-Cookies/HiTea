@@ -87,7 +87,7 @@ const removeInterval = setInterval(removeCover(), 1000)
 body.addEventListener("load", () => {
   setTimeout(() => {
     clearInterval(removeInterval)
-  }, 5000);
+  }, 10000);
 })
 function removeCover() {
   // console.log('remo')
