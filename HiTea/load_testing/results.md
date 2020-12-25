@@ -36,4 +36,4 @@
 
 # Suggestions
 - Reduce ColdStart Times on additional instances by reducing # of useless dependencies and stop commiting useless files like pycache as it makes the underlying app engine image larger, thus harder to start
-- **Try Commenting out libraries in requirements.txt to see which one of useless**
+- **Try Commenting out libraries indivudally in requirements.txt to see which one of useless**
