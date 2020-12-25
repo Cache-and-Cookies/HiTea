@@ -97,7 +97,7 @@ if os.getenv('GAE_APPLICATION', None):
             'USER': config('USER'),
             'PASSWORD': config('USER_PASSWORD'),
             'NAME': config('DATABASE_NAME'),
-            'CONN_MAX_AGE': 840,
+            'CONN_MAX_AGE': 3600,
         }
     }
 else:
@@ -110,7 +110,7 @@ else:
                 'NAME': config('DATABASE_NAME'),
                 'USER': config('USER'),
                 'PASSWORD': config('USER_PASSWORD'),
-                'CONN_MAX_AGE': 840,
+                'CONN_MAX_AGE': 3600,
             }
         }
     else:
