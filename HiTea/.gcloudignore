@@ -13,6 +13,9 @@
 .git
 .gitignore
 
+*/load_testing/*
+load_testing/*
+/load_testing/*
 # Python pycache:
 __pycache__/
 # Ignored by the build system
