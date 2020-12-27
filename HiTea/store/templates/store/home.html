@@ -5,6 +5,51 @@
 {% block materialize_forms_css %}
 {% endblock materialize_forms_css %}
 
+{% block structuredData %}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "image": [
+        "https://storage.googleapis.com/hitea_bucket_pics/images-optimize/bubble-tea.jpg",
+        "https://storage.googleapis.com/hitea_bucket_pics/thumbnails/Rose_Lemon_Tea.jpg",
+        "https://storage.googleapis.com/hitea_bucket_pics/thumbnails/Roasted_Milk_Tea_with_Pearls.jpg"
+    ],
+    "name": "Bubble Tea",
+    "description": "Delicious bubble tea in the form of either milk tea, lemon tea, fresh fruit, or cheese foam.",
+    "brand": {
+        "@type": "Brand",
+        "name": "HiTea Canada"
+    },
+    "offers": {
+        "@type": "AggregateOffer",
+        "url": "https://www.hiteato.ca",
+        "availability": "https://schema.org/InStock",
+        "lowPrice": "4.99",
+        "highPrice": "9.99",
+        "priceCurrency": "CAD"
+    },
+    "review": {
+        "@type": "Review",
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Charles Liu"
+        }
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "81"
+    }
+}
+</script>
+{% endblock structuredData %}
+
 {% block navbar %}
 <nav>
     <div class="nav-wrapper grey darken-3">
@@ -18,10 +63,18 @@
         </ul>
         <!--Social Media Links-->
         <ul class="right">
-            <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram"></i></a></li>
-            <li><a target="_blank" class="green btn-floating btn-small waves-effect" href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i class="fab fa-uber"></i></a></li>
-            <li><a target="_blank" class="red btn-floating btn-small waves-effect" href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img alt="Skip the Dishes" class="skip" src="{%static 'images/skipdishes.png'%}"></a></li>
+            <li class="hide-on-med-and-down"><a target="_blank" class="indigo btn-floating btn-small waves-effect"
+                                                href="https://www.facebook.com/Hi.teacanada/"><i
+                    class="fab fa-facebook-f"></i></a></li>
+            <li class="hide-on-med-and-down"><a target="_blank" class="pink btn-floating btn-small waves-effect"
+                                                href="https://www.instagram.com/hi.tea_canada/?hl=en"><i
+                    class="fab fa-instagram"></i></a></li>
+            <li><a target="_blank" class="green btn-floating btn-small waves-effect"
+                   href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"><i
+                    class="fab fa-uber"></i></a></li>
+            <li><a target="_blank" class="red btn-floating btn-small waves-effect"
+                   href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"><img
+                    alt="Skip the Dishes" class="skip" src="{%static 'images/skipdishes.png'%}"></a></li>
         </ul>
     </div>
 </nav>
@@ -33,8 +86,10 @@
     <li><a class="closeNav" href="#location">Location</a></li>
     <li><a class="closeNav" href="#contact">Contact</a></li>
     <div class="divider"></div>
-    <li><a target="_blank" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f indigo-text"></i>Facebook</a></li>
-    <li><a target="_blank" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i class="fab fa-instagram pink-text"></i>Instagram</a></li>
+    <li><a target="_blank" href="https://www.facebook.com/Hi.teacanada/"><i class="fab fa-facebook-f indigo-text"></i>Facebook</a>
+    </li>
+    <li><a target="_blank" href="https://www.instagram.com/hi.tea_canada/?hl=en"><i
+            class="fab fa-instagram pink-text"></i>Instagram</a></li>
 </ul>
 <!--/SIDENAV-->
 {% endblock navbar %}
@@ -42,7 +97,8 @@
 
 {% block content %}
 <div class="parallax-container baseline">
-    <div class="parallax"><img alt="Store Interior Parallax" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/store.jpg"></div>
+    <div class="parallax"><img alt="Store Interior Parallax"
+                               src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/store.jpg"></div>
     <img alt="HiTea Logo" class="logo pop" src="{% static 'images/HiTea Logo.png' %}">
     <i class="horizontal-center large material-icons"><a class="white-text" href="#introduction">keyboard_arrow_down</a></i>
 </div>
@@ -54,13 +110,18 @@
         <div class="col s12 l7 box-element fade-in from-right-but">
             <h5>About</h5>
             <p>HiTea has established 163 branches in China.
-                Its unique flavors and delicately crafted foods and beverages have shown a strong popularity among customers.
-                All of HiTea’s stores focus on providing customers with a satisfactory and relaxing dining and drinking experience.
-                Their specialized, freshly cut, fruit tea recipe has been improving for the past few years, and they never fail to fascinate customers.
+                Its unique flavors and delicately crafted foods and beverages have shown a strong popularity among
+                customers.
+                All of HiTea’s stores focus on providing customers with a satisfactory and relaxing dining and drinking
+                experience.
+                Their specialized, freshly cut, fruit tea recipe has been improving for the past few years, and they
+                never fail to fascinate customers.
                 All the tea leaves come from top tea farms in China, and cut fruits are the freshest seasonal choices.
-                Nowadays, the company is still actively adapting to customers tastes to create the perfect signature drink.
+                Nowadays, the company is still actively adapting to customers tastes to create the perfect signature
+                drink.
             </p>
-            <img alt="Happy Employees" class="home-image" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/contest-winner.jpg">
+            <img alt="Happy Employees" class="home-image"
+                 src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/contest-winner.jpg">
         </div>
 
         <div class="col s12 l4 box-element offset-l1 fade-in from-left">
@@ -104,10 +165,13 @@
 
 <!--MAPS-->
 <div class="parallax-container">
-    <div class="parallax"><img alt="Bubble Tea Parallax" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/bubble-tea.jpg"></div>
+    <div class="parallax"><img alt="Bubble Tea Parallax"
+                               src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/bubble-tea.jpg">
+    </div>
 </div>
 
-<div class="page-section" style="background-image: url(https://storage.googleapis.com/hitea_bucket_pics/images-optimize/wood-background.jpg)">
+<div class="page-section"
+     style="background-image: url(https://storage.googleapis.com/hitea_bucket_pics/images-optimize/wood-background.jpg)">
     <div class="scrollspy container row" id="location">
         <div class="col s12 l12 box-element fade-in">
             <h5 class="center">Location</h5>
@@ -124,12 +188,14 @@
 
 <!--/PARALLAX-->
 <div class="parallax-container">
-    <div class="parallax"><img alt="Store Interior Parallax" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/darling.jpg"></div>
+    <div class="parallax"><img alt="Store Interior Parallax"
+                               src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/darling.jpg"></div>
 </div>
 <!--/PARALLAX-->
 
 <!--Contact Us Form-->
-<div class="page-section" style="background-image:url( https://storage.googleapis.com/hitea_bucket_pics/images-optimize/white-wood-background.jpg)">
+<div class="page-section"
+     style="background-image:url( https://storage.googleapis.com/hitea_bucket_pics/images-optimize/white-wood-background.jpg)">
     <div class="scrollspy container row" id="contact">
         <br>
         <h4 class="center fade-in" style="margin: 0; padding: 2vh; font-weight: 500;">Contact Us</h4>
@@ -142,14 +208,22 @@
                 <hr>
                 <br>
                 <h4 class="flow-text"><strong>Order From:</strong></h4>
-                <img alt="Food HWY Affiliate" class="affiliate" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/foodhwy.jpg">
-                <img alt="Hungry Panda Affiliate" class="affiliate" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/hungrypanda.jpg">
-                <img alt="Lanyangyang Affiliate" class="affiliate" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/lanyangyang.jpg">
-                <img alt="Fantuan Affiliate" class="affiliate" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/fantuan.jpg">
+                <img alt="Food HWY Affiliate" class="affiliate"
+                     src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/foodhwy.jpg">
+                <img alt="Hungry Panda Affiliate" class="affiliate"
+                     src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/hungrypanda.jpg">
+                <img alt="Lanyangyang Affiliate" class="affiliate"
+                     src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/lanyangyang.jpg">
+                <img alt="Fantuan Affiliate" class="affiliate"
+                     src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/fantuan.jpg">
                 <a href="https://www.ubereats.com/ca/toronto/food-delivery/hi-tea-%E8%8C%B6%E5%AE%A4-midland/CSOxlR2sQgCHti2O947CYQ?utm_source=google&utm_medium=organic&utm_campaign=place-action-link"
-                   target="_blank"><img class="affiliate" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/ubereats.jpg" alt="Uber Eats Affiliate"></a>
+                   target="_blank"><img class="affiliate"
+                                        src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/ubereats.jpg"
+                                        alt="Uber Eats Affiliate"></a>
                 <a href="https://www.skipthedishes.com/hi-tea-midland-avenue?utm_source=google&utm_medium=organic&utm_campaign=gpa"
-                   target="_blank"><img class="affiliate" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/skipthedishes.jpg" alt="Skip the Dishes Affiliate"></a>
+                   target="_blank"><img class="affiliate"
+                                        src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/skipthedishes.jpg"
+                                        alt="Skip the Dishes Affiliate"></a>
             </div>
         </div>
         <div class="col s12 l6 fade-in">
@@ -173,12 +247,14 @@
 
 <!--PARALLAX-->
 <div class="parallax-container">
-    <div class="parallax"><img alt="Store Interior Parallax" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/tables.jpg"></div>
+    <div class="parallax"><img alt="Store Interior Parallax"
+                               src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/tables.jpg"></div>
 </div>
 <!--/PARALLAX-->
 
 <!--GOOGLE REVIEWS-->
-<div class="page-section" style="background-image: url(https://storage.googleapis.com/hitea_bucket_pics/images-optimize/wall-background.jpg)">
+<div class="page-section"
+     style="background-image: url(https://storage.googleapis.com/hitea_bucket_pics/images-optimize/wall-background.jpg)">
     <div class="container row">
         <div class="elf col s12 l12 box-element fade-in">
             <!--Elfsight plugin limited to 200 views a month-->
@@ -192,7 +268,8 @@
 
 <!--PARALLAX-->
 <div class="parallax-container">
-    <div class="parallax"><img alt="Store Interior Parallax" src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/flowers.jpg"></div>
+    <div class="parallax"><img alt="Store Interior Parallax"
+                               src="https://storage.googleapis.com/hitea_bucket_pics/images-optimize/flowers.jpg"></div>
 </div>
 <!--/PARALLAX-->
 
