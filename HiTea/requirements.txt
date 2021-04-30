@@ -24,7 +24,7 @@ PyMySQL==0.10.0
 python-decouple==3.3
 pytz==2020.5
 requests==2.25.1
-rsa==4.6
+rsa==4.7
 six==1.15.0
 sqlparse==0.4.1
 urllib3==1.26.3
