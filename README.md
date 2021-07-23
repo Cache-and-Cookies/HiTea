@@ -1,7 +1,5 @@
 # HiTea Canada Website
 
-![GitHub last commit](https://img.shields.io/github/last-commit/Cache-and-Cookies/HiTea)
-
 ![image](https://user-images.githubusercontent.com/47992694/113460642-72578980-93e7-11eb-9730-dd216e7c9d76.png)
 
 ![image](https://user-images.githubusercontent.com/47992694/113460664-800d0f00-93e7-11eb-9860-2344b7439fbb.png)
